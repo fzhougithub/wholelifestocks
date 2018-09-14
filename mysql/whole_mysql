@@ -1,0 +1,64 @@
+#!/bin/sh
+# add this file into /etc/init.d directory, run /etc/init.d/whole_mysql link to link it to rc..d directory for auto restart
+
+. /root/.my
+
+CAT=/bin/cat
+HOSTNAME=`hostname`
+DATE=`date '+%Y%m%d-%H%M%S'`
+MYSQL_DIR="/var/tellme/mysql"
+DATA_DIR="${MYSQL_DIR}/data"
+LOGFILE="/var/tellme/mysql/admin/logs/tellme_mysql-${DATE}.log"
+#DDL_DIR="/usr/local/mysql/startup"
+#MYSQL_PROFILE=`grep "mysql.profile" /tools/config/current/gold.conf |cut -d= -f2| sed 's/^[ \t]*//;s/[ \t]*$//'`
+
+LD_LIBRARY_PATH=/usr/local/lib:${LD_LIBRARY_PATH}
+export LD_LIBRARY_PATH
+
+mysql="/usr/local/bin/mysql"
+
+case "$1" in
+    start)
+        echo "=================" >> ${LOGFILE}
+        echo "Starting Database" >> ${LOGFILE}
+        echo "=================" >> ${LOGFILE}
+
+        if [ -d $DATA_DIR/mysql ]; then
+           /usr/sbin/mysqld --daemonize >> ${LOGFILE} 2>&1 &
+            return_value=$?
+            if [ "$return_value" -ne 0 ]; then
+               echo "ERROR Cannot start mysql. See log files. Possible error:"
+               grep ERROR $MYSQL_DIR/*.err | tail -2
+               echo "Cannot start mysql" >> ${LOGFILE}
+               exit $return_value
+            fi
+
+            sleep 2
+            echo "MySQL Started"
+        fi
+        ;;
+    stop)
+        echo "=================" >> ${LOGFILE}
+        echo "Stopping Database" >> ${LOGFILE}
+        echo "=================" >> ${LOGFILE}
+
+        if [ -d $DATA_DIR/mysql ]; then
+             /usr/bin/mysqladmin -uroot -p$PWD shutdown
+             ${CAT} ${MYSQL_DIR}/mysqld.err >> ${MYSQL_DIR}/mysqld.err-old
+             ${CAT} /dev/null > ${MYSQL_DIR}/mysqld.err
+        fi
+        ;;
+    link)
+    # important: don't echo output to $LOGFILE like everyone else!
+    # See comment above.
+        ln -s ../init.d/tellme_mysql /etc/rc3.d/S75tellme_mysql
+        ln -s ../init.d/tellme_mysql /etc/rc2.d/K15tellme_mysql
+        ln -s ../init.d/tellme_mysql /etc/rc1.d/K15tellme_mysql
+        ln -s ../init.d/tellme_mysql /etc/rc0.d/K15tellme_mysql
+        ln -s ../init.d/tellme_mysql /etc/rcS.d/K15tellme_mysql
+        ;;
+    *)
+        echo "usage: $0 { start | stop | link | maint }" 1>&2
+        exit 1
+        ;;
+esac

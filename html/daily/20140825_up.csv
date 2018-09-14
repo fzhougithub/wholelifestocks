@@ -1,0 +1,15 @@
+"No.","Ticker","Company","Sector","Industry","Country","Market Cap","P/E","Price","Change","Volume"
+1,"ADXS","Advaxis, Inc.","Healthcare","Biotechnology","USA",62.60,,4.00,23.08%,3400888
+2,"BKW","Burger King Worldwide, Inc.","Services","Restaurants","USA",9550.31,35.67,32.40,19.51%,20687132
+3,"CO","China Cord Blood Corporation","Healthcare","Medical Laboratories & Research","Hong Kong",348.21,17.67,5.70,19.50%,347279
+4,"DGLY","Digital Ally Inc.","Technology","Scientific & Technical Instruments","USA",21.52,,12.50,57.43%,23769094
+5,"DSKX","DS Healthcare Group, Inc.","Consumer Goods","Personal Products","USA",18.18,,1.41,24.78%,40680
+6,"GPRC","Guanwei Recycling Corp.","Industrial Goods","Waste Management","China",7.10,0.87,0.79,16.18%,153873
+7,"HGSH","China HGS Real Estate Inc.","Financial","Real Estate Development","China",278.92,10.67,7.43,20.03%,2246872
+8,"INUV","Inuvo, Inc.","Services","Marketing Services","USA",26.30,18.67,1.39,24.11%,2298337
+9,"ITMN","InterMune, Inc.","Healthcare","Biotechnology","USA",5808.79,,72.85,35.41%,51514588
+10,"LTM","Life Time Fitness, Inc.","Services","Sporting Activities","USA",1626.56,14.30,48.36,16.25%,4191684
+11,"NLST","Netlist Inc.","Technology","Semiconductor- Memory Chips","USA",42.70,,1.19,15.53%,3125736
+12,"THI","Tim Hortons Inc.","Services","Restaurants","Canada",8363.38,22.69,74.72,18.91%,11957631
+13,"VII","Vicon Industries Inc.","Technology","Security Software & Services","USA",10.10,,3.05,36.77%,217428
+14,"ZSPH","ZS Pharma, Inc.","Healthcare","Drug Manufacturers - Major","USA",677.90,,38.20,17.32%,153516

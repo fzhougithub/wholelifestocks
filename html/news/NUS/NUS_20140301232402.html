@@ -1,0 +1,921 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+<title>如新“直销”之谜_华夏时报</title>
+<link href="/hxsb/css/static/topnav.css" rel="stylesheet" type="text/css" />
+<link rel="icon" href="/hxsb/images/static/favicon.ico" />
+<link rel="Shortcut Icon" href="/hxsb/images/static/favicon.ico" />
+<link rel="Bookmark" href="/hxsb/images/static/favicon.ico" />
+<script type="text/javascript" src="/hxsb/js/static/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="/hxsb/js/static/common/comment.js"></script>
+<script type="text/javascript" src="/hxsb/js/static/common/vote.js"></script>
+<script type="text/javascript" src="/hxsb/js/static/common/relationNews.js"></script>
+<script type="text/javascript" src="/hxsb/js/static/common/author.js"></script>
+<!--图片漂浮广告代码结束-->
+</head>
+
+<body>
+<input type="hidden" value="2" id="partId" name="partId"/>
+<input type="hidden" value="5" id="secpartId" name="secpartId"/>
+<input type="hidden" value="133227" id="newsId" name="newsId"/>
+<input type="hidden" value="0" id="iscomment" name="iscomment"/>
+<input type="hidden" value="" id="relationIds" name="relationIds"/>
+<div class="header_box">
+     <div class="header">
+          <ul class="huanyin" id="ulLoginInfo1">
+             <li>您好<span id="spanName" style="color:blue"></span>，欢迎来到华夏时报!</li>
+             <li id="aInfoLogin"><a href="###" onclick="refreshRegistCode();document.getElementById('divRegist').style.display='block';">注册</a></li>
+          </ul>
+          <ul class="nav ">
+             <li><a href="javascript:void(-1);" onclick="addFavorite('http://www.chinatimes.cc','华夏时报')">加为收藏</a></li>
+             <li><a href="javascript:void(-1);" onclick="setHome('http://www.chinatimes.cc')">设为首页</a></li>
+          </ul>
+             <script>
+                $.loadLoginInfo();
+             </script>
+     </div>
+</div>
+<!---Logo、登录--->
+<div class="top">
+     <div class="logo"><a href="http://www.chinatimes.cc"><img src="/hxsb/images/static/hxsb_logo.png" alt="华夏时报首页" /></a></div>
+     <div class="banner1"><a href="###"><img src="/hxsb/images/static/top_ad_new.gif" alt="banner1" /></a></div>
+     <div class="weixin"><img src="/hxsb/images/static/weixin.jpg" alt="华夏时报官方微信" /></div>
+     <!--<div class="login">
+          <ul class="bg"><a href="###"></a></ul>
+          <ul class="lodin_bnt">
+             <li><a href="/hxsb/login/sinaWeiboUserlogin.htm" target="_blank"><img src="/hxsb/images/static/login_sina.jpg" width="52" height="25" alt="新浪登录" /></a></li>
+             <li><a href="/hxsb/login/qqWeiboUserlogin.htm" target="_blank"><img src="/hxsb/images/static/login_tx.jpg" width="58" height="25" alt="腾讯登录" /></a></li>
+             <div class="clear"></div>
+          </ul>
+          <ul class="login_huaxia"><a href="###" onclick="document.getElementById('divLogin').style.display='block';"><img src="/hxsb/images/static/login_hx.jpg" alt="华夏时报登录" /></a></ul>
+     </div>-->
+     <div class="clear"></div>
+</div>
+
+	<!--登录开始-->
+    	<div id="divLogin" class="huadeng" style=" display: none">
+           <div class="huadengtop" style=" width:660px; height:85px; border-bottom:1px dashed #d0d0d0; background:url(/hxsb/images/static/login_title_bg.jpg) no-repeat;">
+              <table style=" width: 100%"><tr style=" width: 100%"><td style=" width: 100%" align="right"><a href="###" onclick="document.getElementById('divLogin').style.display='none';">关&nbsp;&nbsp;闭</a></td></tr></table>
+           </div>
+           <div class="login_con">
+               <form class="dengform" name="" method="post" action="">
+                    <p class="dengname">
+                        <label for="" >用户名：</label>
+                        <input maxlength="50" id="userAccount2" name="userAccount2" type="text" value="" />
+                    </p>
+                    <p class="dengmi">
+                        <label for="" >密 码：</label>
+                        <input maxlength="20" id="userPswLogin" name="userPswLogin" type="password" value="" />
+                    </p>
+               </form>	
+                <div class="denglubnt"> 
+                	<p class="dengbnt"><a href="###" onclick="loginUser2();">登录</a></p>
+                	<p class="dengbnt" style="margin-left:10px;"><a onclick="document.getElementById('divLogin').style.display='none';" href="###">关闭</a></p>
+                </div>
+           </div>
+        </div>
+    <!--登录结束-->
+<!--注册开始-->
+<div id="divRegist" class="hualogon" style=" display: none">
+    <div>
+      <table style=" width: 100%; height: 20px" border="0" class="logontop">
+        <tr style=" width: 100%" class="logontop">
+	        <td style=" width: 50%" align="left"><p class="logontop">新用户注册</p></td>
+	        <td class="logontop" style=" width: 50%" align="right"><p class="dengbnt" style="margin-left:10px;"><a onclick="document.getElementById('divRegist').style.display='none';" href="###">关闭</a></p></td>
+        </tr>
+      </table>
+    </div>
+    <div class="logonunder">
+    	<ul>
+           <li class="span" style=" width: 80px">用户名：</li>
+           <li class="k"><input onmouseout="checkUserIfExist();" class="register_input"  onmousedown="getCheckCode();" maxlength="50" id="userAccount" name="userAccount"  type="text" /></li>
+           <li class="tips"><span>*</span>不超过20个字符（10个汉字）</li>
+        </ul>
+        <ul>
+           <li class="span" style=" width: 80px">性别：</li>
+           <li><input id="radNan" name="sex" type="radio" checked="checked" value="1"/>男&nbsp;</li>
+           <li><input id="radNv" name="sex" type="radio" value="0"/>女&nbsp;</li>
+           <li><input id="radNo" name="sex" type="radio" value="-1"/>保密&nbsp;</li>
+        </ul>
+        <ul>
+           <li class="span" style=" width: 80px">密码：</li>
+           <li class="k"><input class="register_input" maxlength="20" id="userPsw" name="userPsw" type="password"/></li>
+           <li class="tips"><span>*</span>至少6位，可以区分大小写。请尽量设得复杂一些。</li>
+        </ul>
+        <ul>
+           <li class="span" style=" width: 80px">确认密码：</li>
+           <li class="k"><input class="register_input" maxlength="20" id="userPsw2" name="userPsw2" type="password"/></li>
+           <li class="tips"><span>*</span>请再次确认。</li>
+        </ul>
+        <ul style=" height: 60px">
+           <li class="span" style=" height: 60px;width: 80px">密码问题：</li>
+           <li class="k" style=" height: 60px">
+                    <input class="register_input" maxlength="30" id="pswAsk" name="pswAsk" type="text"/><br/>
+                       <select onchange="document.getElementById('pswAsk').value=this.value" name="select">
+                          <option value="" selected="selected">快速选择提示问题</option>
+                          <option value="我家的宠物的名字？">我家的宠物的名字？</option>
+                          <option value="我就读的第一所学校的名称？">我就读的第一所学校的名称？</option>
+                          <option value="少年时代心目中的英雄是谁？">少年时代心目中的英雄是谁？</option>
+                          <option value="我最喜欢的休闲运动是什么？">我最喜欢的休闲运动是什么？</option>
+                          <option value="我最喜欢哪支运动队？">我最喜欢哪支运动队？</option>
+                          <option value="我最喜欢的运动员是谁？">我最喜欢的运动员是谁？</option>
+                          <option value="高中的校训是什么？">高中的校训是什么？</option>
+                          <option value="我的第一辆汽车或自行车是什么牌子的？">我的第一辆汽车是什么牌子的？</option>
+                        </select>
+           </li>
+           <li class="tips"><span>*</span>忘记密码的提示问题，用于取回密码。</li>
+        </ul>
+        <ul>
+           <li class="span" style=" width: 80px">密码答案：</li>
+           <li class="k"><input class="register_input" id="pswAns" name="pswAns" type="text"/></li>
+           <li class="tips"><span>*</span>忘记密码的提示问题答案，用于取回密码。</li>
+        </ul>
+        <ul>
+           <li class="span" style=" width: 80px">E-mail：</li>
+           <li class="k"><input class="register_input" maxlength="60" id="userMail" name="userMail" type="text"/></li>
+           <li class="tips"><span>*</span>请输入有效的邮件地址，以便我们可以及时和你联系。</li>
+        </ul>
+        <ul>
+           <li class="span" style=" width: 80px">验证码：</li>
+           <li><input maxlength="5" id="checkCode" name="checkCode" type="text" value=""/></li>
+           <li><img id="verifyCodeImg" name="verifyCodeImg" src="" alt="验证码"/></li>
+           <li class="tips"><a title="看不清楚  换一个" href="javascript:refreshRegistCode();">看不清楚  换一个</a></li>
+        </ul>
+        <ul>
+           <li class="span">&nbsp;</li>
+           <li style="color:#07769f;"><input checked="checked" id="ceckRead" name="ceckRead" type="checkbox" value="1"/>我已阅读并接受<a href="" style=" text-decoration: none;"><span style="color:#c00; cursor:pointer;">《华夏时报协议》</span></a></li>
+        </ul>
+        <ul>
+           <li style=" padding-left:100px;"><input onclick="registUser();" value="注  册" name="btnSubmitR" type="button" style=" padding:2px 6px;"/>&nbsp;&nbsp;<input onclick="document.getElementById('divRegist').style.display='none';" value="关 闭" name="btnReset" type="button"style=" padding:2px 6px;"/></li>
+        </ul>
+    </div>
+</div>
+<!-- 加关注  开始 -->
+<div id="divGuanzhu" style="display:none;">
+<div class="xuanden_inner">
+	<div class="tiguan">
+    	<p>请先登录您的微博账号</p>
+        <a href="javascript:;" onclick="document.getElementById('divGuanzhu').style.display='none';closeWindow();"><img src="/hxsb/images/static/guanbi_03.jpg" /></a><!--关闭按钮-->
+        <br />
+    </div>
+    <div class="content">
+        <div class="xin"><a href="/hxsb/login/sinaWeiboUserlogin.htm"><p>新浪微博帐号登录</p></a></div>
+        <div class="ten"><a href="/hxsb/login/qqWeiboUserlogin.htm"><p>腾讯微博帐号登录</p></a></div>
+    </div>
+</div>
+</div>
+<!-- 加关注  END -->
+    <input type="hidden" id="hidCheckCode" name="hidCheckCode" value="" />
+    <input type="hidden" id="hidCheckUser" name="hidCheckUser" value="0" />
+    <input type="hidden" id="basePath" name="basePath" value="/hxsb/" />
+<!--注册结束-->
+<script type=text/javascript>
+function setHome(url) {
+	if (document.all) {
+		document.body.style.behavior='url(#default#homepage)';
+		document.body.setHomePage(url);
+	} else if(window.sidebar) {
+		if(window.netscape) {
+			try {
+				netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+			} catch (e) {
+				alert("此操作被浏览器拒绝！请在浏览器地址栏输入“about:config”并回车 然后将[signed.applets.codebase_principal_support]设置为'true'");  
+			}
+			var prefs = Components.classes['@mozilla.org/preferences-service;1'].getService(Components.interfaces.nsIPrefBranch);
+			prefs.setCharPref('browser.startup.homepage', url);
+		}
+	} else{
+		alert("您好,您的浏览器不支持自动设置页面为首页功能,请您手动在浏览器里设置该页面为首页!");
+	}
+}
+function addFavorite(url, title) {
+	url = encodeURI(url);
+	if (document.all) {
+		window.external.addFavorite(url, title);
+	} else{
+		try {
+			window.sidebar.addPanel(title, url, "");
+		}catch (ex) {  
+			alert("加入收藏失败，请使用Ctrl+D进行添加,或手动在浏览器里进行设置!");
+		}  
+	}
+}
+
+	var isIe=(document.all)?true:false;		
+	function EjectDiv(id)//点击弹出框事件
+	{
+		var popUp = document.getElementById(id)
+		
+		//document.getElementById('fabu_box').style.display='';
+		
+		var obj = document.getElementById(id);
+		var W = screen.width;//取得屏幕分辨率宽度
+		var H = screen.height;//取得屏幕分辨率高度
+		var yScroll;//取滚动条高度
+		if (self.pageYOffset) {
+			yScroll = self.pageYOffset;
+		} else if (document.documentElement && document.documentElement.scrollTop){
+			yScroll = document.documentElement.scrollTop;
+		} else if (document.body) {
+			yScroll = document.body.scrollTop;
+		}
+		obj.style.display="block";
+	}
+	
+	//测试弹出
+	function testMessageBox(ev)
+	{
+		var objPos = mousePosition(ev);
+		messContent="<div style='padding:20px 0 20px 0;text-align:center'>消息正文</div>";
+		showMessageBox('writebg',messContent,objPos,575);
+	}
+	
+	function mousePosition(ev)
+	{
+		if(ev.pageX || ev.pageY)
+		{
+			return {x:ev.pageX, y:ev.pageY};
+		}
+		
+		return {
+			x:ev.clientX + document.body.scrollLeft - document.body.clientLeft,y:ev.clientY + document.body.scrollTop - document.body.clientTop
+		};
+	}
+	//弹出方法
+	function showMessageBox(wTitle,content,pos,wWidth)
+	{
+		closeWindow();
+		var bWidth=parseInt(document.documentElement.scrollWidth);
+		var bHeight=parseInt(document.documentElement.scrollHeight);
+		//if(isIe){
+		//setSelectState('hidden');}
+		var back=document.createElement("div");
+		back.id="back";
+		var styleStr="top:0px;left:0px;position:absolute;background:#000;width:"+bWidth+"px;height:"+bHeight+"px;";
+		styleStr+=(isIe)?"filter:alpha(opacity=0);":"opacity:0;";
+		back.style.cssText=styleStr;
+		document.body.appendChild(back);
+		showBackground(back,50);
+		var mesW=document.createElement("div");
+		mesW.id="dingzhik";
+		mesW.className="mesWindow";
+		var dingzhik = document.getElementById("dingzhik");
+		mesW = dingzhik;
+		
+		
+		styleStr="left:"+(bWidth-815)/2+"px;top:"+(bHeight-415)/2+"px;position:absolute;";
+		mesW.style.cssText=styleStr;
+		document.body.appendChild(mesW);
+	}
+	//让背景渐渐变暗
+	function showBackground(obj,endInt)
+	{
+		if(isIe)
+		{
+			obj.filters.alpha.opacity+=50;
+			if(obj.filters.alpha.opacity<endInt)
+			{
+				setTimeout(function(){showBackground(obj,endInt)},100);
+			}
+			}else{
+				var al=parseFloat(obj.style.opacity);al+=0.5;
+				obj.style.opacity=al;
+			
+				if(al<(endInt/100))
+				{
+					setTimeout(function(){showBackground(obj,endInt)},0);
+				}
+		}
+	}
+	//关闭窗口
+	function closeWindow()
+	{
+		if(document.getElementById('back')!=null)
+		{
+			document.getElementById('back').parentNode.removeChild(document.getElementById('back'));
+		}
+		//alert(document.getElementById('mesWindow'));
+		if(document.getElementById('mesWindow')!=null)
+		{
+			document.getElementById('mesWindow').parentNode.removeChild(document.getElementById('mesWindow'));
+		}
+	}
+</script>
+<script>
+	  function refreshRegistCode(){
+		var verifyCodeImg = document.getElementById("verifyCodeImg");
+		verifyCodeImg.src=$("#basePath").val()+"/getImg?id="+Math.random();
+		
+		getCheckCode();
+	  }
+	  
+	   
+	  function getCheckCode(){
+		   
+   		$.post($("#basePath").val()+"login/getCheckCode.htm",null,function(data){
+		
+			if(data.result!="0"){
+			    document.getElementById("hidCheckCode").value=data.result;
+			}
+	    },"json")		 
+	  }
+	  
+	  	    String.prototype.Trim = function(){return this.replace(/(^\s*)|(\s*$)/g,"");}
+	    function registUser(){
+				if($("#userAccount").val().Trim()==""){
+					alert("请输入用户名!");
+					$("#userAccount").focus();
+					return false;
+				}else{
+				   
+				   var txt=$("#userAccount").val();
+				   if(txt.indexOf("=")!=-1||txt.indexOf("<")!=-1){
+				      
+					  alert("请输入正确用户名，不要输入特殊字符，例如等号=,大于号>等!");
+					  $("#userAccount").focus();
+					  return false;				      
+				   }
+				}
+				
+				if($("#userAccount").val().length<2){
+				   
+				    alert("对不起，您输入的帐号长度太短！!");
+				    $("#userAccount").focus();
+				    return false;					   
+				}
+				
+				var userSex="1";
+                var val=$('input:radio[name="sex"]:checked').val();
+				userSex=val;
+				//alert(userSex);					
+				//return false;
+				if($("#userPsw").val().Trim()=="")
+				{
+					alert("请输入用户登录密码!");
+					$("#userPsw").focus();
+					return false;
+				}else{
+				    
+				    var psw=$("#userPsw").val();
+				    if(psw.indexOf("=")!=-1||psw.indexOf("<")!=-1){
+				      
+					   alert("请输入准确的用户登录密码!");
+					   $("#userPsw").focus();
+					   return false;				      
+				    }				    
+				}
+				
+				if($("#userPsw").val().length<6){
+					alert("对不起，您输入的密码长度太短请大于6位!");
+					$("#userPsw").focus();
+					return false;
+				}				
+				
+				if($("#userPsw2").val().Trim()==""){
+					alert("请输入确认登录密码!");
+					$("#userPsw2").focus();
+					return false;
+				}else{
+				    
+				    var psw=$("#userPsw2").val();
+				    if(psw.indexOf("=")!=-1||psw.indexOf("<")!=-1){
+				      
+					   alert("请输入准确的确认登录密码!");
+					   $("#userPsw2").focus();
+					   return false;				      
+				    }				    
+				}
+					
+				if($("#userPsw2").val().length<6)
+				{
+					alert("对不起，您输入的确认密码长度太短请大于6位!");
+					$("#userPsw2").focus();
+					return false;
+				}	
+				
+				if($("#userPsw").val()!=$("#userPsw2").val()){
+				   
+					alert("对不起，您两次输入的密码不一致，请重新输入!");
+					$("#userPsw").focus();
+					return false;				   
+				}	
+				
+			   if($("#pswAsk").val().Trim()==""){
+					alert("请输入密码问题!");
+					$("#pswAsk").focus();
+					return false;
+				}	
+				
+				if($("#pswAns").val().Trim()==""){
+					alert("请输入密码答案!");
+					$("#pswAns").focus();
+					return false;
+				}			
+				
+				if($("#userMail").val().Trim()==""){
+					alert("请输入注册邮箱!");
+					$("#userMail").focus();
+					return false;
+				}	
+				
+				if(!checkUserEmail($("#userMail").val())){
+					alert("对不起，您输入的邮箱格式不正确，请输入一个准确的邮箱!");
+					$("#userMail").focus();
+					return false;				   
+				}				
+				
+				
+				if($("#checkCode").val().Trim()=="")
+				{
+					alert("请输入验证码!");
+					$("#checkCode").focus();
+					return false;
+				}
+				//alert($("#checkCode").val()+"==="+$("#hidCheckCode").val());
+				if($("#checkCode").val().toLocaleLowerCase()!=$("#hidCheckCode").val().toLocaleLowerCase()){
+				   
+					alert("对不起，您输入的验证码不正确请重新输入!");
+					$("#checkCode").focus();
+					return false;				   
+				}
+				if($("#ceckRead").attr("checked")=="undefined"){
+				   
+					alert("注册前请查看注册协议，如果看完请选中!");
+					return false;					   
+				}
+				if($("#ceckRead").attr("checked")!="checked"){
+				   
+					alert("注册前请查看注册协议，如果看完请选中!");
+					return false;					   
+				}
+				
+				var userFlag=$("#hidCheckUser").val();
+				
+				if(userFlag=="1"){
+				   
+					alert("对不起，您输入用户名已存在，请重试!");
+					$("#userAccount").focus();
+					return false;				   
+				}
+				
+			    $.post($("#basePath").val()+"login/userRegister.htm",{"userAccount":encodeURI(encodeURI($("#userAccount").val())),"psw":$("#userPsw").val(),"userName":encodeURI(encodeURI($("#userAccount").val())),"userSex":userSex,"userMail":$("#userMail").val(),"pswAsk":encodeURI(encodeURI($("#pswAsk").val())),"pswAns":encodeURI(encodeURI($("#pswAns").val()))},function(data){
+				
+					if(data.result=="1"){
+					
+						alert("注册成功!");
+						document.getElementById('divRegist').style.display='none';
+					}else if(data.result=="0"){
+					
+						alert("对不起，没有注册成功请您重试！");
+						$("#userAccount").focus();
+					}else if(data.result=="2"){
+					    
+					    alert("对不起，您输入的用户已经存在，请换一个！");
+						$("#userAccount").focus();
+					}
+			    },"json")
+			}
+	     
+	     //检查用户是否存在
+	     function checkUserIfExist(){
+	        
+	        if($("#userAccount").val().Trim()!=""){
+				//alert("wo yao jian cha le!");
+	        	$.post($("#basePath").val()+"login/checkRegisterUser.htm",{"userAccount":encodeURI(encodeURI($("#userAccount").val()))},function(data){
+				
+					if(data.result=="1"){
+					
+					   document.getElementById("hidCheckUser").value="1";
+					}else{
+					   document.getElementById("hidCheckUser").value="0";
+					}
+			    },"json")	            
+			}
+	     }
+	     
+	    //验证邮箱，正确返回true，错误返回false
+		function checkUserEmail(userEmail){
+			if(userEmail!=null && userEmail.length>0){
+				if(/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$/.test(userEmail)){  
+					var suffixes = userEmail.split('.');
+					var suffix = suffixes[1];
+					if(suffix=='com' || suffix=='org' || suffix=='cn'|| suffix=='net'){
+						return true;
+					}else{
+						return false;
+					}
+	   			}else{
+	   				return false;
+	   			}
+			}
+			
+			return false;
+		} 
+		
+		
+		function loginUser2(){
+		   
+			if($("#userAccount2").val().Trim()=="")
+			{
+				alert("请输入用户登录帐号!");
+				$("#userAccount2").focus();
+				return false;
+			}else{
+			   
+			   var txt=$("#userAccount2").val();
+			   if(txt.indexOf("=")!=-1||txt.indexOf("<")!=-1){
+			      
+				  alert("请输入正确用户登录帐号!");
+				  $("#userAccount2").focus();
+				  return false;				      
+			   }
+			}
+			
+			if($("#userAccount2").val().length<3){
+			   
+			    alert("请输入准确的用户登录帐号!");
+			    $("#userAccount2").focus();
+			    return false;					   
+			}
+			
+			if($("#userPswLogin").val().Trim()=="")
+			{
+				alert("请输入用户登录密码!");
+				$("#userPswLogin").focus();
+				return false;
+			}else{
+			    
+			    var psw=$("#userPswLogin").val();
+			    if(psw.indexOf("=")!=-1||psw.indexOf("<")!=-1){
+			      
+				   alert("请输入准确的用户登录密码!");
+				   $("#userPswLogin").focus();
+				   return false;				      
+			    }				    
+			}
+			
+			if($("#userPswLogin").val().length<6)
+			{
+				alert("请输入准确的用户登录密码!");
+				$("#userPswLogin").focus();
+				return false;
+			}
+			
+		    $.post($("#basePath").val()+"login/userLogin.htm",{"userAccount":encodeURI(encodeURI($("#userAccount2").val())),"psw":encodeURI(encodeURI($("#userPswLogin").val()))},function(data){
+			
+				if(data.result=="1"){
+				
+				    //window.open($("#basePath").val()+"index.htm");
+				    //window.parent.opener = null; //禁止关闭窗口的提示
+                       //window.close(); //自动关闭本窗口
+				    
+				    //window.location.href= $("#basePath").val()+"index.htm";
+					alert("登录成功！");
+					document.getElementById('divLogin').style.display='none';
+				}else{
+					alert("对不起，您输入的用户名或密码不对请重新输入");
+					$("#userAccount").focus();
+				}
+		    },"json")		   
+		}
+		
+		function search(){
+			var searchKey = document.getElementById("searchKey").value;
+			var searchType = document.getElementById("searchType").value;
+			if(searchKey.Trim()!=""){
+				window.open("/hxsb/search.html?searchKey="+encodeURIComponent(searchKey).replace(/%/g,'mmm')+"&searchType="+searchType);
+			}
+		}
+		var getParam = function(paramName){
+			var url = window.location.search;
+			if(url.indexOf("?")!=-1)   
+			{   
+			  var str = url.substr(1);
+			  strs = str.split("&"); 
+			  for(i=0;i<strs.length;i++)   
+			  {   
+			    if([strs[i].split("=")[0]]==paramName) return unescape(strs[i].split("=")[1]);
+			  }
+			}
+		}
+	</script>
+<!---推荐新闻--->
+<!--[CDATA[newslist_start]]-->
+<!--[requestTag[type=-1&indexid=1]requestTag]-->
+<div class="top_news">
+     
+     <ul>
+        <a class="newsimg" href="/hxsb/news/zhengce/140228/1402282232-133882.html" target="_blank"><img src="/upload/sources/info/images/BIG201402282232458.jpg" /></a>
+        <div class="newsinner">
+           <h5>养老改革急需“组合拳”</h5>
+           <p><a href="/hxsb/news/zhengce/140228/1402282232-133882.html" target="_blank">连续多年，“养老金并轨”成为众多全国人大代表、政协委员关注的焦点。</a></p>
+        </div>
+     </ul>
+     
+     
+     <ul>
+        <a class="newsimg" href="/hxsb/news/zhengce/140228/1402282229-133879.html" target="_blank"><img src="/upload/sources/info/images/BIG201402282229511.jpg" /></a>
+        <div class="newsinner">
+           <h5>发改委放权这一年 </h5>
+           <p><a href="/hxsb/news/zhengce/140228/1402282229-133879.html" target="_blank">从车水马龙到门可罗雀，毫无疑问，发改委的冷清是近一年来简政放权的最好体现。</a></p>
+        </div>
+     </ul>
+     
+     
+     <ul>
+        <a class="newsimg" href="/hxsb/news/renwu/140228/1402281957-133833.html" target="_blank"><img src="/upload/sources/info/images/BIG201402282008365.jpg" /></a>
+        <div class="newsinner">
+           <h5>喊冤者 杨剑波</h5>
+           <p><a href="/hxsb/news/renwu/140228/1402281957-133833.html" target="_blank">他要起诉的是证监会，要求撤销其做出的（2013）59号《行政处罚决定书》和（2013）20号《市场禁入决定书》。</a></p>
+        </div>
+     </ul>
+     
+</div>
+
+<!--[CDATA[newslist_end]]-->
+
+<!---菜单--->
+<div class="menu">
+          <ul class="menu1">
+              <li id="one1" ><a href="/hxsb/index.html">首页</a></li>
+              <li id="one2" ><a href="/hxsb/comment/index.html">观点</a></li>
+              <li id="one3" ><a href="/hxsb/news/renwu/index.html">人物</a></li>
+              <li id="one4" ><a href="/hxsb/news/zhengce/index.html">政策</a></li>
+              <li id="one5" ><a href="/hxsb/news/jinrong/index.html">金融</a></li>
+              <li id="one6" ><a href="/hxsb/news/zhengquan/index.html">证券</a></li>
+              <li id="one7" class="hover"><a href="/hxsb/news/gongsi/index.html">公司</a></li>
+              <li id="one8" ><a href="/hxsb/special/dichan/index.html">地产</a></li>
+              <li id="one9" ><a href="/hxsb/special/qiche/index.html">汽车</a></li>
+              <li id="one10" ><a href="/hxsb/news/tianxia/index.html">天下</a></li>
+          <div style="width:10px; height:45px; background:url(images/static/menu_left.jpg) no-repeat; position:absolute; z-index:10; top:0px; left:-10px;">&nbsp;</div><div style="width:10px; height:45px; background:url(images/static/menu_right.jpg) no-repeat; position:absolute; z-index:10; top:0px; right:-10px;">&nbsp;</div>
+          <!--[MENU_PART]-->
+       </ul>
+     </div>    
+<!--内容部分开始minute-main--> 
+<div class="minute_main">
+<ul class="weizhi">
+      <li class="hover">您的当前位置：</li>
+      <li><a href="/" target="_blank">首页</a>&nbsp;&gt;</li>
+      <!--<li><a href="/hxsb/news/index.html">新闻</a>&nbsp;&gt;</li>-->
+      <li><a href="/hxsb/news/gongsi/index.html">公司</a></li>
+</ul>
+<!--[CDATA[newslist_start]]-->
+<!--[requestTag[type=-2]requestTag]-->
+<div class="news_con">
+			
+			<div class="news_title">
+				<h3>如新“直销”之谜</h3>
+				<p></p>
+			</div>
+               <div class="news_laiyuan">
+               <p>作者：<span id="newswriter"><script>$.getAuthorbyid('郝静','newswriter');</script></span></p>
+               <p>来源：华夏时报</p>
+               <p>发布时间：2014-01-20 09:28</p>
+               <div class="news_xinqq"><span style="line-height:24px; float:left;">关注本报：</span>
+				<iframe style=" float:left; width:65px;height:24px;" frameborder="0" allowtransparency="true" marginwidth="0" marginheight="0" scrolling="no" border="0" src="http://widget.weibo.com/relationship/followbutton.php?language=zh_cn&amp;width=63&amp;height=24&amp;uid=1838672663&amp;style=1&amp;btn=red&amp;dpc=1"></iframe>
+				<iframe style=" float:left; width:65px;height:24px;" src="http://follow.v.t.qq.com/index.php?c=follow&amp;a=quick&amp;name=chinatimes&amp;style=5&amp;t=1345613769003&amp;f=0" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
+			   </div>   
+			</div>
+               <div class="news_zhaiyao">摘要: 《人民日报》连续发3篇文章指责如新涉嫌传销、违规操作并利用群体效应进行精神控制等等，接连爆出的猛料令如新股价大幅下挫，两天暴跌37.86%。</div>
+               <div class="news_zuizhongcon">
+               <p>　　本报记者 郝静 上海报道</p>
+<p>　　跨国直销巨头如新正在经历一场前所未有的危机：日前，《人民日报》连续发3篇文章指责如新涉嫌传销、违规操作并利用群体效应进行精神控制等等，接连爆出的猛料令如新股价大幅下挫，两天暴跌37.86%，目前商务部方面已介入相关调查。</p>
+<p>　　1月15日，如新美国官网挂出了声明，指称：“《人民日报》的文章包含了不准确的内容，夸大了如新在中国的部分业务不具代表性，记者并未尝试向如新方面确认任何信息，我们不相信这篇文章是特定政府调查的结果。”这个官方解释是否能让广大投资者和消费者买单？一向标榜“荟萃优质纯然无瑕”的如新是否只是一张画皮？</p>
+<p>　　大中华业务或地震</p>
+<p>　　All of the Good，None ofthe Bad这是如新所标榜的文化理念，公司是否如其所说全是good，没有bad？</p>
+<p>　　事实上，从如新2003年进入中国以来，对于其涉嫌传销的声音一直未曾停息，从最早期的花510元成为优惠顾客继而被培训成业务代表介绍朋友购买，业务代表的底薪260元起，做8500元业务量拿10%的提成，当时的如新回应称，是美国如新的一些海外经销商所为，与自己并无关联。</p>
+<p>　　2006年8月1日，如新拿到了国内的直销牌照，被允许在上海8个区进行直销经营，次年9月，如新中国被举报称在黑龙江涉嫌传销，致使千人陷入传销陷阱；2012年8月7日，如新再度被做空机构香椽指违反FDA和公平委员会相关法律，在中国区进行非法传销模式，且夸大与斯坦福大学在护肤品研究上的合作关系。</p>
+<p>　　2012年8月，斯坦福大学发信至如新要求其停止继续使用该大学教员StuartKim博士的姓名并撤销其网页，2014年1月17日午时，如新官网抗衰老专业科学顾问团中从当年的28人已缩减到23人，荣誉主席仍然是来自于斯坦福大学的化学系教授Prof.CarlDjerassi，《人民日报》文中顾问团之一的香港理工大学郝乔治（GeorgesHalpern）教授已不见踪迹。</p>
+<p>　　如新的产品价格不菲，以记者体验过的主打产品ageLOC精华液为例，30ml的容量标价1500元，一个包含了洁面、精华和日霜晚霜的焕新套装则标价2640元，美体spa套装标价5000元，这个价格已经与一线品牌如雅诗兰黛、兰蔻等的价格比肩甚至有过之而无不及。</p>
+<p>　　业内人士指出：“所谓直销是一个公司直接把产品销售给终端用户，而传销是层层发展，中间增加了这么多环节，到最后的转嫁价格高也是可想而知了。”</p>
+<p>　　如新的一位高层坦承：“该事件对于中国市场的销售存在负面影响，但究竟影响多大还无法预知。”从财务数据上来看，如新在国内市场的增长强劲：如新集团2013年第三季度的营收达9亿美元，较上年同比增76%。大中华区营收为4.646亿美元，与上年同期营收1.4亿美元相比，增长240%，远远好于如新在欧洲、中东及非洲地区2013年第三季度的业绩，在四季度，如新的业绩将首次突破10亿美元。</p>
+<p>　　2013年4月10日，如新大中华创新总部园区封顶仪式在上海奉贤举行，该园区投资总额超过3.5亿，是如新集团在美国总部以外设立的首个区域总部，记者曾经参与了2011年末时的动土仪式，当时如新高管和地方政府高层悉数到场，场面宏大犹在眼前。如新内部人士对记者坦承：该总部园区目前仍未投入运营，后续进展无法预测。</p>
+<p>　　直销还是传销？</p>
+<p>　　1月17日上午，记者拨通了如新PR相关联系人的电话，该人士声音颇显疲惫：“谢谢大家的关心，公司已经在对相关信息进行核实和调查，有新的进展我们会通知大家，目前仍然以官方声明为准，对于在大中华区的业务拓展，相信不会受到影响。”</p>
+<p>　　在1月15、16两日，如新官网紧急登出了两份声明，声明中指出：我们将开诚布公地和监管层沟通和处理文章所提出的问题。如新有着政府批准的直销执照。我们将积极培训销售团队遵循公司的政策和流程规定，任何一个销售人员违反当地法律和政策的将受到处罚。</p>
+<p>　　记者随机拨通了山东一家如新生活形象店的电话，以消费者的身份表示了对于其产品和业务的担忧，该店一位方姓女士告诉记者：“一家公司在高速成长的过程总会招致一些负面的声音，这篇报道并未向我方核实过就发出来了。公司已经在开展内部调查，我们店的业务目前还没有受到任何影响。”</p>
+<p>　　如新的层级模式究竟是怎样运作？一位曾经在北京某专业女子美容院担任总监目前全职做如新的人士告诉记者：“我觉得如新的奖金制度还是不错的。”</p>
+<p>　　她告诉记者：如新的奖金制度主要分两块，一块叫零售奖金，如果只想赚几千块零花钱，这块足够了；另外一块叫连锁店奖金，想赚大钱做大生意的都是冲这块来的。加入如新的第一个环节是成为初级代理（QSR)，考核标准是5000元或以上的销售业绩，第二个环节是在一到六个月之内完成3万的销售，奖金10%，完成之后升级为高级代理(SR)，提成可以拿到营业净额的20%。如果想再升一级，就需要了解一下开分店的模式，我们向公司推荐一个高级代理，我们级别升到销售主任(SE)，如果推荐四个高级代理，我们就升为销售经理(SM)，推荐8位，我们达到销售总监(SD)，全球平均年薪85万元人民币，如果推荐了12位，我们就可以做到如新最高级别，即全国销售总监(NSD)，海外叫蓝钻，全球平均年薪近350万！</p>
+<p>　　反传销咨询救助网的一位宣传员则告诉记者：“根据《禁止传销条例》第二章第七条的规定，只要满足三大条件：一，发展下线；二，买产品或者交钱；三，形成上下线关系，并根据业绩提成，这就是传销。很多公司是有直销牌照，但这不代表他们在底下不做违规的事情，传销是在特定环境和氛围之下，利用人的贪念进行洗脑，普通老百姓都有跟风的心态，但你实际的购买能力又在那里，一开始说是买产品，后来都是在发展下线了，去年听说安利那边发了一个内部通知说停止发展下线，但如新目前的情况就不清楚了。”</p>
+	</div>
+                <p style="float:right; margin-left:20px;"><a href="javascript:void(0)"><img src="/hxsb/images/static/b24.png" border="0" alt="转播到腾讯微博"></a></p>                    
+               <p style="float:right"><iframe allowtransparency="true" frameborder="0" scrolling="no" src="http://hits.sinajs.cn/A1/weiboshare.html?url=http%3A%2F%2Fwww.chinatimes.cc%2Fhuaxia%2Fpages%2FmoreInfo.htm%3Fid%3D129993&amp;type=5&amp;count=&amp;appkey=2123380628&amp;title=%E6%91%98%E8%A6%81%3A%20%E8%BF%91%E6%97%A5%EF%BC%8C%E5%9B%BD%E7%A8%8E%E6%80%BB%E5%B1%80%E3%80%81%E5%A4%96%E6%B1%87%E7%AE%A1%E7%90%86%E5%B1%80%E3%80%81%E6%B5%B7%E5%85%B3%E6%80%BB%E7%BD%B2%E7%AD%89%E5%A4%9A%E9%83%A8%E5%A7%94%E6%B4%BE%E4%BA%BA%E5%89%8D%E5%BE%80%E6%B7%B1%E5%9C%B3%EF%BC%8C%E8%81%94%E5%90%88%E8%B0%83%E6%9F%A5%E5%87%BA%E5%8F%A3%E9%AA%97%E7%A8%8E%E9%BB%91%E5%B9%95%EF%BC%8C%E6%AC%B2%E5%A0%B5%E5%A1%9E%E7%9B%91%E7%AE%A1%E6%BC%8F%E6%B4%9E%E3%80%82&amp;pic=&amp;ralateUid=&amp;rnd=1375430778933" width="106" height="24"></iframe></p>
+               
+          </div>
+<!--[CDATA[newslist_end]]-->
+<!--投票开始-->          
+<div class="huatoupiao">
+	<div class="more_news" id="vote">
+        <div class="piao_title"><img style="display:inline; padding-right:4px;" src="/hxsb/images/static/toupiao.jpg" />投票调查</div>
+        <!--[CDATA[vote_start]]-->
+        <div class="piaounder">
+            <img class="piaotu" src="/hxsb/images/static/toupiao_big.jpg" />
+            <div class="piaoright">
+                 <p class="piaortext"><!--[CDATA[vote_title]]--></p>
+                 <p class="piaortextp"><!--[CDATA[vote_description]]--></p>
+                 <div class="toupiao_list">
+                     <ul id="toupiao_one">
+                     	<!--[CDATA[vote_selection_start]]-->
+                        <li><!--[CDATA[vote_selection_title]]--></li>
+                        <!--[CDATA[vote_selection_end]]-->
+                        <li class="toupiaobnt">
+                            <a class="toupiao_bnt" href="javascript:void(-1);" onclick="$.vote($(this).attr('voteid'));" voteid="[CDATA[vote_id]]" voteway="[CDATA[vote_way]]" votemaxSelection="[CDATA[vote_maxSelection]]">投票</a>
+                            <a class="toupiao_cha" style=" font-size:12px; margin-left:8px;" href="javascript:void(-1);" onclick="$.showResult($(this).attr('voteid'),'toupiao_two','toupiao_one');" voteid="[CDATA[vote_id]]">查看投票结果</a>
+                            <div class="clear"></div>
+                        </li>
+                     </ul>
+                     <ul id="toupiao_two" style=" display:none;">
+                     </ul>
+                 </div>
+            </div>
+            <div class="clear"></div>
+        </div>     
+        <!--[CDATA[vote_end]]-->
+   </div>
+   <script type="text/javascript">
+   	$.loadVotes("vote",$("#newsId").val());
+   	</script>
+   <div class="more_news" id="relationNews">
+   		<div class="piao_title">相关新闻</div>
+        <ul class="newsul">
+           <!--[CDATA[news_start]]-->
+           <li><a href="[CDATA[news_url]]">·<!--[CDATA[news_title]]--></a></li>
+           <!--[CDATA[news_end]]-->
+           <!--[CDATA[news_start]]-->
+           <li><a href="[CDATA[news_url]]">·<!--[CDATA[news_title]]--></a></li>
+           <!--[CDATA[news_end]]-->
+           <div class="clear"></div>
+        </ul>
+        <ul class="newsul">
+       	   <!--[CDATA[news_start]]-->
+           <li><a href="[CDATA[news_url]]">·<!--[CDATA[news_title]]--></a></li>
+           <!--[CDATA[news_end]]-->
+           <!--[CDATA[news_start]]-->
+           <li><a href="[CDATA[news_url]]">·<!--[CDATA[news_title]]--></a></li>
+           <!--[CDATA[news_end]]-->
+           <div class="clear"></div>
+        </ul>
+   </div>
+   <script>
+   var relationIds = $("#relationIds").val();
+   if(relationIds!=""){
+   	$.loadRelationNews("relationNews",relationIds);
+   }else{
+   	$("#relationNews").css("display","none");
+   }
+   </script>
+   <div class="more_news" id="commentBox">
+   		<div class="piao_title" style="border-bottom:none;"><img style="display:inline; padding-right:4px;" src="/hxsb/images/static/conment_ico.jpg" />评论</div>
+        <p class="pintexe"><textarea id="commentContent" name="" cols="" rows=""></textarea></p>
+        <p class="pintexebnt"><input name="提交评论" type="button" value="提交评论" id="pinlun" onclick="$.addComment()" /></p>
+        <div class="clear"></div>
+   </div>
+   <ul class="morenewslist" id="comment">
+   		<!--[CDATA[comment_start]]-->
+   		<li>
+            <div class="newslistp">
+                <p class="listname"><span><!--[CDATA[comment_user]]-->：</span><!--[CDATA[comment_content]]--></p>
+                <p class="listtime"><!--[CDATA[comment_time]]--></p>
+            </div>
+            <div class="clear"></div>
+        </li>
+        <!--[CDATA[comment_end]]-->
+        <li class="look_more">
+        	<a href="javascript:void(-1);" onclick="$(this).parent().css('display','none');$.loadComments('1',0);">查看所有<span style="padding:0px 4px; color:#f60;"><!--[CDATA[comment_nums]]--></span>条评论</a>
+        </li>
+   </ul>
+   <script type="text/javascript">
+   	if($("#iscomment").val()=="1"){
+   		$.options={newsId:$("#newsId").val(),blockid:"comment",contentId:"commentContent"};
+   		$.loadComments("0",10);
+   	}else{
+   		$("#comment").css("display","none");
+   		$("#commentBox").css("display","none");
+   	}
+   	</script>
+</div>     
+<!--投票结束-->
+</div>
+<!--内容部分结束minute-main--> 
+<div style="background-color:#101113;width:100%;float:left;padding-top:20px;padding-bottom:20px" id="iambottom">
+    <div class="foot_bottom">
+        <div class="list">
+            <a class="title">频道</a>
+            <ul>
+                <li><a href="/hxsb/comment/index.html">观点</a></li>
+                <li><a href="/hxsb/news/renwu/index.html">人物</a></li>
+                <li><a href="/hxsb/news/zhengce/index.html">政策</a></li>
+                <li><a href="/hxsb/news/jinrong/index.html">金融</a></li>
+                <li><a href="/hxsb/news/zhengquan/index.html">证券</a></li>
+                <li><a href="/hxsb/news/gongsi/index.html">公司</a></li>
+                <li><a href="/hxsb/special/dichan/index.html">地产</a></li>
+                <li><a href="/hxsb/special/qiche/index.html">汽车</a></li>
+                <li><a href="/hxsb/news/tianxia/index.html">天下</a></li>
+                <li><a href="/hxsb/news/quyu/index.html">区域</a></li>
+                <li><a href="/hxsb/news/wenhua/index.html">文化</a></li>
+                <li><a href="/hxsb/special/rendaocishan/index.html">人道</a></li>
+            </ul>
+        </div>
+        <div class="list">
+            <a class="title">公司信息</a>
+            <ul>
+                <li><a href="http://www.chinatimes.cc/hxsb/jianjie.html" target="_blank">关于我们</a></li>
+                <li><a href="http://www.chinatimes.cc/hxsb/banquan.html" target="_blank">版权声明</a></li>
+                <li><a href="http://www.chinatimes.cc/hxsb/guanggao.html" target="_blank">广告刊例</a></li>
+                <li><a href="http://www.chinatimes.cc/hxsb/faxing.html" target="_blank">发行简介</a></li>
+                <li><a href="http://www.chinatimes.cc/hxsb/baokan.html" target="_blank">报刊订阅</a></li>
+                <li><a href="http://www.chinatimes.cc/hxsb/jizhe.html" target="_blank">驻地记者</a></li>
+                <li><a href="http://www.chinatimes.cc/hxsb/zhaopin.html" target="_blank">招聘信息</a></li>
+                <li><a href="http://www.chinatimes.cc/hxsb/lianxi.html" target="_blank">联系方式</a></li>
+            </ul>
+        </div>
+        <div class="list">
+            <a class="title">合作伙伴</a>
+            <ul>
+                <li><a href="http://finance.sina.com.cn" target="_blank">新浪财经</a></li>
+                <li><a href="http://finance.qq.com" target="_blank">腾讯财经</a></li>
+                <li><a href="http://money.163.com" target="_blank">网易财经</a></li>
+                <li><a href="http://finance.ifeng.com" target="_blank">凤凰财经</a></li>
+                <li><a href="http://news.baidu.com" target="_blank">百度新闻</a></li>
+                <li><a href="http://www.people.com.cn" target="_blank">人民网</a></li>
+                <li><a href="http://www.hexun.com" target="_blank">和讯网</a></li>
+                <li><a href="http://www.myzaker.com/index.html" target="_blank">ZAKER</a></li>
+                <li><a href="http://www.vivame.cn/mag/wap/web2/index" target="_blank">VIVA</a></li>
+            </ul>
+        </div>
+        <div class="list">
+            <a class="title" href="/hxsb/pinpai/index.html" target="_blank" style="cursor:pointer">市场活动</a>
+            <ul>
+                <li><a href="http://www.chinatimes.cc/subsite/2013flj/index.shtml" target="_blank">飞轮奖</a></li>
+                <li><a href="http://www.chinatimes.cc/subsite/2013ceo/index.shtml" target="_blank">CEO高峰论坛</a></li>
+                <li><a href="http://www.chinatimes.cc/subsite/2013zgjjmtqjfh/index.shtml" target="_blank">2013中国经济媒体秋季峰会</a></li>
+                <li><a href="http://www.chinatimes.cc/subsite/2013zglvpplt/index.shtml" target="_blank">2013中国品牌旅游论坛</a></li>
+            </ul>
+        </div>
+        <div class="epaper" style="">
+            <a class="title">电子报</a>
+            <span style="display:block;float:left;width:110px;height:129px;" ><a href="http://www.chinatimes.cc/site1/hxsb/html/2014-01/06/node_2.htm" target="_blank"><img src="/images/static/hxsb_epaper.jpg"></a></span>
+            <span style="display:block;float:left;width:100px;height:129px;" ><a href="http://www.chinamoneyweekly.com/" target="_blank"><img src="/images/static/hxlc_epaper.jpg"></a></span>
+        </div>
+        <div class="co">
+            <p>Copyright 2009 华夏时报 All Right Reserved 版权所有</p>
+            <p>京ICP备12007146号-1 京公网安备110105005216 京ICP证100822号</p>
+        </div>
+	</div>
+</div>
+<script>
+	function locSonPart(part){
+		var partid = $(part).attr("partid");
+		$(".menu .menu2 ul.twonav").css("display","none");
+		$(".menu .menu2 ul.twonav[partvalue='"+partid+"']").css("display","block");
+	}
+	function locPart(){
+		var url = location.href;
+		var urlA = url.split("/hxsb/");
+		var locpartObj;
+		if(urlA.length==1||urlA[1].split("/")[0]==""||urlA[1].split("/")[0]=="index.html"){
+			locpartObj = $(".menu .menu1 li a[partid='0']");
+		}else if(urlA[1].split("/")[0]=="newspaper.html"){
+			locpartObj = $(".menu .menu1 li a[partengname='newspaper']");
+		}else{
+			locpartObj = $(".menu .menu1 li a[partengname='"+urlA[1].split("/")[0]+"']");
+		}
+		//$(locpartObj).css("background","url(/hxsb/images/static/menu_sanjiao.jpg) no-repeat center bottom");
+		locSonPart(locpartObj);
+	}
+	$(".menu .menu1 li a").bind("mouseover",function(){
+		$(".menu .menu1 li a").css("background","");
+		//$(this).css("background","url(/hxsb/images/static/menu_sanjiao.jpg) no-repeat center bottom");
+		locSonPart(this);
+	});
+	$(".second_main,.copyright,.header_box,.top,.top_news").bind("mouseover",function(){
+		$(".menu .menu1 li a").css("background","");
+		locPart();
+	});
+	
+	var cursecPartId = $("#secpartId").val();
+	$(".menu .menu2 ul.twonav li a").css("color","#333");
+	$(".menu .menu2 ul.twonav li a[secPartId='"+cursecPartId+"']").css("color","#FC0404");
+	$(".menu .menu2 ul.twonav li a").bind("mouseover",function(){
+		var curColor = $(this).css("color");
+		if(curColor!="#FC0404"){
+			$(this).css("color","#FC0404");
+		}
+	}).bind("mouseout",function(){
+		if($(this).css("color")!="#FC0404"){
+			$(this).css("color","#333");
+		}
+		$(".menu .menu2 ul.twonav li a[secPartId='"+cursecPartId+"']").css("color","#FC0404");
+	});
+
+</script>
+<div>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1000077034'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s22.cnzz.com/z_stat.php%3Fid%3D1000077034%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script> 
+<script type="text/javascript" src="/hxsb/js/static/common/count.js"></script>
+</div>
+</body>
+</html>
+<script type="text/javascript">
+	TB.widget.SimpleSlide.decoration('SlidePlayer', {eventType:'mouse', effect:'scroll'});
+</script>

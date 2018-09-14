@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<link rel="shortcut icon" type="image/ico" href="http://www.datatables.net/favicon.ico" />
+
+<title>single_research</title>
+		<style type="text/css" title="currentStyle">
+			@import "/DataTables/media/css/demo_page.css";
+			@import "/DataTables/media/css/demo_table.css";
+		</style>
+		<script type="text/javascript" language="javascript" src="/DataTables/media/js/jquery.js"></script>
+		<script type="text/javascript" language="javascript" src="/DataTables/media/js/jquery.dataTables.js"></script>
+		<script type="text/javascript" charset="utf-8">
+                        $(document).ready(function() {
+                                $('.dataTable').dataTable( {
+					"pagingType": "simple",
+					"autoWidth": true
+				});
+                        } )
+		</script>
+	</head>
+	<body id="dt_example" >
+		<div id="container" style="width:90%"> 
+
+<FORM action=http://107.170.209.150/cgi-bin/single.cgi method=post>
+Ticker: <INPUT type=text name=new_ticker>
+<INPUT type=submit name=submit value=ADD> 
+</FORM>
+<div id=demo_gecko>
+<table cellpadding=0 cellspacing=0 border=0 class='display dataTable' width=100%>
+<thead><tr><th>M</th><th>V/F%</th><th>OP</th><th>CP</th><th>OR%</th><th>CR%</th><th>DF</th><th>industry</th><th>T</th><th>as</th><th>D</th></th><th>R</th><th>X</th><th>T</th><th>f</th><th>H</th><th>O</th><th>N</th></tr></thead>
+<tbody>
+</tbody>
+</table></div>
+                        </div>
+                </div>
+        </body> 
+</html>                 
+
