@@ -1,0 +1,18 @@
+		<style type="text/css" title="currentStyle">
+			@import "/DataTables/media/css/demo_page.css";
+			@import "/DataTables/media/css/demo_table.css";
+		</style>
+		<script type="text/javascript" language="javascript" src="/DataTables/media/js/jquery.js"></script>
+		<script type="text/javascript" language="javascript" src="/DataTables/media/js/jquery.dataTables.js"></script>
+		<script type="text/javascript" charset="utf-8">
+                        $(document).ready(function() {
+                                $('.dataTable').dataTable( {
+					"pagingType": "simple",
+					"autoWidth": true
+				});
+                        } )
+		</script>
+	</head>
+	<body id="dt_example" >
+		<div id="container" style="width:90%"> 
+

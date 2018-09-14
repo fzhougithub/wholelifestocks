@@ -1,0 +1,67 @@
+#!/usr/bin/perl
+
+ use DBI;
+ use CGI  qw(:cgi-lib :standard);  # Use CGI modules that let people read data passed from a form
+ use Encode qw/encode decode from_to/;
+ use encoding 'utf8', STDIN=>'utf8', STDOUT=>'utf8';
+ use HTML::Entities;
+ use utf8;
+
+ require "display.pl";
+
+# &ReadParse(%in);                 # This grabs the data passed by the form and puts it in an array
+# $action = $in{"submit"};
+# $new_ticker = $in{"new_ticker"};             # Get the user's name and assign to variable
+
+ my $cgi=new CGI;
+
+ print header (-type => 'text/html',-charset => 'utf8');
+ $cgi->start_html( 
+  -title => Seven, 
+  -encoding => "utf8",
+  -style => { 
+  -src => '/css/seven.css' 
+  }
+ ); 
+ 
+ $newdate = $cgi->param("newdate");
+ $action = $cgi->param("submit");
+ $olddate = $cgi->param("olddate");
+ 
+ if ( $newdate ne "" and $olddate ne "" ){
+   print "<h4> Compare Ranking between ".$newdate." and ".$olddate."</h4>";
+ } else {
+   print "<h4> Compare Ranking between NewDate and OldDate</h4>";
+ }
+
+ print "<FORM action=http://162.243.151.204/cgi-bin/seven.cgi method=post>";
+ print "New Date: <INPUT type=text name=newdate>";
+ print "Old Date: <INPUT type=text name=olddate>";
+ print "<INPUT type=submit name=submit value=COMPARE>";
+ print "</FORM>";
+
+ if ( $newdate ne "" and $olddate ne "" and $action eq "COMPARE"){
+
+   $sth=$dbh->prepare("call seven_compare_perl('$newdate','$olddate')");
+   $sth->execute
+   or die "SQL Error: $DBI::errstr\n";
+
+   $sth=$dbh->prepare("set names utf8");
+   $sth->execute
+   or die "SQL Error: $DBI::errstr\n";
+
+   $sth=$dbh->prepare("select * from seven_compare_result");
+   $sth->execute
+   or die "SQL Error: $DBI::errstr\n";
+
+   print '<table border="1" align=left class=gridtable>'; 
+   print "<tr><th>symbol</th><th>name</th><th>".$newdate."</th><th>".$olddate."</th><th>Up/Down</th></tr>";
+
+   while (my @row = $sth->fetchrow_array) {
+	print "@row";
+   }
+   print "</table>";
+ }
+
+1;
+

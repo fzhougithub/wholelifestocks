@@ -1,0 +1,542 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="apple-itunes-app" content="app-id=592031984">
+<meta name="keywords" content="當心買入京東深似海,港股美股論壇,美股港股交流社區,美股港股開戶,港股美股軟件,H股交易" />
+<meta name="description" content="當心買入京東深似海，港股美股論壇,美股港股交流社區,美股港股開戶,港股美股軟件,H股交易，富途證券為香港證監會認可的持牌法團，提供港股證券開戶及交易服務，致力於為內地股民提供優質的港股開戶服務，並提供便捷的網上開戶服務以及超低的傭金，現更有免傭金活動，富途證券依靠強大的軟件開發實力以及資深互聯網從業經驗在香港證券業得到一致好評，富途證券提供最好用的港股軟件，並提供實時行情報價，方便股民的港股交易(包括窩輪、牛熊證等)。富途證券的誕生，源於我們重塑香港網絡證券經紀服務的願景和信心。" />
+<title>當心買入京東深似海-港股美股論壇,美股港股交流社區,美股港股開戶,港股美股軟件,H股交易-富途證券</title>
+<meta name="copyright" content="富途證券國際(香港)有限公司" />
+<link rel="Shortcut Icon" href="/favicon.ico?2014.06.06.1.hk"/>
+<link href="/Cdn/getcss/cssname/common?2014.06.06.1.hk" rel="stylesheet" type="text/css" /><link type="text/css" rel="stylesheet" href="/css/editor.css?2014.06.06.1.hk">
+</head>
+
+<body>
+
+<div class="nHeader01">
+	<div class="wrap">
+		<div class="fLeft">
+			<span class="span01 fl" style="padding-right:12px; padding-left:11px;">客服熱線：400-870-1818</span>
+			<span class="gapLine01 fl"></span>
+			<span class="floatSpan01 fl" onmouseover="$(this).addClass('floatSpan01Onmouse');" onmouseout="$(this).removeClass('floatSpan01Onmouse');">
+				<div class="divT01">關注微信</div>
+				<div class="divC01 divC01-wx">
+					<div class="imgBox"></div>
+					<div class="txt01">關注微信服務號，交易信息隨時查</div>
+				</div>
+			</span>
+		</div>
+		
+				<div class="fRight">
+			<span class="span01 pr0 fr"><a href="http://www.futu5.com/account/setup" class="aBtn01">免費開戶<i class="i001"></i></a></span>
+			<span class="gapLine01 fr"></span>
+			<span class="span01 fr"><a href="http://www.futu5.com/reg">注冊</a></span>
+			<span class="gapLine01 fr"></span>
+			<span class="span01 fr"><a href="#" onclick="portal_show_login_box();return;" class="a01"><em class="em02"></em>用戶登錄</a></span>
+		</div>
+			</div>
+</div>
+
+<span id="G_SVR_NETWORK_ERROR_SPAN" style="display:none;">網絡錯誤</span>
+<input type="hidden" name="g_user_account_state" id="g_user_account_state" value="" state="" />
+
+
+<script>
+
+function login_redirect_to_forget_password(){
+	var redirect_url = "/account/forgetpsw";
+	var email = $("[name=login_form]").find("[name=pop_login_email]").val();
+	if( email.match( /^(?:[a-z\d]+[_\-\+\.]?)*[a-z\d]+@(?:([a-z\d]+\-?)*[a-z\d]+\.)+([a-z]{2,})+$/i ) ){
+		redirect_url += '?email=' + email;	
+	}
+	window.location.href = redirect_url;
+}
+
+function portal_show_login_box( success_callback ){
+	//登錄鑒權信息跳轉獨立頁麵進行處理
+	var cur_url = window.location.href;
+	var tar_url = "https://www.futu5.com/login?ref=" + cur_url;
+	window.location.href = tar_url;
+	return;
+	
+	//原有彈窗登錄邏輯
+	var target_top =  $(window).scrollTop() + $(window).height() / 2 - ( $("#login_form").height()  / 2 );
+	$("#login_form").css({top:target_top});
+	
+	$("#login_form").find( "[name=pop_login_email]" ).attr( 'value', $("#login_form").find( "[name=pop_login_email]" ).attr('default_value') );
+	$("#login_form").find( "[name=pop_login_email]" ).addClass('gray01');
+	$("#login_form").find( "[name=passwd]" ).attr( 'value', '' );
+	
+	$("#login_form").find( "[name=email_error_hint_span]" ).hide();
+	$("#login_form").find( "[name=psw_error_hint_span]" ).hide();
+	
+	
+	$("#login_form").show();
+	
+// $("#login_form").find("[name=pop_login_email]").focus();
+
+	var input_email_dom = $("[name=login_form]").find("[name=pop_login_email]");
+	$(input_email_dom).unbind();
+	
+	$(input_email_dom).focus( function(){
+		if( $(input_email_dom).attr('default_value') == $(input_email_dom).attr('value') ){
+			$(input_email_dom).attr('value', '');
+			$(input_email_dom).removeClass('gray01');
+		}
+	});
+	
+	$(input_email_dom).blur( function(){
+		if( '' == $(input_email_dom).attr('value') ){
+			$(input_email_dom).attr('value', $(input_email_dom).attr('default_value') );
+			$(input_email_dom).addClass('gray01');
+		}
+	});
+
+	$("#login_submit").unbind();
+	$("#login_submit").click( function(){
+		protal_login_post( success_callback );
+	});
+}
+
+function protal_key_up_submit( event ){
+	if( 13 == event.keyCode ){
+		$("#login_submit").click();
+	}	
+}
+
+
+function protal_login_post( success_callback ){
+	
+	var input_valid = true;
+	var email = $("[name=login_form]").find("[name=pop_login_email]").val();
+	if( '' == email || $("[name=login_form]").find("[name=pop_login_email]").attr('default_value') == email ){
+		$("[name=login_form]").find("[name=email_error_hint_span]").show();
+		input_valid = false;
+	}else{
+		$("[name=login_form]").find("[name=email_error_hint_span]").hide();
+	}
+	
+	var password = $("[name=login_form]").find("[name=passwd]").val();
+	if( '' == password ){
+		$("[name=login_form]").find("[name=psw_error_hint_span]").show();
+		input_valid = false;
+	}else{
+		$("[name=login_form]").find("[name=psw_error_hint_span]").hide();
+	}
+	
+	if( !input_valid ){
+		return
+	}
+	
+	var dt = {};
+	dt.of = 'json';
+	
+	dt.email = email;
+	dt.passwd = $.md5( password );
+	
+	if ( $("[name=chk_auto_login]").attr( "checked" ) ){  
+		dt.autologin = 1;
+	}else{
+		dt.autologin = 0;
+	}
+	
+	$('#posting_hint').show();
+	$.ajax({url:'/user/login',async:true,dataType:'json',type:'POST',data:dt,cache:false,
+		success:function( ret ){
+			
+			$('#posting_hint').hide();
+			if( 0 == ret.result ){
+				// console.info( "callback", success_callback );return; 
+				if( 'function' == typeof( success_callback ) ){
+					success_callback();
+				}else{
+					window.location.reload();
+				}
+				
+			}else if( 101 == ret.result ){
+				var left_time_hint = "還有" + ret.left_try_times + "機會";
+				
+				$("[name=login_form]").find("[name=psw_error_hint_span]").html( ret.ret_msg + "!");
+				$("[name=login_form]").find("[name=psw_error_hint_span]").show();
+			}else if( 400 == ret.result ){
+				window.location = "/account/regfeedback?tuid=" + ret.tar_uid;	
+			}else if( 102 == ret.result ){
+				$("[name=login_form]").find("[name=psw_error_hint_span]").html( "出錯太多已鎖定，請明天再試" );
+				
+				$("[name=login_form]").find("[name=psw_error_hint_span]").show();
+			}else{
+				$("[name=login_form]").find("[name=psw_error_hint_span]").html( ret.ret_msg );
+				$("[name=login_form]").find("[name=psw_error_hint_span]").show();
+			}
+		},
+		error :function(){
+			$('#posting_hint').hide();
+			futus.alert( '提交失敗，請稍後再試' );
+		}
+	});
+}
+
+function protal_logout_post(){
+	var dt = {};
+	dt.of = 'json';
+	
+	$.ajax({url:'/user/logout',async:true,dataType:'json',type:'POST',data:dt,cache:false,
+		success:function( ret )
+		{
+			if(window.location.host=='bbs.futu5.com')
+			{
+				window.location.reload(true);
+			}
+			else
+			{
+				window.location.href = "http://www.futu5.com/";
+			}
+		},
+		error :function(){
+			futus.alert( '提交失敗，請稍後再試' );
+		}
+	});
+}
+
+</script><div class="nHeader02">
+	<div class="wrap">
+		<div class="logo">
+			<div class="clear">&nbsp;</div>
+			<a href="http://www.futu5.com" title="港股美股開戶,美股港股交易-富途證券">
+				 <img src="//www.futu5.com/get/sys-img/sub_key/futu5_black/id/20?2014.06.06.1.hk" alt="港股美股開戶,美股港股交易-富途證券" align="absmiddle"/>
+			</a>
+		</div>
+				<div class="nMainNav" id="main_navi">
+        	<span class="aS001">
+			<a href="http://www.futu5.com" title="富途證券首頁" >首頁</a>
+			<a href="http://www.futu5.com/tools/windows" title="下載港股美股行情交易軟件-富途牛牛" >下載</a>
+			<a href="http://bbs.futu5.com" title="港股美股論壇,美股港股交流社區" class="current">社區</a>
+			<a href="http://www.futu5.com/about/" title="關於富途證券" >關於</a>
+            </span>
+            <span class="sGap001"></span>
+            <span class="aS002">
+			<a style="margin-left:0px;" href="https://my.futu5.com/" name="trade" title="港股交易,美股交易-網頁牛牛" >網頁牛牛</a>
+			<a href="https://my.futu5.com/account" name="account" title="我的富途" >我的富途</a>
+            </span>
+		</div>
+			</div>
+</div><div class="wrap">
+    	<div class="crumbsBox01">
+		<a href="http://www.futu5.com" class="home" title="港股美股開戶,美股港股交易-富途證券"></a><em></em><a href="/" title="港股論壇,港股交流社區-富途社區">社區</a><em></em><a href="/list-18" title="市場資訊">市場資訊</a><em></em><a href="/view-2519" title="當心買入京東深似海">當心買入京東深似海</a>
+        <div class="fr001"><a href="/mine"><em></em><span>我的帖子</span></a></div>
+	</div>
+	
+	<div class="pageBox1 pageBox2 pageBox3" style="padding-top:0px;">
+		<div class="fl"><a class="btn02-3" href="/post">發 帖</a><a class="btn01-3" href="/login?ref=/view-2519" id="reply_btn" >回 帖</a></div>
+		
+		<div class="fr">
+					</div>
+
+			</div>
+
+	<div class="bbsViewBox01">
+				<div class="box01">
+			<div class="fLeft">
+				<div class="numBar01">查看:<span class="red">61</span>&nbsp;&nbsp;&nbsp;&nbsp;回複:<span class="red">0</span></div>
+			</div>
+			<div class="fRight">
+				<div class="title01">
+                                        <h1>當心買入京東深似海</h1>                </div>
+			</div>
+			<div class="clear"></div>
+		</div>
+		
+		<div class="box01" name="data_box" tid="2519" uid="129580" board_id="18">
+			<div class="fLeft">
+				<div class="nameBar01"><span><a href="/my-129580">魚兒</a></span><i title="富途的客戶"></i></div>
+				<div class="userImgBox"><a href="/my-129580"><img src="/icon-129580-120-1369363659?2014.06.06.1.hk" width="120" height="120" alt="魚兒" /></a></div>
+				<div class="numBar01"><a href="/my-129580">發帖:11</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/my-129580-reply">回複:6</a></div>
+			</div>
+			<div class="fRight">
+				<div class="toolBar01">
+					<div class="fl">
+						<span name="nick">樓主</span><span>發表於：<font name="time_s">2014-05-23 14:36</font></span>
+					</div>
+					<div class="fr"><a href="#" class="aspan001" name="copy_link" onclick="return false;"><div class="flashFloat" id="copy_link_swf_container" style="display:none;">當心買入京東深似海  http://bbs.futu5.com/view-2519</div>複製鏈接</a><a class="aspan001" href="/login?ref=http://bbs.futu5.com/view-2519" name="quote" >回複</a>                    </div>
+				</div>
+				<div class="c01" name="content_box">
+					
+<div>
+ <p>今晚美股有大鱷出沒，代號JD，奉勸一幹小散早點洗洗去睡，千萬別抱著死粉心態，拿著身家追漲。</p>
+ <p><br />
+ </p>
+ <p>原本發行價的區間被定為16-18美元，結果發行價被定在了19美元，據稱認購倍數高達15倍，雖然京東要的並不多，最新的招股上要的不過17億美金。按照19美元定價，京東的市值將達到250億美元。從融資量看，京東是中國赴美上市的最大互聯網公司。</p>
+ <p><br />
+ </p>
+ <p>每次一有大的公司上市，人們就會對比2012年5月的Face book巨型160億美金的IPO。</p>
+ <p><br />
+ </p>
+ <p>當時，face book也是供不應求，一連三次調高發行價，一路漲到38美元/股，開盤後衝高到40美金，第二天便破發，三日創下大型IPO跌幅之最，此後更是走出長達1年的跌勢。</p>
+ <p><br />
+ </p>
+ <p>納斯達克不是A股，高倍的認購說明價格已是充分競爭後的結果。但凡大型IPO，首日可能的漲幅基本能算得出來。狠一點的直接會把發行價定在上限，如果能為散戶們留下一定空間的基本都是業界良心。</p>
+ <p><br />
+ </p>
+ <p>賣者已經提前預支了漲幅，再加上四月以來接連受挫的市場資金，估計JD首日表現一般。別光看著去年500彩票網上市首日漲了54%，怎麼不說今年微博首日才漲了17%，握著大把現金上市的獵豹移動首日差點沒保住發行價。</p>
+ <p><br />
+ </p>
+ <p>為了造勢，京東恨不得一天一件新鮮事兒，一周一個新業務地推。在與騰訊握手、進軍互聯網金融、開啟虛擬運營商模式之後，短期將很難再有亮點推出，這將不利於股價的中期表現。估計，拿幾周也是沒戲。</p>
+ <p><br />
+ </p>
+ <p>另外，原股東的套現也是要擔心的。</p>
+ <p><br />
+ </p>
+ <p>請問，你還記得有多少家PE/VC投了京東嗎？從2007年開始，他們是今日資本、雄牛資本以及梁伯韜私人公司、DST、Classroom Investments、老虎全球基金、Kingdom 5-KR-225基金、Supreme Universal Holdings、Goldstone Capital……還有紅杉和騰訊。</p>
+ <p><br />
+ </p>
+ <p>像聽相聲貫口的吧，肺活量小的一口氣還真說不下來。</p>
+ <p><br />
+ </p>
+ <p>最近有好事者統計，Facebook上市兩周年來，公司內部人員及高管累計拋售所持公司股票數量至少達到1.86億股，總計套現72億美元。其中很大部分是在股價持續低迷的時候拋售的。</p>
+ <p><br />
+ </p>
+ <p>京東大部分股票都在劉強東一個人手裏（這樣說可能不準確，應該是劉強東及旗下Max Smart Limited和Fortune Rising Holdings Limited投票權加起來總共為83.7%），就算頂著巨大虧損的壓力混戰這麼多年的劉哥不想變現犒勞一下自己，那麼這一群機構在這樣的市場形勢下，多半沒有那麼多耐性。</p>
+ <p><br />
+ </p>
+ <p>你說你不是想打新，看的其實是更長期的增值？那麼你得當心阿裏8、9月份的上市了。他要的可是150—200億美元，有望成為美國至今最大的IPO。</p>
+ <p>好吧，我承認想說的一直是阿裏。</p>
+ <p><br />
+ </p>
+ <p>很多基金經理看淡今年美股接下來的走勢，除了“美國政府收緊QE”這種爛大街的理由外，最擔心的就是阿裏等一眾中概股近300億美元的融資計劃。這種竭澤而漁很可能會加劇市場流動性冰封。</p>
+ <p><br />
+ </p>
+ <p>一位專家今天用 “值原型”的估值法，用亞馬遜和ebay算了一下阿裏的估值大約在2350億美元。但隨後又自我否定——當許多沒有專業知識的投資者蜂擁而至搶購一家公司的股票，理性的估值對價格的影響將十分有限——他相信，阿裏巴巴的IPO將是Facebook IPO的重演，最終的估值將遠遠超過僅僅由基本麵作出的判斷，而是由狂熱的供需關係所決定。</p>
+ <p><br />
+ </p>
+ <p>Facebook股價走勢帶來的教訓就是，如果你真看好京東（也包括阿裏），那麼千萬別急著買入，以後有的機會。</p>
+ <p><br />
+ </p>
+ <p>不過，如果不出現意外，首日的開盤價還是可以保住的——一般投行們為了爭奪發行資格，會允諾在上市初的幾天裏，為股價護航。</p>
+ <p><br />
+ </p>
+ <p>所以，你一定要玩的話，不妨用點毛票，在一個不太離譜的價格上買進（如果能買進）。然後，以賭徒的心態期待會有土豪粉絲們在更高的價格上接球。感謝偉大的“T+0”，除開手續費，也許最後還能剩點零花。</p>
+ <p><br />
+ </p>
+ <p>（經濟觀察網 朱熹妍/文 ）<br />
+ </p>
+ <p><a style="color: rgb(1, 109, 184); line-height: 25px; font-family: Tahoma, Arial, HELVETICA, sans-serif; text-decoration: none; -ms-word-wrap: break-word;" href="http://bbs.futu5.com/view-2321" target="_blank"><img width="330" height="150" style="vertical-align: middle; -ms-word-wrap: break-word; max-width: 760px;" alt="image" src="http://bbs.futu5.com/file/image/file/5c79adb130169fcf113c993ca4e76f29a64a5f33c8e6ef1ff48376f62083af9d8d56ee1cb6901d22500126fd8971e694c4bb30a2252dc503.jpg?2014.05.12.1.cn&amp;2014.05.12.1.cn&amp;2014.05.12.1.cn&amp;2014.05.12.1.cn&amp;2014.05.12.1.cn&amp;2014.05.12.1.cn&amp;2014.05.12.1.cn&amp;2014.05.12.1.cn&amp;2014.05.12.1.cn&amp;2014.05.12.1.cn&amp;2014.05.12.1.cn&amp;2014.05.12.1.cn&amp;2014.05.12.1.cn&amp;2014.05.12.1.cn&amp;2014.05.12.1.cn&amp;2014.05.15.1.cn&amp;2014.05.15.2.cn&amp;2014.05.15.2.cn&amp;2014.05.15.2.cn&amp;2014.05.15.2.cn&amp;2014.05.15.2.cn&amp;2014.05.15.2.cn&amp;2014.05.15.2.cn&amp;2014.05.15.2.cn&amp;2014.05.15.2.cn&amp;2014.05.22.2.cn&amp;2014.05.22.2.cn&2014.06.06.1.hk" //></a><a style="color: rgb(1, 109, 184); line-height: 1.5; font-family: Tahoma, Arial, HELVETICA, sans-serif; text-decoration: none; -ms-word-wrap: break-word;" href="http://bbs.futu5.com/view-2298" target="_blank"><img width="330" height="150" style="vertical-align: middle; -ms-word-wrap: break-word; max-width: 760px;" alt="image" src="http://bbs.futu5.com/file/image/file/5c79adb130169fcf113c993ca4e76f29a64a5f33c8e6ef1ff5e811990f94875d726f331b82e3c32870866f7c9bd6b64387d71e9978a066a0.jpg?2014.05.12.1.cn&amp;2014.05.12.1.cn&amp;2014.05.12.1.cn&amp;2014.05.12.1.cn&amp;2014.05.12.1.cn&amp;2014.05.12.1.cn&amp;2014.05.12.1.cn&amp;2014.05.12.1.cn&amp;2014.05.12.1.cn&amp;2014.05.12.1.cn&amp;2014.05.12.1.cn&amp;2014.05.12.1.cn&amp;2014.05.12.1.cn&amp;2014.05.12.1.cn&amp;2014.05.15.1.cn&amp;2014.05.15.2.cn&amp;2014.05.15.2.cn&amp;2014.05.15.2.cn&amp;2014.05.15.2.cn&amp;2014.05.15.2.cn&amp;2014.05.15.2.cn&amp;2014.05.15.2.cn&amp;2014.05.15.2.cn&amp;2014.05.15.2.cn&amp;2014.05.22.2.cn&amp;2014.05.22.2.cn&2014.06.06.1.hk" //></a></p>
+</div>
+
+										                    <div class="bbsInviteBox" style="display: none">
+                                                <div class="bbsInviteBoxDiv02"><a href="/login?ref=http://bbs.futu5.com/view-2519" class="inviteLinkBtn01">查看我的邀請鏈接</a></div>
+                                            </div>
+            
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+		    			</div>
+	
+	<div class="pageBox1 pageBox2 pageBox3">
+		<div class="fl"><a class="btn02-3" href="/post">發 帖</a></div>
+		
+		<div class="fr">
+					</div>
+
+			</div>
+	<div class="gap01"></div>
+		<div class="msgBox01">
+		<div class="msg01">您還沒有登錄，不能回帖，請<a href="/login?ref=http://bbs.futu5.com/view-2519">登錄</a></div>
+	</div>
+		<div class="line04"></div>
+</div>
+
+<div class="bottom">
+	<div class="wrap" style="position:relative;">
+		<span class="span01"><a title="港股美股開戶,美股港股交易-富途證券" href="http://www.futu5.com">富途證券</a>為香港證監會認可的持牌法團（<a href="http://www.sfc.hk/publicregWeb/corp/AZT137/details" target="_blank">中央編號：AZT137</a>），提供證券交易服務並受其監管。</span>
+		<a href="#" class="span02" id="foot_lang_box" onclick="return false;" style="display:none;">
+			<em></em>
+						<span code="cn">简体中文</span>
+					</a>
+		<span class="span01" style="float:right;">&copy;2014 富途證券國際(香港)有限公司 版權所有.<font style="display:none;"> 粵ICP備08108712號</font></span>
+	</div>
+</div>
+<div class="mainLeftFloatM">
+    <div class="mainLeftFloat03" id="invite_float_ad" style="display: none;">
+        <a href="http://bbs.futu5.com/view-2267" target="_blank" title="邀請好友享0傭"><em title="關閉"></em></a>
+    </div>
+<div class="mainLeftFloat01" id="wx_float_ad" style="display:none;">
+	<div class="wx0001"><a href="#" name="wx_float_ad_close" onclick="return false;"  title="關閉" class="close001"></a></div>
+</div>
+<div class="mainLeftFloat02">
+    <div id="scroll_to_top" style="display:none;"><a href="#" onclick="$('html,body').animate({scrollTop: 0}, 0);return false;" style="margin-top:0px;" class="a01" title="返回頂部"><span class="span02"></span></a></div>
+	<a class="a01" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2850165312&site=qq&menu=yes" title="QQ客服"><span class="span01">Q Q<br />客服</span></a>
+	<a class="a01" target="_blank" href="https://my.futu5.com/message/consult"><span class="span01">在線<Br />谘詢</span></a>
+</div>
+</div>
+
+<!-- Baidu Button BEGIN -->
+<!--<script type="text/javascript" id="bdshare_js" data="type=slide&amp;img=8&amp;pos=right&amp;uid=6680043" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000);
+</script>-->
+<!-- Baidu Button END -->
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F717e0cfec3fa06afe9697bd5818cf716' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<div style="left: 691.5px; top: 239px; z-index: 1005; display:none;" class="creatBqChoose" id="bqchoose">
+	<div class="chooseBqc001">
+		<div class="chooseBqBox">
+		    <a title="微笑" href="#" onclick="return false;"></a><a title="撇嘴" href="#" onclick="return false;"></a><a title="色" href="#" onclick="return false;"></a><a title="發呆" href="#" onclick="return false;"></a><a title="得意" href="#" onclick="return false;"></a><a title="流淚" href="#" onclick="return false;"></a><a title="害羞" href="#" onclick="return false;"></a><a title="閉嘴" href="#" onclick="return false;"></a><a title="大哭" href="#" onclick="return false;"></a><a title="尷尬" href="#" onclick="return false;"></a><a title="發怒" href="#" onclick="return false;"></a><a title="呲牙" href="#" onclick="return false;"></a><a title="驚訝" href="#" onclick="return false;"></a><a title="難過" href="#" onclick="return false;"></a><a title="酷" href="#" onclick="return false;"></a><a title="冷汗" href="#" onclick="return false;"></a><a title="折磨" href="#" onclick="return false;"></a><a title="吐" href="#" onclick="return false;"></a><a title="偷笑" href="#" onclick="return false;"></a><a title="可愛" href="#" onclick="return false;"></a><a title="白眼" href="#" onclick="return false;"></a><a title="傲慢" href="#" onclick="return false;"></a><a title="困" href="#" onclick="return false;"></a><a title="驚恐" href="#" onclick="return false;"></a><a title="流汗" href="#" onclick="return false;"></a><a title="憨笑" href="#" onclick="return false;"></a><a title="大兵" href="#" onclick="return false;"></a><a title="奮鬥" href="#" onclick="return false;"></a><a title="咒罵" href="#" onclick="return false;"></a><a title="疑問" href="#" onclick="return false;"></a><a title="噓..." href="#" onclick="return false;"></a><a title="暈" href="#" onclick="return false;"></a><a title="衰" href="#" onclick="return false;"></a><a title="骷髏" href="#" onclick="return false;"></a><a title="敲打" href="#" onclick="return false;"></a><a title="再見" href="#" onclick="return false;"></a><a title="擦汗" href="#" onclick="return false;"></a><a title="摳鼻" href="#" onclick="return false;"></a><a title="鼓掌" href="#" onclick="return false;"></a><a title="糗大了" href="#" onclick="return false;"></a><a title="壞笑" href="#" onclick="return false;"></a><a title="左哼哼" href="#" onclick="return false;"></a><a title="右哼哼" href="#" onclick="return false;"></a><a title="鄙視" href="#" onclick="return false;"></a><a title="委屈" href="#" onclick="return false;"></a><a title="快哭了" href="#" onclick="return false;"></a><a title="陰險" href="#" onclick="return false;"></a><a title="親親" href="#" onclick="return false;"></a><a title="嚇" href="#" onclick="return false;"></a><a title="可憐" href="#" onclick="return false;"></a><a title="示愛" href="#" onclick="return false;"></a><a title="菜刀" href="#" onclick="return false;"></a><a title="豬頭" href="#" onclick="return false;"></a><a title="玫瑰" href="#" onclick="return false;"></a><a title="凋謝" href="#" onclick="return false;"></a><a title="強" href="#" onclick="return false;"></a><a title="弱" href="#" onclick="return false;"></a><a title="握手" href="#" onclick="return false;"></a><a title="勝利" href="#" onclick="return false;"></a><a title="抱拳" href="#" onclick="return false;"></a><a title="勾引" href="#" onclick="return false;"></a><a title="拳頭" href="#" onclick="return false;"></a><a title="NO" href="#" onclick="return false;"></a><a title="OK" href="#" onclick="return false;"></a><a title="錢" href="#" onclick="return false;"></a><div class="clear"></div>
+		</div>
+	</div>
+</div>
+
+<div style="display:none;z-index:1003;" class="floatBox01" id="alert_box">
+	<div class="alphaDiv01"></div>
+	<div class="m001">
+		<div class="t01"><h3 name="header">確認</h3><a title="關閉" class="closeBtn01" href="#" onclick="return false;" name="close"></a></div>
+		<div class="c01">
+			<div class="msgBox001">
+				<div class="msg01" name="msg">
+					<p>您確認要刪除這支自選股嗎？</p>
+					<p><b><a href="#">01988 民生銀行</a></b></p>
+				</div>
+			</div>
+		</div>
+		<div class="f01">
+			<div class="fr">
+				<span name="hint_text"></span>
+				<a class="btn01" href="#" name="confirm" onclick="return false;"><font name="submit_button_text" class="cMid">確 定</font></a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div style="display:none;z-index:1002;" class="floatBox01" id="confirm_box">
+	<div class="alphaDiv01"></div>
+	<div class="m001">
+		<div class="t01"><h3 name="header">確認</h3><a title="關閉" class="closeBtn01" name="close" href="#" onclick="return false;"></a></div>
+		<div class="c01">
+			<div class="msgBox001">
+				<div class="msg01" name="msg">
+					<p>您確認要刪除這支自選股嗎？</p>
+					<p><b><a href="#" onclick="return false;">01988 民生銀行</a></b></p>
+				</div>
+			</div>
+		</div>
+		<div class="f01">
+			<div class="fr">
+				
+				<a class="btn01" href="#" name="confirm" onclick="return false;"><font name="submit_text" class="cMid">確 定</font></a><a class="btn04" href="#" name="cancel" onclick="return false;">取 消</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<div id="success_box" class="floatBox01" style="display:none;">
+	<div class="alphaDiv01"></div>
+	<div class="m001">
+		<div class="t01"><h3 name="header">係統提示</h3><a name="close" onclick="return false;" href="#" class="closeBtn01" title="關閉"></a></div>
+		<div class="c01">
+			<div class="msgBox001">
+				<div name="msg" class="msg01Ok">
+					<p>提交成功</p>
+					<p>感謝您提出的寶貴反饋。</p>
+					<p class="gray01 font12 pt01">
+						溫馨提示：<br />
+						1、抱歉我們可能不能第一時間回複每一條反饋；<br />
+						2、我們回複後您將會收到消息通知。
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="f01">
+			<div class="fr">
+				<a onclick="return false;" name="confirm" href="#" class="btn01">確 定</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="upImgC01" id="upAttachRow" style="display:none;">
+	<a href="#" name="close" onclick="return false;" class="edCloseBtn01" title="關閉"></a>
+	<div class="uploadBar02" name="attachBar"></div>
+	<div class="uploadBar01Fj" name="attachCompleted" style="display:none;"><span class="msgInputOk"></span><span>上傳完畢</span></div>
+	<div class="upImgNameBarFj"><span class="pdfIcon" name="attachTxt">東方證券晨會紀要20111117.pdf<font>(354k)</font></span></div>
+</div>
+
+<div class="upImgC01" id="upVideoRow" style="display:none;">
+	<a title="關閉" class="edCloseBtn01" onclick="return false;" name="video_row_close" href="#" key="0"></a>
+	<div name="video_img" style="" class="upImgBox"><img src=""></div>
+	<div name="video_input" class="inputTxtBox" style="display: none;">
+		<input type="hidden" value="" name="video_title">
+		<input type="hidden" value="" name="video_play_link">
+		<input type="hidden" value="" name="video_play_swf">
+		<input type="hidden" value="" name="video_img_url">
+		<input type="hidden" value="" name="video_video_from">
+		<input type="hidden" value="" name="video_pubdate">
+		<input type="text" class="inputTxt02 gray01" name="video_url" value="輸入視頻地址 支持優酷/土豆">
+	</div>
+</div></body>
+</html>
+<script>
+var GDATA = 
+{
+	login:0};
+</script>
+<script src="/js/jquery.js?2014.06.06.1.hk"></script>
+<script src="/getjs/jquery.ext.js?2014.06.06.1.hk"></script>
+<script src="/getjs/futus.js?hk&2014.06.06.1.hk"></script>
+<!-- <script src="/getjs/bbs.js?hk&2014.06.06.1.hk"></script> -->
+<script src="/js/bbs/index/bbs_index_view.js?2014.06.06.1.hk"></script>
+<script src="/getjs/jquery.md5.js?2014.06.06.1.hk"></script>
+<script src="/js/jquery.printf.js?2014.06.06.1.hk"></script>
+<script src="/js/json2.js?2014.06.06.1.hk"></script>
+<script src="/getjs/module/pageNaviHint.js?2014.06.06.1.hk"></script>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1000431642'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "v1.cnzz.com/z_stat.php%3Fid%3D1000431642' type='text/javascript'%3E%3C/script%3E"));</script>
+<script>
+$(document).ready(function(){
+	//futus.docReadyInit();
+		setTimeout(function()
+	{
+        	$("#cnzz_stat_icon_1000431642").remove();
+	}, 5);
+});
+</script>
+
+<script type="text/javascript">
+	var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " https://");
+	statistic_code = unescape("%3Cscript src='https://hm.baidu.com/h.js%3F717e0cfec3fa06afe9697bd5818cf716' type='text/javascript'%3E%3C/script%3E");
+	statistic_code = statistic_code.replace( "http:", "https:" );
+	document.write( statistic_code );
+</script>
+<script src="/js/editor/common.js?2014.06.06.1.hk"></script>
+<script src="/js/editor/editor.js?2014.06.06.1.hk"></script>
+<script src="/js/editor/futu_editor.js?2014.06.06.1.hk"></script>
+<script src="/js/swf_uploader.js?2014.06.06.1.hk"></script>
+<script>
+
+GBBS.initBbsView();
+
+var rid_location = parseInt('');
+$("[name=data_box]").each(function(index) {
+	if ($(this).attr('rid') == rid_location) {
+		var offset = $(this).offset();
+		$(document).scrollTop(offset.top);
+	}
+});
+</script>
+<script>
+    //線上id=2267
+    $(document).ready(function(){
+        var tid = 2519;
+        if (tid == 2267) {
+            $('div.bbsInviteBox').show();
+        }
+        // 2298是線上下載開戶表格的帖子，測試環境可用280測試
+        if (tid == 2298) {
+            GFutuBind.changeSetupDownloadUrl(tid);
+        }
+    });
+</script>

@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html" charset="utf-8" Accept-Ranges:bytes=2097152 Content-Transfer-Encoding="chuncked"  />
+		<link rel="shortcut icon" type="image/ico" href="http://www.datatables.net/favicon.ico" />
+		<link rel="stylesheet" href="/lib/dojo192/dijit/themes/claro/claro.css">
+		
+		<title>seven list</title>
+		<style type="text/css" title="currentStyle">
+			@import "/DataTables/media/css/demo_page.css";
+			@import "/DataTables/media/css/";
+		</style>
+		<script type="text/javascript" language="javascript" src="/DataTables/media/js/jquery.js"></script>
+		<script type="text/javascript" language="javascript" src="/DataTables/media/js/jquery.dataTables.js"></script>
+		<script type="text/javascript" charset="utf-8">
+                        $(document).ready(function() {
+                                $('.dataTable').dataTable({
+       					"bPaginate": true,
+        				"bLengthChange": false,
+				        "bFilter": true,
+				        "bSort": true,
+				        "bInfo": false,
+				        "bAutoWidth": false
+				    });
+                        } );
+		</script>
+	
+		<script>dojoConfig = {parseOnLoad: true}</script>
+		<script src='/lib/dojo192/dojo/dojo.js'></script>
+	
+		<script>
+			require(["dojo/parser", "dijit/form/DateTextBox"]);
+		</script>
+	</head>
+	<body id="dt_example" class="claro">
+		<div id="container" style="width:80%"> 
+

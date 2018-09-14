@@ -1,0 +1,13 @@
+#!/bin/sh
+
+log=/var/www/cgi-bin/debug/input.log
+
+echo "">$log
+
+until [ $# -eq 0 ]
+do
+echo "$@">> $log
+shift
+done
+
+exit
