@@ -1,0 +1,3133 @@
+stock.stock_list: Records: 3522  Deleted: 0  Skipped: 3522  Warnings: 6524
+601958
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '601958',t.* from tmp_hist_data t
+601965
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '601965',t.* from tmp_hist_data t
+601966
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '601966',t.* from tmp_hist_data t
+601968
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '601968',t.* from tmp_hist_data t
+601969
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '601969',t.* from tmp_hist_data t
+601985
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '601985',t.* from tmp_hist_data t
+601988
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '601988',t.* from tmp_hist_data t
+601989
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '601989',t.* from tmp_hist_data t
+601990
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '601990',t.* from tmp_hist_data t
+601991
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '601991',t.* from tmp_hist_data t
+601992
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '601992',t.* from tmp_hist_data t
+601996
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '601996',t.* from tmp_hist_data t
+601997
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '601997',t.* from tmp_hist_data t
+601998
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '601998',t.* from tmp_hist_data t
+601999
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '601999',t.* from tmp_hist_data t
+603000
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603000',t.* from tmp_hist_data t
+603001
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603001',t.* from tmp_hist_data t
+603002
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603002',t.* from tmp_hist_data t
+603003
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603003',t.* from tmp_hist_data t
+603005
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603005',t.* from tmp_hist_data t
+603006
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603006',t.* from tmp_hist_data t
+603007
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603007',t.* from tmp_hist_data t
+603008
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603008',t.* from tmp_hist_data t
+603009
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603009',t.* from tmp_hist_data t
+603010
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603010',t.* from tmp_hist_data t
+603011
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603011',t.* from tmp_hist_data t
+603012
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603012',t.* from tmp_hist_data t
+603013
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603013',t.* from tmp_hist_data t
+603015
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603015',t.* from tmp_hist_data t
+603016
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603016',t.* from tmp_hist_data t
+603017
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603017',t.* from tmp_hist_data t
+603018
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603018',t.* from tmp_hist_data t
+603019
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603019',t.* from tmp_hist_data t
+603020
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603020',t.* from tmp_hist_data t
+603021
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603021',t.* from tmp_hist_data t
+603022
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603022',t.* from tmp_hist_data t
+603023
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603023',t.* from tmp_hist_data t
+603025
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603025',t.* from tmp_hist_data t
+603026
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603026',t.* from tmp_hist_data t
+603027
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603027',t.* from tmp_hist_data t
+603028
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603028',t.* from tmp_hist_data t
+603029
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603029',t.* from tmp_hist_data t
+603030
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603030',t.* from tmp_hist_data t
+603031
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603031',t.* from tmp_hist_data t
+603032
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603032',t.* from tmp_hist_data t
+603033
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603033',t.* from tmp_hist_data t
+603035
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603035',t.* from tmp_hist_data t
+603036
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603036',t.* from tmp_hist_data t
+603037
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603037',t.* from tmp_hist_data t
+603038
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603038',t.* from tmp_hist_data t
+603039
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603039',t.* from tmp_hist_data t
+603040
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603040',t.* from tmp_hist_data t
+603041
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603041',t.* from tmp_hist_data t
+603042
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603042',t.* from tmp_hist_data t
+603043
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603043',t.* from tmp_hist_data t
+603045
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603045',t.* from tmp_hist_data t
+603050
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603050',t.* from tmp_hist_data t
+603055
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603055',t.* from tmp_hist_data t
+603056
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603056',t.* from tmp_hist_data t
+603058
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603058',t.* from tmp_hist_data t
+603059
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603059',t.* from tmp_hist_data t
+603060
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603060',t.* from tmp_hist_data t
+603063
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603063',t.* from tmp_hist_data t
+603066
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603066',t.* from tmp_hist_data t
+603067
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603067',t.* from tmp_hist_data t
+603069
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603069',t.* from tmp_hist_data t
+603076
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603076',t.* from tmp_hist_data t
+603077
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603077',t.* from tmp_hist_data t
+603078
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603078',t.* from tmp_hist_data t
+603079
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603079',t.* from tmp_hist_data t
+603080
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603080',t.* from tmp_hist_data t
+603081
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603081',t.* from tmp_hist_data t
+603083
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603083',t.* from tmp_hist_data t
+603085
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603085',t.* from tmp_hist_data t
+603086
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603086',t.* from tmp_hist_data t
+603088
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603088',t.* from tmp_hist_data t
+603089
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603089',t.* from tmp_hist_data t
+603090
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603090',t.* from tmp_hist_data t
+603096
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603096',t.* from tmp_hist_data t
+603098
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603098',t.* from tmp_hist_data t
+603099
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603099',t.* from tmp_hist_data t
+603100
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603100',t.* from tmp_hist_data t
+603101
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603101',t.* from tmp_hist_data t
+603103
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603103',t.* from tmp_hist_data t
+603106
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603106',t.* from tmp_hist_data t
+603108
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603108',t.* from tmp_hist_data t
+603110
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603110',t.* from tmp_hist_data t
+603111
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603111',t.* from tmp_hist_data t
+603113
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603113',t.* from tmp_hist_data t
+603116
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603116',t.* from tmp_hist_data t
+603117
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603117',t.* from tmp_hist_data t
+603118
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603118',t.* from tmp_hist_data t
+603123
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603123',t.* from tmp_hist_data t
+603126
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603126',t.* from tmp_hist_data t
+603127
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603127',t.* from tmp_hist_data t
+603128
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603128',t.* from tmp_hist_data t
+603129
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603129',t.* from tmp_hist_data t
+603131
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603131',t.* from tmp_hist_data t
+603133
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603133',t.* from tmp_hist_data t
+603136
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603136',t.* from tmp_hist_data t
+603138
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603138',t.* from tmp_hist_data t
+603139
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603139',t.* from tmp_hist_data t
+603156
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603156',t.* from tmp_hist_data t
+603157
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603157',t.* from tmp_hist_data t
+603158
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603158',t.* from tmp_hist_data t
+603159
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603159',t.* from tmp_hist_data t
+603160
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603160',t.* from tmp_hist_data t
+603161
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603161',t.* from tmp_hist_data t
+603165
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603165',t.* from tmp_hist_data t
+603166
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603166',t.* from tmp_hist_data t
+603167
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603167',t.* from tmp_hist_data t
+603168
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603168',t.* from tmp_hist_data t
+603169
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603169',t.* from tmp_hist_data t
+603177
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603177',t.* from tmp_hist_data t
+603178
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603178',t.* from tmp_hist_data t
+603179
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603179',t.* from tmp_hist_data t
+603180
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603180',t.* from tmp_hist_data t
+603181
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603181',t.* from tmp_hist_data t
+603183
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603183',t.* from tmp_hist_data t
+603186
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603186',t.* from tmp_hist_data t
+603188
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603188',t.* from tmp_hist_data t
+603189
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603189',t.* from tmp_hist_data t
+603196
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603196',t.* from tmp_hist_data t
+603197
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603197',t.* from tmp_hist_data t
+603198
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603198',t.* from tmp_hist_data t
+603199
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603199',t.* from tmp_hist_data t
+603200
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603200',t.* from tmp_hist_data t
+603203
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603203',t.* from tmp_hist_data t
+603208
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603208',t.* from tmp_hist_data t
+603214
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603214',t.* from tmp_hist_data t
+603218
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603218',t.* from tmp_hist_data t
+603222
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603222',t.* from tmp_hist_data t
+603223
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603223',t.* from tmp_hist_data t
+603225
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603225',t.* from tmp_hist_data t
+603226
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603226',t.* from tmp_hist_data t
+603227
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603227',t.* from tmp_hist_data t
+603228
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603228',t.* from tmp_hist_data t
+603229
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603229',t.* from tmp_hist_data t
+603232
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603232',t.* from tmp_hist_data t
+603233
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603233',t.* from tmp_hist_data t
+603238
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603238',t.* from tmp_hist_data t
+603239
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603239',t.* from tmp_hist_data t
+603258
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603258',t.* from tmp_hist_data t
+603259
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603259',t.* from tmp_hist_data t
+603260
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603260',t.* from tmp_hist_data t
+603266
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603266',t.* from tmp_hist_data t
+603268
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603268',t.* from tmp_hist_data t
+603269
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603269',t.* from tmp_hist_data t
+603277
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603277',t.* from tmp_hist_data t
+603278
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603278',t.* from tmp_hist_data t
+603283
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603283',t.* from tmp_hist_data t
+603286
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603286',t.* from tmp_hist_data t
+603288
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603288',t.* from tmp_hist_data t
+603289
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603289',t.* from tmp_hist_data t
+603298
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603298',t.* from tmp_hist_data t
+603299
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603299',t.* from tmp_hist_data t
+603300
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603300',t.* from tmp_hist_data t
+603301
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603301',t.* from tmp_hist_data t
+603303
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603303',t.* from tmp_hist_data t
+603305
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603305',t.* from tmp_hist_data t
+603306
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603306',t.* from tmp_hist_data t
+603308
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603308',t.* from tmp_hist_data t
+603309
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603309',t.* from tmp_hist_data t
+603311
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603311',t.* from tmp_hist_data t
+603313
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603313',t.* from tmp_hist_data t
+603315
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603315',t.* from tmp_hist_data t
+603316
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603316',t.* from tmp_hist_data t
+603318
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603318',t.* from tmp_hist_data t
+603319
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603319',t.* from tmp_hist_data t
+603320
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603320',t.* from tmp_hist_data t
+603321
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603321',t.* from tmp_hist_data t
+603322
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603322',t.* from tmp_hist_data t
+603323
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603323',t.* from tmp_hist_data t
+603326
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603326',t.* from tmp_hist_data t
+603328
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603328',t.* from tmp_hist_data t
+603329
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603329',t.* from tmp_hist_data t
+603330
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603330',t.* from tmp_hist_data t
+603331
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603331',t.* from tmp_hist_data t
+603333
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603333',t.* from tmp_hist_data t
+603335
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603335',t.* from tmp_hist_data t
+603336
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603336',t.* from tmp_hist_data t
+603337
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603337',t.* from tmp_hist_data t
+603338
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603338',t.* from tmp_hist_data t
+603339
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603339',t.* from tmp_hist_data t
+603345
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603345',t.* from tmp_hist_data t
+603348
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603348',t.* from tmp_hist_data t
+603355
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603355',t.* from tmp_hist_data t
+603356
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603356',t.* from tmp_hist_data t
+603357
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603357',t.* from tmp_hist_data t
+603358
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603358',t.* from tmp_hist_data t
+603359
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603359',t.* from tmp_hist_data t
+603360
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603360',t.* from tmp_hist_data t
+603363
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603363',t.* from tmp_hist_data t
+603365
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603365',t.* from tmp_hist_data t
+603366
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603366',t.* from tmp_hist_data t
+603367
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603367',t.* from tmp_hist_data t
+603368
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603368',t.* from tmp_hist_data t
+603369
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603369',t.* from tmp_hist_data t
+603377
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603377',t.* from tmp_hist_data t
+603378
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603378',t.* from tmp_hist_data t
+603380
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603380',t.* from tmp_hist_data t
+603383
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603383',t.* from tmp_hist_data t
+603385
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603385',t.* from tmp_hist_data t
+603386
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603386',t.* from tmp_hist_data t
+603387
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603387',t.* from tmp_hist_data t
+603388
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603388',t.* from tmp_hist_data t
+603389
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603389',t.* from tmp_hist_data t
+603393
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603393',t.* from tmp_hist_data t
+603396
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603396',t.* from tmp_hist_data t
+603398
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603398',t.* from tmp_hist_data t
+603399
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603399',t.* from tmp_hist_data t
+603416
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603416',t.* from tmp_hist_data t
+603421
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603421',t.* from tmp_hist_data t
+603429
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603429',t.* from tmp_hist_data t
+603444
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603444',t.* from tmp_hist_data t
+603456
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603456',t.* from tmp_hist_data t
+603458
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603458',t.* from tmp_hist_data t
+603466
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603466',t.* from tmp_hist_data t
+603477
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603477',t.* from tmp_hist_data t
+603486
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603486',t.* from tmp_hist_data t
+603488
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603488',t.* from tmp_hist_data t
+603496
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603496',t.* from tmp_hist_data t
+603499
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603499',t.* from tmp_hist_data t
+603500
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603500',t.* from tmp_hist_data t
+603501
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603501',t.* from tmp_hist_data t
+603505
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603505',t.* from tmp_hist_data t
+603506
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603506',t.* from tmp_hist_data t
+603507
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603507',t.* from tmp_hist_data t
+603508
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603508',t.* from tmp_hist_data t
+603515
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603515',t.* from tmp_hist_data t
+603516
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603516',t.* from tmp_hist_data t
+603517
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603517',t.* from tmp_hist_data t
+603518
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603518',t.* from tmp_hist_data t
+603519
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603519',t.* from tmp_hist_data t
+603520
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603520',t.* from tmp_hist_data t
+603527
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603527',t.* from tmp_hist_data t
+603528
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603528',t.* from tmp_hist_data t
+603533
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603533',t.* from tmp_hist_data t
+603535
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603535',t.* from tmp_hist_data t
+603536
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603536',t.* from tmp_hist_data t
+603538
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603538',t.* from tmp_hist_data t
+603555
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603555',t.* from tmp_hist_data t
+603556
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603556',t.* from tmp_hist_data t
+603557
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603557',t.* from tmp_hist_data t
+603558
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603558',t.* from tmp_hist_data t
+603559
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603559',t.* from tmp_hist_data t
+603566
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603566',t.* from tmp_hist_data t
+603567
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603567',t.* from tmp_hist_data t
+603568
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603568',t.* from tmp_hist_data t
+603569
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603569',t.* from tmp_hist_data t
+603577
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603577',t.* from tmp_hist_data t
+603578
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603578',t.* from tmp_hist_data t
+603579
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603579',t.* from tmp_hist_data t
+603580
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603580',t.* from tmp_hist_data t
+603585
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603585',t.* from tmp_hist_data t
+603586
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603586',t.* from tmp_hist_data t
+603588
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603588',t.* from tmp_hist_data t
+603589
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603589',t.* from tmp_hist_data t
+603595
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603595',t.* from tmp_hist_data t
+603596
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603596',t.* from tmp_hist_data t
+603598
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603598',t.* from tmp_hist_data t
+603599
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603599',t.* from tmp_hist_data t
+603600
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603600',t.* from tmp_hist_data t
+603601
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603601',t.* from tmp_hist_data t
+603602
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603602',t.* from tmp_hist_data t
+603603
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603603',t.* from tmp_hist_data t
+603605
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603605',t.* from tmp_hist_data t
+603606
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603606',t.* from tmp_hist_data t
+603607
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603607',t.* from tmp_hist_data t
+603608
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603608',t.* from tmp_hist_data t
+603609
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603609',t.* from tmp_hist_data t
+603611
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603611',t.* from tmp_hist_data t
+603612
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603612',t.* from tmp_hist_data t
+603615
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603615',t.* from tmp_hist_data t
+603616
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603616',t.* from tmp_hist_data t
+603617
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603617',t.* from tmp_hist_data t
+603618
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603618',t.* from tmp_hist_data t
+603619
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603619',t.* from tmp_hist_data t
+603626
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603626',t.* from tmp_hist_data t
+603628
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603628',t.* from tmp_hist_data t
+603630
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603630',t.* from tmp_hist_data t
+603633
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603633',t.* from tmp_hist_data t
+603636
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603636',t.* from tmp_hist_data t
+603637
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603637',t.* from tmp_hist_data t
+603638
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603638',t.* from tmp_hist_data t
+603639
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603639',t.* from tmp_hist_data t
+603648
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603648',t.* from tmp_hist_data t
+603655
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603655',t.* from tmp_hist_data t
+603656
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603656',t.* from tmp_hist_data t
+603658
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603658',t.* from tmp_hist_data t
+603659
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603659',t.* from tmp_hist_data t
+603660
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603660',t.* from tmp_hist_data t
+603661
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603661',t.* from tmp_hist_data t
+603663
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603663',t.* from tmp_hist_data t
+603665
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603665',t.* from tmp_hist_data t
+603667
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603667',t.* from tmp_hist_data t
+603668
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603668',t.* from tmp_hist_data t
+603669
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603669',t.* from tmp_hist_data t
+603676
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603676',t.* from tmp_hist_data t
+603677
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603677',t.* from tmp_hist_data t
+603678
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603678',t.* from tmp_hist_data t
+603679
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603679',t.* from tmp_hist_data t
+603680
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603680',t.* from tmp_hist_data t
+603683
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603683',t.* from tmp_hist_data t
+603685
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603685',t.* from tmp_hist_data t
+603686
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603686',t.* from tmp_hist_data t
+603688
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603688',t.* from tmp_hist_data t
+603689
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603689',t.* from tmp_hist_data t
+603690
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603690',t.* from tmp_hist_data t
+603696
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603696',t.* from tmp_hist_data t
+603698
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603698',t.* from tmp_hist_data t
+603699
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603699',t.* from tmp_hist_data t
+603701
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603701',t.* from tmp_hist_data t
+603703
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603703',t.* from tmp_hist_data t
+603707
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603707',t.* from tmp_hist_data t
+603708
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603708',t.* from tmp_hist_data t
+603709
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603709',t.* from tmp_hist_data t
+603711
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603711',t.* from tmp_hist_data t
+603712
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603712',t.* from tmp_hist_data t
+603716
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603716',t.* from tmp_hist_data t
+603717
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603717',t.* from tmp_hist_data t
+603718
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603718',t.* from tmp_hist_data t
+603721
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603721',t.* from tmp_hist_data t
+603722
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603722',t.* from tmp_hist_data t
+603725
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603725',t.* from tmp_hist_data t
+603726
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603726',t.* from tmp_hist_data t
+603727
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603727',t.* from tmp_hist_data t
+603728
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603728',t.* from tmp_hist_data t
+603729
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603729',t.* from tmp_hist_data t
+603730
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603730',t.* from tmp_hist_data t
+603733
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603733',t.* from tmp_hist_data t
+603737
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603737',t.* from tmp_hist_data t
+603738
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603738',t.* from tmp_hist_data t
+603757
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603757',t.* from tmp_hist_data t
+603758
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603758',t.* from tmp_hist_data t
+603766
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603766',t.* from tmp_hist_data t
+603767
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603767',t.* from tmp_hist_data t
+603768
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603768',t.* from tmp_hist_data t
+603773
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603773',t.* from tmp_hist_data t
+603776
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603776',t.* from tmp_hist_data t
+603777
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603777',t.* from tmp_hist_data t
+603778
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603778',t.* from tmp_hist_data t
+603779
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603779',t.* from tmp_hist_data t
+603787
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603787',t.* from tmp_hist_data t
+603788
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603788',t.* from tmp_hist_data t
+603789
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603789',t.* from tmp_hist_data t
+603797
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603797',t.* from tmp_hist_data t
+603798
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603798',t.* from tmp_hist_data t
+603799
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603799',t.* from tmp_hist_data t
+603800
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603800',t.* from tmp_hist_data t
+603801
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603801',t.* from tmp_hist_data t
+603803
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603803',t.* from tmp_hist_data t
+603806
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603806',t.* from tmp_hist_data t
+603808
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603808',t.* from tmp_hist_data t
+603809
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603809',t.* from tmp_hist_data t
+603811
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603811',t.* from tmp_hist_data t
+603813
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603813',t.* from tmp_hist_data t
+603816
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603816',t.* from tmp_hist_data t
+603817
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603817',t.* from tmp_hist_data t
+603818
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603818',t.* from tmp_hist_data t
+603819
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603819',t.* from tmp_hist_data t
+603822
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603822',t.* from tmp_hist_data t
+603823
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603823',t.* from tmp_hist_data t
+603825
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603825',t.* from tmp_hist_data t
+603826
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603826',t.* from tmp_hist_data t
+603828
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603828',t.* from tmp_hist_data t
+603829
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603829',t.* from tmp_hist_data t
+603833
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603833',t.* from tmp_hist_data t
+603838
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603838',t.* from tmp_hist_data t
+603839
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603839',t.* from tmp_hist_data t
+603843
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603843',t.* from tmp_hist_data t
+603848
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603848',t.* from tmp_hist_data t
+603855
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603855',t.* from tmp_hist_data t
+603856
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603856',t.* from tmp_hist_data t
+603858
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603858',t.* from tmp_hist_data t
+603859
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603859',t.* from tmp_hist_data t
+603860
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603860',t.* from tmp_hist_data t
+603861
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603861',t.* from tmp_hist_data t
+603866
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603866',t.* from tmp_hist_data t
+603868
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603868',t.* from tmp_hist_data t
+603869
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603869',t.* from tmp_hist_data t
+603871
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603871',t.* from tmp_hist_data t
+603876
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603876',t.* from tmp_hist_data t
+603877
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603877',t.* from tmp_hist_data t
+603878
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603878',t.* from tmp_hist_data t
+603879
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603879',t.* from tmp_hist_data t
+603880
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603880',t.* from tmp_hist_data t
+603881
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603881',t.* from tmp_hist_data t
+603882
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603882',t.* from tmp_hist_data t
+603883
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603883',t.* from tmp_hist_data t
+603885
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603885',t.* from tmp_hist_data t
+603886
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603886',t.* from tmp_hist_data t
+603887
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603887',t.* from tmp_hist_data t
+603888
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603888',t.* from tmp_hist_data t
+603889
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603889',t.* from tmp_hist_data t
+603890
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603890',t.* from tmp_hist_data t
+603895
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603895',t.* from tmp_hist_data t
+603896
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603896',t.* from tmp_hist_data t
+603897
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603897',t.* from tmp_hist_data t
+603898
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603898',t.* from tmp_hist_data t
+603899
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603899',t.* from tmp_hist_data t
+603900
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603900',t.* from tmp_hist_data t
+603901
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603901',t.* from tmp_hist_data t
+603903
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603903',t.* from tmp_hist_data t
+603906
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603906',t.* from tmp_hist_data t
+603908
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603908',t.* from tmp_hist_data t
+603909
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603909',t.* from tmp_hist_data t
+603912
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603912',t.* from tmp_hist_data t
+603916
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603916',t.* from tmp_hist_data t
+603917
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603917',t.* from tmp_hist_data t
+603918
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603918',t.* from tmp_hist_data t
+603919
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603919',t.* from tmp_hist_data t
+603920
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603920',t.* from tmp_hist_data t
+603922
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603922',t.* from tmp_hist_data t
+603926
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603926',t.* from tmp_hist_data t
+603928
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603928',t.* from tmp_hist_data t
+603929
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603929',t.* from tmp_hist_data t
+603933
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603933',t.* from tmp_hist_data t
+603936
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603936',t.* from tmp_hist_data t
+603937
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603937',t.* from tmp_hist_data t
+603938
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603938',t.* from tmp_hist_data t
+603939
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603939',t.* from tmp_hist_data t
+603955
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603955',t.* from tmp_hist_data t
+603958
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603958',t.* from tmp_hist_data t
+603959
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603959',t.* from tmp_hist_data t
+603960
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603960',t.* from tmp_hist_data t
+603963
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603963',t.* from tmp_hist_data t
+603966
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603966',t.* from tmp_hist_data t
+603968
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603968',t.* from tmp_hist_data t
+603969
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603969',t.* from tmp_hist_data t
+603970
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603970',t.* from tmp_hist_data t
+603976
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603976',t.* from tmp_hist_data t
+603977
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603977',t.* from tmp_hist_data t
+603978
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603978',t.* from tmp_hist_data t
+603979
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603979',t.* from tmp_hist_data t
+603980
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603980',t.* from tmp_hist_data t
+603985
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603985',t.* from tmp_hist_data t
+603986
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603986',t.* from tmp_hist_data t
+603987
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603987',t.* from tmp_hist_data t
+603988
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603988',t.* from tmp_hist_data t
+603989
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603989',t.* from tmp_hist_data t
+603990
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603990',t.* from tmp_hist_data t
+603991
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603991',t.* from tmp_hist_data t
+603993
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603993',t.* from tmp_hist_data t
+603996
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603996',t.* from tmp_hist_data t
+603997
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603997',t.* from tmp_hist_data t
+603998
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603998',t.* from tmp_hist_data t
+603999
+Traceback (most recent call last):
+  File "/Users/frank.zhou/work/wholelifestocks/load_data.py", line 8, in <module>
+    b.to_csv('/Users/frank.zhou/work/wholelifestocks/tmp_all_hist_data.csv')
+AttributeError: 'NoneType' object has no attribute 'to_csv'
+stock.tmp_hist_data: Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+use stock;insert ignore hist_data select '603999',t.* from tmp_hist_data t
