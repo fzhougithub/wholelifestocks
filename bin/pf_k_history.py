@@ -54,11 +54,11 @@ efile=open(filename)
 eReader=csv.reader(efile,delimiter=',')
 
 for row in eReader:
-  if (row[2] != 'high'):
-    h=float(row[2])
+  if (row[1] != 'date'):
+    h=float(row[4])
     c=float(row[3])
-    l=float(row[4])
-    v=float(row[5])
+    l=float(row[5])
+    v=float(row[6])
     if ((c > tpH and trend == 1) or ( c < tpL and trend == -1)):
 	trend_keep()
     elif ((c < tpH and trend == 1) or (c > tpL and trend == -1)):
