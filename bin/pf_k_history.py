@@ -9,7 +9,7 @@ from matplotlib import rc
 from pathlib import Path
 stock_symbol=sys.argv[1]
 step=float(sys.argv[2])
-trend=1
+trend=0
 v=h=l=o=c=totalV=pH=pL=tpL=tpH=0
 bar_x_high=[]
 bar_x_bot=[]
@@ -25,20 +25,18 @@ def mod_up(x,unit):
   n=0
   if x>unit:
 	rmod=math.modf(x/unit)
-	if rmod[0]>0 and rmod[0]>unit/2:
+	if rmod[0]>unit/2:
 	  n=rmod[1]+1
 	else:
 	  n=rmod[1]
 	return n*unit
-  else:
-	return x
 
 def mod_down(x,unit):
   n=0
   if x>unit:
         rmod=math.modf(x/unit)
-        if rmod[0]>0 and rmod[0]>unit/2:
-          n=rmod[1]-1
+        if rmod[0]>unit/2:
+          n=rmod[1]+1
 	else:
 	  n=rmod[1]
         return n*unit
@@ -61,12 +59,15 @@ def trend_keep():
       pH = mod_up(h,step)
   totalV=totalV+v
 #  print("trend_keep:"+str(trend)+"|"+str(totalV)+"|"+str(pH)+'|'+str(pL)+'|'+str(pH)+'|'+str(pL))
+  print('trend_keep:h('+str(h)+')l('+str(l)+')pH('+str(pH)+')tpH('+str(tpH)+')tpL('+str(tpL)+')pL('+str(pL)+')totalV('+str(totalV)+')trend('+str(trend)+')')
 
 
 def trend_turn():
   global trend,pH,pL,totalV,l,h,tpH,tpL,v,step,bar_x_high,bar_o_high,bar_x_bot,bar_o_bot,bar_x_total,bar_o_total,rx,ro
-  if trend == 1:
+  #print('trent:'+str(trend))
+  if (trend == 1):
     trend=-1
+  #  print('changed from 1 to -1:'+str(trend))
      #print("X,"+str(pH-pL)+","+str(pL)+","+str(totalV))
     bar_x_high.append(pH-pL)
     bar_x_bot.append(pL)
@@ -74,14 +75,16 @@ def trend_turn():
     rx.append(rx[-1]+2)
 #    print("X: pH="+str(pH)+",pL="+str(pL)+",v="+str(totalV)) 
     pH=pH-step
-    if pH-step*4 < mod_down(l,step):
+    tpH=pH-step*3
+    if tpH-step > mod_down(l,step):
       pL=mod_down(l,step)
     else:
-      pL=pH-step*4
+        pL=tpH-step
     tpL=pL+step*3
     totalV=v
-  if trend == -1:
+  elif (trend == -1):
     trend=1
+    print('changed from -1 to 1:'+str(trend))
      #print("O,"+str(pH-pL)+","+str(pL)+","+str(totalV))
     bar_o_high.append(pH-pL)
     bar_o_bot.append(pL)
@@ -89,12 +92,65 @@ def trend_turn():
     ro.append(ro[-1]+2)
 #    print("O: pH="+str(pH)+",pL="+str(pL)+",v="+str(totalV))
     pL=pL+step
-    if pL+step*4 > mod_up(h,step):
+    tpL=pL+step*3
+    if tpL+step < mod_up(h,step):
       pH=mod_up(h,step)
     else:
-      pH=pL+step*4
+      pH=tpL+step
     tpH=pH-step*3
     totalV=v
+  print('trend_turn:h('+str(h)+')l('+str(l)+')pH('+str(pH)+')pL('+str(pL)+')totalV('+str(totalV)+')trend('+str(trend)+')')
+
+def trend_unknown():
+  global trend,pH,pL,totalV,c,l,h,tpH,tpL,v,step,bar_x_high,bar_o_high,bar_x_bot,bar_o_bot,bar_x_total,bar_o_total,rx,ro
+  if pH == pL and pH == 0:
+    pH=mod_up(h,step)
+    tpH=pH-3*step
+    pL=mod_down(l,step)
+    tpL=pL+3*step
+    totalV=totalV+v
+  if l<pL:
+    pL=mod_down(l,step)
+    tpL=pL+3*step
+    totalV=totalV+v
+  if h>pH:
+    pH=mod_up(h,step)
+    tpH=pH-3*step
+    totalV=totalV+v
+  if pH-pL >=4*step:
+    if l>tpH and c > tpH:
+      trend=1
+      trend_status='k'
+#      trend_turn()
+    if h<tpL and c < tpL:
+      trend=-1
+      trend_status='k'
+#      trend_turn()
+  print('trend_unknown:h('+str(h)+')l('+str(l)+')pH('+str(pH)+')pL('+str(pL)+')totalV('+str(totalV)+')trend('+str(trend)+')')
+
+def trend_rollback():
+  print('trend_rollback')
+  global trend,pH,pL,totalV,l,h,tpH,tpL,v,step,bar_x_high,bar_o_high,bar_x_bot,bar_o_bot,bar_x_total,bar_o_total,rx,ro
+  if trend == 1:
+    trend = -1
+    pH=bar_x_bot[-1]+bar_x_high[-1]
+    pL=bar_x_bot[-1]
+    totalV=bar_x_total[-1]
+    bar_x_bot.remove(bar_x_bot[-1])
+    bar_x_high.remove(bar_x_high[-1])
+    bar_x_total.remove(bar_x_total[-1])
+    rx.remove(rx[-1])
+    trend_keep()
+  elif trend == -1:
+    trend = 1
+    pH=bar_o_bot[-1]+bar_o_high[-1]
+    pL=bar_o_bot[-1]
+    totalV=bar_o_total[-1]
+    bar_o_bot.remove(bar_o_bot[-1])
+    bar_o_high.remove(bar_o_high[-1])
+    bar_o_total.remove(bar_o_total[-1])
+    ro.remove(ro[-1])     
+    trend_keep()
 
 #print(stock_symbol)
 filename="/var/tmp/history/" + stock_symbol
@@ -105,6 +161,7 @@ efile=open(filename)
 eReader=csv.reader(efile,delimiter=',')
 
 trend_status='k'
+startH=startL=0
 
 for row in eReader:
   if (row[1] != 'date'):
@@ -113,15 +170,19 @@ for row in eReader:
     c=float(row[3])
     l=float(row[5])
     v=float(row[6])
+    if (trend == 0 or pH-pL<4*step ):
+        trend_unknown()
+        trend_status='u'
     if ((l >= tpH and trend == 1) or ( h <= tpL and trend == -1)):
 	trend_keep()
 	trend_status='k'
-    elif ((mod_down(l,step) < tpH and mod_down(c,step) <tpH and trend == 1) or (mod_up(h,step) > tpL and mod_up(c,step) > tpL and trend == -1)):
-        trend_turn()
-	trend_status='t'
-
-if trend_status == 'k':
-   trend_turn()
+    elif ((l < tpH and c <tpH and trend == 1) or (h > tpL and c > tpL and trend == -1)):
+        if trend_status =='k':
+	  trend_turn()
+          trend_status='t' 
+        elif trend_status =='t' and len(rx) > 3 and len(ro) > 3:
+	  trend_rollback()
+	  trend_status='k'
 
 efile.close()
 
@@ -142,6 +203,11 @@ if len(ro)<len(bar_o_total):
 dfx = pd.DataFrame({'x':rx,'x_bot':bar_x_bot,'x_high':bar_x_high,'x_v':bar_x_total})
 dfo = pd.DataFrame({'o':ro,'o_bot':bar_o_bot,'o_high':bar_o_high,'o_v':bar_o_total})
 
+print(bar_o_high)
+print(bar_o_bot)
+print(bar_x_high)
+print(bar_x_bot)
+
 plt.figure(figsize=(12,8))
 gs=gridspec.GridSpec(2,1,height_ratios=[5,1])
 fig,axes = plt.subplots(nrows=2,ncols=1,sharex=True,sharey=False)
@@ -154,7 +220,7 @@ axes[0].bar( 'x','x_high',bottom='x_bot',data=dfx,color='green',width=barWidth)
 axes[0].bar( 'o','o_high',bottom='o_bot',data=dfo,color='red',width=barWidth)
 axes[1].bar( 'x','x_v',data=dfx,color='black',width=barWidth)
 axes[1].bar( 'o','o_v',data=dfo,color='red',width=barWidth)
-axes[0].title.set_text('Point & Figure Chart '+ stock_symbol+'  ('+days[0]+'~'+days[-1]+')')
+axes[0].title.set_text('Point & Figure Chart '+ stock_symbol+'  ('+days[0]+'~'+days[-1]+') step='+str(step))
 axes[1].title.set_text('Volume')
 
 plt.show()
