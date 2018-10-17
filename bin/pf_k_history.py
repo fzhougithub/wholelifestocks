@@ -144,14 +144,14 @@ def trend_unknown():
     tpH=pH-4*step
     pL=mod_down(l,step)
     tpL=pL+4*step
-  if l<pL:
+  elif mod_down(l,step)<pL:
     pL=mod_down(l,step)
     tpL=pL+4*step
-  if h>pH:
+  elif mod_up(h,step)>pH:
     pH=mod_up(h,step)
     tpH=pH-4*step
     totalV=totalV+v
-  if pH-pL >=4*step:
+  if pH-pL > 5*step:
     if l>tpH and c > tpH:
       trend=1
       rx.append(1)
@@ -159,8 +159,8 @@ def trend_unknown():
       trend_status='k'
     elif h<tpL and c < tpL:
       trend=-1
-      rx.append(1)
-      ro.append(2)
+      rx.append(2)
+      ro.append(1)
       trend_status='k'
   totalV=totalV+v
   print('trend_unknown:h('+str(h)+')l('+str(l)+')pH('+str(pH)+')pL('+str(pL)+')totalV('+str(totalV)+')trend('+str(trend)+')')
@@ -200,6 +200,15 @@ def check_result():
      print('rx='+str(rx[i])+',pL='+str(bar_x_bot[i])+',pH='+str(bar_x_bot[i]+bar_x_high[i]))
 
 
+def final_bar():
+  global trend,trend_status,pH,pL,totalV,l,h,tpH,tpL,v,step,bar_x_high,bar_o_high,bar_x_bot,bar_o_bot,bar_x_total,bar_o_total,rx,ro
+  if trend_status == 'k':
+    if trend == 1:
+      bar_append('x')
+    elif trend == -1:
+      bar_append('o')
+     
+  
 #print(stock_symbol)
 filename="/var/tmp/history/" + stock_symbol
 #myfile=Path(filename)
@@ -213,6 +222,8 @@ startH=startL=0
 
 for row in eReader:
   print('eReader:'+str(eReader.line_num))
+  if len(bar_x_high)>0:
+    print('x0:'+str(bar_x_high[0]+bar_x_bot[0])+','+str(bar_x_bot[0]))
   if (row[1] != 'date'):
     days.append(row[1])
     h=float(row[4])
@@ -230,16 +241,13 @@ for row in eReader:
         if trend_status =='k':
 	  trend_turn()
           trend_status='t' 
-        elif trend_status =='t' and len(rx) > 2 and len(ro) > 2:
+        elif trend_status =='t' and len(rx) > 3 and len(ro) > 3:
 	  trend_rollback()
 	  trend_status='k'
 
 efile.close()
 
-if trend == 1:
-  bar_append('x')
-if trend == -1:
-  bar_append('o')
+final_bar()
 
 barWidth=1
 
@@ -272,13 +280,22 @@ axes[0]=plt.subplot(gs[0])
 axes[1]=plt.subplot(gs[1])
 axes[0].grid(True)
 axes[1].grid(True)
-axes[0].bar( 'x','x_high',bottom='x_bot',data=dfx,color='green',width=barWidth)
-axes[0].bar( 'o','o_high',bottom='o_bot',data=dfo,color='red',width=barWidth)
-axes[1].bar( 'x','x_v',data=dfx,color='black',width=barWidth)
-axes[1].bar( 'o','o_v',data=dfo,color='red',width=barWidth)
+
+if rx[0] == 2:
+  axes[0].bar( 'x','x_high',bottom='x_bot',data=dfx,color='green',width=barWidth)
+  axes[0].bar( 'o','o_high',bottom='o_bot',data=dfo,color='red',width=barWidth)
+  axes[1].bar( 'x','x_v',data=dfx,color='black',width=barWidth)
+  axes[1].bar( 'o','o_v',data=dfo,color='red',width=barWidth)
+elif rx[0] == 1:
+  axes[0].bar( 'o','o_high',bottom='o_bot',data=dfo,color='red',width=barWidth)
+  axes[0].bar( 'x','x_high',bottom='x_bot',data=dfx,color='green',width=barWidth)
+  axes[1].bar( 'o','o_v',data=dfo,color='red',width=barWidth)
+  axes[1].bar( 'x','x_v',data=dfx,color='black',width=barWidth)
+
 axes[0].title.set_text('Point & Figure Chart '+ stock_symbol+'  ('+days[0]+'~'+days[-1]+') step='+str(step))
 axes[1].title.set_text('Volume')
 
+print rx[0],bar_x_bot[0],bar_x_high[0]
 plt.show()
 
 
