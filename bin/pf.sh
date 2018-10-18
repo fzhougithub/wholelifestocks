@@ -1,13 +1,20 @@
 #!/bin/bash
 
-if [ $# -lt 2 ];then
-	echo $0 "<stock_symbol> <step>"
+if [ $# -lt 1 ];then
+	echo $0 "<stock_symbol> [step]"
 	echo example: $0 300393 1
+	echo example: $0 300393 
 	exit 1
 fi
 
 symbol=$1
-step=$2
+
+if [ -z $2 ];then
+  step=0
+else
+  step=$2
+fi
+
 datadir=/var/tmp/history
 xofile=/var/tmp/history/${symbol}pf.csv
 chartfile=/var/tmp/history/${symbol}_chart.py

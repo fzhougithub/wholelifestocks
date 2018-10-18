@@ -11,8 +11,11 @@ import matplotlib as mpl
 import matplotlib.gridspec as gridspec
 from matplotlib import rc
 from pathlib import Path
+
+#https://stackoverflow.com/questions/5423381/checking-if-sys-argvx-is-defined
 stock_symbol=sys.argv[1]
 step=float(sys.argv[2])
+
 trend=0
 v=h=l=o=c=totalV=pH=pL=tpL=tpH=maxy=0
 bar_x_high=[]
@@ -210,10 +213,10 @@ def final_bar():
   if trend_status == 'k':
     if trend == 1:
       bar_append('x')
-      print bar_x_bot[-1],bar_x_bot[-1]+bar_x_high[-1]
+      print step, bar_x_bot[-1],bar_x_bot[-1]+bar_x_high[-1]
     elif trend == -1:
       bar_append('o')
-      print bar_o_bot[-1],bar_o_bot[-1]+bar_o_high[-1]
+      print step, bar_o_bot[-1],bar_o_bot[-1]+bar_o_high[-1]
      
   
 #print(stock_symbol)
@@ -221,110 +224,180 @@ filename="/var/tmp/history/" + stock_symbol
 #myfile=Path(filename)
 #histbars=numpy.loadtxt(open(filename,"rb"),delimiter=",",skiprows=0)
 
-efile=open(filename)
-eReader=csv.reader(efile,delimiter=',')
-
 trend_status='k'
 startH=startL=0
 
-for row in eReader:
+def prepare_data():
+  global trend,trend_status,pH,pL,totalV,l,h,tpH,tpL,v,step,bar_x_high,bar_o_high,bar_x_bot,bar_o_bot,bar_x_total,bar_o_total,rx,ro,eReader,days,stock_symbol
+  best_step=max_price=max_total_bar=0
+
+  efile=open(filename)
+  eReader=csv.reader(efile,delimiter=',')
+  if stock_symbol is None:
+	return -1 
+  if step <= 0:
+    block=step=0.05
+    max_total_bar=max_price=0
+    n=0
+    while (step < 10 and max_total_bar<50):
+      n=n+1
+      step=step+n*block
+      try:
+	r_set=calculate_dataset()
+	r=r_set[0]
+	max_price=r_set[1]
+	if max_price < 10:
+	   block=0.01
+	if r>max_total_bar:
+	   max_total_bar=r
+           best_step=step
+      except:
+        print("Error: calculate_dataset:step="+str(step)+":"+str(best_step)+",max_total_bar="+str(max_total_bar))
+    print(best_step)
+    if best_step>0:
+      step=best_step
+      max_total_bar=max_price=0
+      r_set=calculate_dataset()
+      max_total_bar=r_set[0]
+      max_price=r_set[1]
+      efile.close()
+      return step,max_total_bar,max_price
+    else:
+      print("Manually Check")
+      efile.close()
+  else:
+    r_set=calculate_dataset()
+    max_total_bar=r_set[0]
+    max_price=r_set[1]
+    efile.close()
+    return step,max_total_bar,max_price
+
+def calculate_dataset():
+  global trend,trend_status,pH,pL,totalV,l,h,c,tpH,tpL,v,step,bar_x_high,bar_o_high,bar_x_bot,bar_o_bot,bar_x_total,bar_o_total,rx,ro,eReader,days
+
+  trend=0
+  v=h=l=o=c=totalV=pH=pL=tpL=tpH=maxy=y=0
+  bar_x_high=[]
+  bar_x_bot=[]
+  bar_o_high=[]
+  bar_o_bot=[]
+  bar_x_total=[]
+  bar_o_total=[]
+  rx=[]
+  ro=[]
+  days=[]
+
+#  efile=open(filename)
+#  eReader=csv.reader(efile,delimiter=',')
+  for row in eReader:
 #  print('eReader:'+str(eReader.line_num))
-#  if len(bar_x_high)>0:
-#    print('x0:'+str(bar_x_high[0]+bar_x_bot[0])+','+str(bar_x_bot[0]))
-  if (row[1] != 'date'):
-    days.append(row[1])
-    h=float(row[4])
-    c=float(row[3])
-    l=float(row[5])
-    v=float(row[6])
+    if len(bar_x_high)>0:
+      y=bar_x_high[0]+bar_x_bot[0]
+      if maxy < y:
+         maxy=y
+#     print('x0:'+str(bar_x_high[0]+bar_x_bot[0])+','+str(bar_x_bot[0]))
+    if (row[1] != 'date'):
+      days.append(row[1])
+      h=float(row[4])
+      c=float(row[3])
+      l=float(row[5])
+      v=float(row[6])
 #    print('eReader:'+str(eReader.line_num)+'|'+str(h)+'|'+str(l)+'|'+str(c)+'|'+str(v))
-    if (trend == 0 or pH-pL<4*step ):
+      if (trend == 0 or pH-pL<4*step ):
         trend_unknown()
         trend_status='u'
-    if ((c >= tpH and trend == 1) or ( c <= tpL and trend == -1)):
+      if ((c >= tpH and trend == 1) or ( c <= tpL and trend == -1)):
 	trend_keep()
 	trend_status='k'
-    elif ((c <tpH and trend == 1) or ( c > tpL and trend == -1)):
+      elif ((c <tpH and trend == 1) or ( c > tpL and trend == -1)):
         if trend_status =='k':
 	  trend_turn()
           trend_status='t' 
         elif trend_status =='t' and len(rx) > 3 and len(ro) > 3:
 	  trend_rollback()
 	  trend_status='k'
+#  efile.close()
+  final_bar()
+  total_bars=len(ro)+len(rx)
+  return total_bars,maxy
 
-efile.close()
+def draw_pf():
+  global trend,trend_status,pH,pL,totalV,l,h,c,tpH,tpL,v,step,bar_x_high,bar_o_high,bar_x_bot,bar_o_bot,bar_x_total,bar_o_total,rx,ro,days
+  barWidth=1
 
-final_bar()
+  #check_result()
+  #plt.bar(rx,bar_x_high,bottom=bar_x_bot,color='green',width=barWidth)
+  #plt.bar(ro,bar_o_high,bottom=bar_o_bot,color='blue',width=barWidth)
+  #plt.show()
 
-barWidth=1
+  dfx = pd.DataFrame({'x':rx,'x_bot':bar_x_bot,'x_high':bar_x_high,'x_v':bar_x_total})
+  dfo = pd.DataFrame({'o':ro,'o_bot':bar_o_bot,'o_high':bar_o_high,'o_v':bar_o_total})
 
-check_result()
+  plt.figure(figsize=(12,8))
+  gs=gridspec.GridSpec(2,1,height_ratios=[5,1])
+  fig,axes = plt.subplots(nrows=2,ncols=1,sharex=True,sharey=False)
 
-#plt.bar(rx,bar_x_high,bottom=bar_x_bot,color='green',width=barWidth)
-#plt.bar(ro,bar_o_high,bottom=bar_o_bot,color='blue',width=barWidth)
-#plt.show()
+  axes[0]=plt.subplot(gs[0])
+  axes[1]=plt.subplot(gs[1])
 
-#exit(0)
+  if rx[0] == 2:
+    axes[0].bar( 'x','x_high',bottom='x_bot',data=dfx,color='green',width=barWidth)
+    axes[0].bar( 'o','o_high',bottom='o_bot',data=dfo,color='red',width=barWidth)
+    axes[1].bar( 'x','x_v',data=dfx,color='black',width=barWidth)
+    axes[1].bar( 'o','o_v',data=dfo,color='red',width=barWidth)
+  elif rx[0] == 1:
+    axes[0].bar( 'o','o_high',bottom='o_bot',data=dfo,color='red',width=barWidth)
+    axes[0].bar( 'x','x_high',bottom='x_bot',data=dfx,color='green',width=barWidth)
+    axes[1].bar( 'o','o_v',data=dfo,color='red',width=barWidth)
+    axes[1].bar( 'x','x_v',data=dfx,color='black',width=barWidth)
 
-dfx = pd.DataFrame({'x':rx,'x_bot':bar_x_bot,'x_high':bar_x_high,'x_v':bar_x_total})
-dfo = pd.DataFrame({'o':ro,'o_bot':bar_o_bot,'o_high':bar_o_high,'o_v':bar_o_total})
+  ysize=axes[0].get_ylim()
+  ymin=ysize[0]
+  ymax=ysize[1]
+  yline=0
+  xline=0.5
+  ylines=[0]
+  xlines=[0]
+  while (yline < ymax):
+    yline=yline+step*4
+    if yline > ymin:
+      ylines.append(yline)
+  while (xline < len(rx)+len(ro)):
+    xline=xline+1
+    xlines.append(xline)
 
-plt.figure(figsize=(12,8))
-gs=gridspec.GridSpec(2,1,height_ratios=[5,1])
-fig,axes = plt.subplots(nrows=2,ncols=1,sharex=True,sharey=False)
+  axes[0].set_yticks(ylines,minor=True)
+  axes[0].set_xticks(xlines,minor=True)
+  axes[1].set_xticks(xlines,minor=True)
+  axes[0].yaxis.grid(True, which='minor')
+  axes[0].xaxis.grid(True, which='minor')
+  axes[1].xaxis.grid(True, which='minor')
 
-axes[0]=plt.subplot(gs[0])
-axes[1]=plt.subplot(gs[1])
-
-if rx[0] == 2:
-  axes[0].bar( 'x','x_high',bottom='x_bot',data=dfx,color='green',width=barWidth)
-  axes[0].bar( 'o','o_high',bottom='o_bot',data=dfo,color='red',width=barWidth)
-  axes[1].bar( 'x','x_v',data=dfx,color='black',width=barWidth)
-  axes[1].bar( 'o','o_v',data=dfo,color='red',width=barWidth)
-elif rx[0] == 1:
-  axes[0].bar( 'o','o_high',bottom='o_bot',data=dfo,color='red',width=barWidth)
-  axes[0].bar( 'x','x_high',bottom='x_bot',data=dfx,color='green',width=barWidth)
-  axes[1].bar( 'o','o_v',data=dfo,color='red',width=barWidth)
-  axes[1].bar( 'x','x_v',data=dfx,color='black',width=barWidth)
-
-ysize=axes[0].get_ylim()
-ymin=ysize[0]
-ymax=ysize[1]
-#axes[0].set_ybound(ymin-step,ymax)
-yline=0
-xline=0.5
-ylines=[0]
-xlines=[0]
-while (yline < ymax):
-  yline=yline+step*4
-  if yline > ymin:
-    ylines.append(yline)
-while (xline < len(rx)+len(ro)):
-  xline=xline+1
-  xlines.append(xline)
-
-axes[0].set_yticks(ylines,minor=True)
-axes[0].set_xticks(xlines,minor=True)
-axes[1].set_xticks(xlines,minor=True)
-axes[0].yaxis.grid(True, which='minor')
-axes[0].xaxis.grid(True, which='minor')
-axes[1].xaxis.grid(True, which='minor')
-
-axes[0].set_ybound(ymin-step,ymax)
+  axes[0].set_ybound(ymin-step,ymax)
 #https://jdhao.github.io/2017/05/13/guide-on-how-to-use-chinese-with-matplotlib/
 
-mpl.rcParams['font.sans-serif'] = ['Heiti SC']
-mpl.rcParams['axes.unicode_minus']=False # in case minus sign is shown as box
+  mpl.rcParams['font.sans-serif'] = ['Heiti SC']
+  mpl.rcParams['axes.unicode_minus']=False # in case minus sign is shown as box
 
-s_name=subprocess.check_output('python get_s_name.py '+stock_symbol,shell=True)
-print s_name
+  s_name=subprocess.check_output('python get_s_name.py '+stock_symbol,shell=True)
+  print s_name
 
-axes[0].title.set_text('Point & Figure Chart '+ stock_symbol+'  ('+days[0]+'~'+days[-1]+') step='+str(step))
-axes[1].title.set_text('Volume')
+  axes[0].title.set_text('Point & Figure Chart '+ stock_symbol+'  ('+days[0]+'~'+days[-1]+') step='+str(step))
+  axes[1].title.set_text('Volume')
 
-axes[0].annotate('c:'+str(c), (len(ro)+len(rx), c),
+  axes[0].annotate('c:'+str(c), (len(ro)+len(rx), c),
             xytext=(0.97, (c-ymin)/(ymax-ymin)), textcoords='axes fraction',
 	    arrowprops=dict(arrowstyle="->"))
+  print c
+  #print rx[0],bar_x_bot[0],bar_x_high[0]
+  plt.show()
 
-#print rx[0],bar_x_bot[0],bar_x_high[0]
-plt.show()
+
+p_set=prepare_data()
+if p_set[1]==0 and p_set[2]==0 and p_set[0]>0 :
+   step=p_set[0]
+   prepare_data()
+
+draw_pf()
+
+
