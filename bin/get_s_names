@@ -1,0 +1,3 @@
+#!/bin/bash
+
+cat /var/tmp/history/s_list|awk -F, '{print $1, $2}'> /var/tmp/history/s_names

@@ -1,16 +1,20 @@
+#!/Library/Frameworks/Python.framework/Versions/2.7/bin/python
+# -*- coding: utf-8 -*-
+
 import math
 import numpy as np
-import numpy,csv,os,sys 
+import numpy,csv,os,sys,subprocess
 import tushare as a
 import pandas as pd
 import matplotlib.pyplot as plt
+import matplotlib as mpl
 import matplotlib.gridspec as gridspec
 from matplotlib import rc
 from pathlib import Path
 stock_symbol=sys.argv[1]
 step=float(sys.argv[2])
 trend=0
-v=h=l=o=c=totalV=pH=pL=tpL=tpH=0
+v=h=l=o=c=totalV=pH=pL=tpL=tpH=maxy=0
 bar_x_high=[]
 bar_x_bot=[]
 bar_o_high=[]
@@ -73,14 +77,14 @@ def mod_down(x,unit):
   else:
         return x
 	
-def bar_error_check():
-  global trend,pH,pL,totalV,l,h,tpH,tpL,v,step,bar_x_high,bar_o_high,bar_x_bot,bar_o_bot,bar_x_total,bar_o_total,rx,ro
-  if rx[-1]>ro[-1] and len(bar_x_bot)>0 and len(bar_o_bot)>0:
-     if bar_x_bot[-1]-bar_o_bot[-1]-step <>0:
-       print('Error1: rx='+str(rx[-1])+' ro='+str(ro[-1]))
-  elif rx[-1]<ro[-1] and len(bar_x_bot)>0 and len(bar_o_bot)>0:
-     if bar_x_bot[-1]+bar_x_high[-1]-step <> bar_o_bot[-1]+bar_o_high[-1]:
-       print('Error2: rx='+str(rx[-1])+' ro='+str(ro[-1])+' rx_high='+str(bar_x_bot[-1]+bar_x_high[-1])+' ro_high='+str(bar_o_bot[-1]+bar_o_high[-1]))
+#def bar_error_check():
+#  global trend,pH,pL,totalV,l,h,tpH,tpL,v,step,bar_x_high,bar_o_high,bar_x_bot,bar_o_bot,bar_x_total,bar_o_total,rx,ro
+#  if rx[-1]>ro[-1] and len(bar_x_bot)>0 and len(bar_o_bot)>0:
+#     if bar_x_bot[-1]-bar_o_bot[-1]-step <>0:
+#       print('Error1: rx='+str(rx[-1])+' ro='+str(ro[-1]))
+#  elif rx[-1]<ro[-1] and len(bar_x_bot)>0 and len(bar_o_bot)>0:
+#     if bar_x_bot[-1]+bar_x_high[-1]-step <> bar_o_bot[-1]+bar_o_high[-1]:
+#       print('Error2: rx='+str(rx[-1])+' ro='+str(ro[-1])+' rx_high='+str(bar_x_bot[-1]+bar_x_high[-1])+' ro_high='+str(bar_o_bot[-1]+bar_o_high[-1]))
 
 def trend_keep():
   global trend,pH,h,pL,l,totalV,tpH,tpL,step,v
@@ -98,7 +102,7 @@ def trend_keep():
       pH = mod_up(h,step)
   totalV=totalV+v
 #  print("trend_keep:"+str(trend)+"|"+str(totalV)+"|"+str(pH)+'|'+str(pL)+'|'+str(pH)+'|'+str(pL))
-  print('trend_keep:h('+str(h)+')l('+str(l)+')pH('+str(pH)+')tpH('+str(tpH)+')tpL('+str(tpL)+')pL('+str(pL)+')totalV('+str(totalV)+')trend('+str(trend)+')')
+#  print('trend_keep:h('+str(h)+')l('+str(l)+')pH('+str(pH)+')tpH('+str(tpH)+')tpL('+str(tpL)+')pL('+str(pL)+')totalV('+str(totalV)+')trend('+str(trend)+')')
 
 
 def trend_turn():
@@ -109,8 +113,8 @@ def trend_turn():
     if mod_up(h,step)>pH:
        pH=mod_up(h,step)
     bar_append('x')
-    print("UpStop:bar_x_added:pL="+str(bar_x_bot[-1])+",pH="+str(bar_x_bot[-1]+bar_x_high[-1])+",rx="+str(rx[-1]))
-    bar_error_check()
+#    print("UpStop:bar_x_added:pL="+str(bar_x_bot[-1])+",pH="+str(bar_x_bot[-1]+bar_x_high[-1])+",rx="+str(rx[-1]))
+#    bar_error_check()
 #    print("X: pH="+str(pH)+",pL="+str(pL)+",v="+str(totalV)) 
     pH=pH-step
     tpH=pH-step*4
@@ -125,8 +129,8 @@ def trend_turn():
     #print('changed from -1 to 1:'+str(trend))
      #print("O,"+str(pH-pL)+","+str(pL)+","+str(totalV))
     bar_append('o')
-    print("DownStop:bar_o_added:pH="+str(bar_o_bot[-1]+bar_o_high[-1])+",pL="+str(bar_o_bot[-1])+",ro="+str(ro[-1]))
-    bar_error_check()
+#    print("DownStop:bar_o_added:pH="+str(bar_o_bot[-1]+bar_o_high[-1])+",pL="+str(bar_o_bot[-1])+",ro="+str(ro[-1]))
+#    bar_error_check()
     pL=pL+step
     tpL=pL+step*4
     if tpL+step < mod_up(h,step):
@@ -135,7 +139,7 @@ def trend_turn():
       pH=tpL+step
     tpH=pH-step*4
     totalV=v
-  print('NewTrend('+str(trend)+') after set rx='+str(rx[-1])+'|ro='+str(ro[-1])+':h('+str(h)+')l('+str(l)+')pH('+str(pH)+')tpH('+str(tpH)+')tpL('+str(tpL)+')pL('+str(pL)+')totalV('+str(totalV))
+#  print('NewTrend('+str(trend)+') after set rx='+str(rx[-1])+'|ro='+str(ro[-1])+':h('+str(h)+')l('+str(l)+')pH('+str(pH)+')tpH('+str(tpH)+')tpL('+str(tpL)+')pL('+str(pL)+')totalV('+str(totalV))
 
 def trend_unknown():
   global trend,pH,pL,totalV,c,l,h,tpH,tpL,v,step,bar_x_high,bar_o_high,bar_x_bot,bar_o_bot,bar_x_total,bar_o_total,rx,ro
@@ -163,7 +167,7 @@ def trend_unknown():
       ro.append(1)
       trend_status='k'
   totalV=totalV+v
-  print('trend_unknown:h('+str(h)+')l('+str(l)+')pH('+str(pH)+')pL('+str(pL)+')totalV('+str(totalV)+')trend('+str(trend)+')')
+#  print('trend_unknown:h('+str(h)+')l('+str(l)+')pH('+str(pH)+')pL('+str(pL)+')totalV('+str(totalV)+')trend('+str(trend)+')')
 
 def trend_rollback():
   global trend,trend_status,pH,pL,totalV,l,h,tpH,tpL,v,step,bar_x_high,bar_o_high,bar_x_bot,bar_o_bot,bar_x_total,bar_o_total,rx,ro
@@ -176,8 +180,8 @@ def trend_rollback():
     tpL=pL+4*step
     totalV=totalV+bar_o_total[-1]
     bar_remove('o')
-    print("bar_o_removed trend -1 pH="+str(pH)+",pL="+str(pL)+",rx"+str(rx[-1])+"|ro="+str(ro[-1])+'x_bot='+str(bar_x_bot[-1])+'x_high='+str(bar_x_high[-1]))
-    bar_error_check()
+#    print("bar_o_removed trend -1 pH="+str(pH)+",pL="+str(pL)+",rx"+str(rx[-1])+"|ro="+str(ro[-1])+'x_bot='+str(bar_x_bot[-1])+'x_high='+str(bar_x_high[-1]))
+#    bar_error_check()
     trend_keep()
   elif trend == -1:
     trend = 1
@@ -188,16 +192,17 @@ def trend_rollback():
     tpL=pL+4*step
     totalV=totalV+bar_x_total[-1]
     bar_remove('x')
-    print("bar_x_removed trend 1 pL="+str(pL)+",pH="+str(pH)+",rx="+str(rx[-1])+'|ro='+str(ro[-1])+',o_bot'+str(bar_o_bot[-1])+',o_high='+str(bar_o_high[-1]))
-    bar_error_check()
+#    print("bar_x_removed trend 1 pL="+str(pL)+",pH="+str(pH)+",rx="+str(rx[-1])+'|ro='+str(ro[-1])+',o_bot'+str(bar_o_bot[-1])+',o_high='+str(bar_o_high[-1]))
+#    bar_error_check()
     trend_keep()
 #  print('trend_rollback:h('+str(h)+')l('+str(l)+')pH('+str(pH)+')tpH('+str(tpH)+')tpL('+str(tpL)+')pL('+str(pL)+')totalV('+str(totalV)+')trend('+str(trend)+')rx='+str(rx[-1])+'|ro='+str(ro[-1]))
 
 
 def check_result():
   global trend,trend_status,pH,pL,totalV,l,h,tpH,tpL,v,step,bar_x_high,bar_o_high,bar_x_bot,bar_o_bot,bar_x_total,bar_o_total,rx,ro
-  for i in range(len(rx)):
-     print('rx='+str(rx[i])+',pL='+str(bar_x_bot[i])+',pH='+str(bar_x_bot[i]+bar_x_high[i]))
+#  for i in range(len(rx)):
+     #print('rx='+str(rx[i])+',pL='+str(bar_x_bot[i])+',pH='+str(bar_x_bot[i]+bar_x_high[i]))
+#  print len(rx),len(bar_x_bot),len(bar_x_total),len(ro),len(bar_o_bot),len(bar_o_total)
 
 
 def final_bar():
@@ -205,8 +210,10 @@ def final_bar():
   if trend_status == 'k':
     if trend == 1:
       bar_append('x')
+      print bar_x_bot[-1],bar_x_bot[-1]+bar_x_high[-1]
     elif trend == -1:
       bar_append('o')
+      print bar_o_bot[-1],bar_o_bot[-1]+bar_o_high[-1]
      
   
 #print(stock_symbol)
@@ -221,16 +228,16 @@ trend_status='k'
 startH=startL=0
 
 for row in eReader:
-  print('eReader:'+str(eReader.line_num))
-  if len(bar_x_high)>0:
-    print('x0:'+str(bar_x_high[0]+bar_x_bot[0])+','+str(bar_x_bot[0]))
+#  print('eReader:'+str(eReader.line_num))
+#  if len(bar_x_high)>0:
+#    print('x0:'+str(bar_x_high[0]+bar_x_bot[0])+','+str(bar_x_bot[0]))
   if (row[1] != 'date'):
     days.append(row[1])
     h=float(row[4])
     c=float(row[3])
     l=float(row[5])
     v=float(row[6])
-    print('eReader:'+str(eReader.line_num)+'|'+str(h)+'|'+str(l)+'|'+str(c)+'|'+str(v))
+#    print('eReader:'+str(eReader.line_num)+'|'+str(h)+'|'+str(l)+'|'+str(c)+'|'+str(v))
     if (trend == 0 or pH-pL<4*step ):
         trend_unknown()
         trend_status='u'
@@ -262,24 +269,12 @@ check_result()
 dfx = pd.DataFrame({'x':rx,'x_bot':bar_x_bot,'x_high':bar_x_high,'x_v':bar_x_total})
 dfo = pd.DataFrame({'o':ro,'o_bot':bar_o_bot,'o_high':bar_o_high,'o_v':bar_o_total})
 
-#print('rx'+str(len(ro)))
-#print(ro)
-#print(bar_o_high)
-#print(bar_o_bot)
-
-#print(len(rx))
-#print(rx)
-#print(bar_x_high)
-#print(bar_x_bot)
-
 plt.figure(figsize=(12,8))
 gs=gridspec.GridSpec(2,1,height_ratios=[5,1])
 fig,axes = plt.subplots(nrows=2,ncols=1,sharex=True,sharey=False)
 
 axes[0]=plt.subplot(gs[0])
 axes[1]=plt.subplot(gs[1])
-axes[0].grid(True)
-axes[1].grid(True)
 
 if rx[0] == 2:
   axes[0].bar( 'x','x_high',bottom='x_bot',data=dfx,color='green',width=barWidth)
@@ -292,11 +287,43 @@ elif rx[0] == 1:
   axes[1].bar( 'o','o_v',data=dfo,color='red',width=barWidth)
   axes[1].bar( 'x','x_v',data=dfx,color='black',width=barWidth)
 
+ysize=axes[0].get_ylim()
+ymin=ysize[0]
+ymax=ysize[1]
+#axes[0].set_ybound(ymin-4*step,ymax)
+yline=0
+xline=0.5
+ylines=[0]
+xlines=[0]
+while (yline < ymax):
+  yline=yline+step*4
+  if yline > ymin:
+    ylines.append(yline)
+while (xline < len(rx)+len(ro)):
+  xline=xline+1
+  xlines.append(xline)
+
+axes[0].set_yticks(ylines,minor=True)
+axes[0].set_xticks(xlines,minor=True)
+axes[1].set_xticks(xlines,minor=True)
+axes[0].yaxis.grid(True, which='minor')
+axes[0].xaxis.grid(True, which='minor')
+axes[1].xaxis.grid(True, which='minor')
+
+#https://jdhao.github.io/2017/05/13/guide-on-how-to-use-chinese-with-matplotlib/
+
+mpl.rcParams['font.sans-serif'] = ['Heiti SC']
+mpl.rcParams['axes.unicode_minus']=False # in case minus sign is shown as box
+
+s_name=subprocess.check_output('python get_s_name.py '+stock_symbol,shell=True)
+print s_name
+
 axes[0].title.set_text('Point & Figure Chart '+ stock_symbol+'  ('+days[0]+'~'+days[-1]+') step='+str(step))
 axes[1].title.set_text('Volume')
 
-print rx[0],bar_x_bot[0],bar_x_high[0]
+axes[0].annotate('c:'+str(c), (len(ro)+len(rx), c),
+            xytext=(0.97, (c-ymin)/(ymax-ymin)), textcoords='axes fraction',
+	    arrowprops=dict(arrowstyle="->"))
+
+#print rx[0],bar_x_bot[0],bar_x_high[0]
 plt.show()
-
-
-
