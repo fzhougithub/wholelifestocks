@@ -290,7 +290,7 @@ elif rx[0] == 1:
 ysize=axes[0].get_ylim()
 ymin=ysize[0]
 ymax=ysize[1]
-#axes[0].set_ybound(ymin-4*step,ymax)
+#axes[0].set_ybound(ymin-step,ymax)
 yline=0
 xline=0.5
 ylines=[0]
@@ -310,6 +310,7 @@ axes[0].yaxis.grid(True, which='minor')
 axes[0].xaxis.grid(True, which='minor')
 axes[1].xaxis.grid(True, which='minor')
 
+axes[0].set_ybound(ymin-step,ymax)
 #https://jdhao.github.io/2017/05/13/guide-on-how-to-use-chinese-with-matplotlib/
 
 mpl.rcParams['font.sans-serif'] = ['Heiti SC']
