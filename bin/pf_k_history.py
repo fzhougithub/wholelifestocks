@@ -17,7 +17,7 @@ stock_symbol=sys.argv[1]
 step=float(sys.argv[2])
 
 trend=0
-v=h=l=o=c=totalV=pH=pL=tpL=tpH=maxy=0
+v=h=l=o=c=totalV=pH=pL=tpL=tpH=0
 bar_x_high=[]
 bar_x_bot=[]
 bar_o_high=[]
@@ -27,6 +27,7 @@ bar_o_total=[]
 rx=[]
 ro=[]
 days=[]
+aset=[]
 
 def bar_append(bar_type):
    global pH,pL,totalV,rx,ro,bar_x_high,bar_x_bot,bar_o_high,bar_o_bot 
@@ -213,10 +214,10 @@ def final_bar():
   if trend_status == 'k':
     if trend == 1:
       bar_append('x')
-      print step, bar_x_bot[-1],bar_x_bot[-1]+bar_x_high[-1]
+      #print step, bar_x_bot[-1],bar_x_bot[-1]+bar_x_high[-1]
     elif trend == -1:
       bar_append('o')
-      print step, bar_o_bot[-1],bar_o_bot[-1]+bar_o_high[-1]
+      #print step, bar_o_bot[-1],bar_o_bot[-1]+bar_o_high[-1]
      
   
 #print(stock_symbol)
@@ -224,59 +225,52 @@ filename="/var/tmp/history/" + stock_symbol
 #myfile=Path(filename)
 #histbars=numpy.loadtxt(open(filename,"rb"),delimiter=",",skiprows=0)
 
-trend_status='k'
-startH=startL=0
 
 def prepare_data():
-  global trend,trend_status,pH,pL,totalV,l,h,tpH,tpL,v,step,bar_x_high,bar_o_high,bar_x_bot,bar_o_bot,bar_x_total,bar_o_total,rx,ro,eReader,days,stock_symbol
+  global step,bar_x_high,bar_o_high,bar_x_bot,bar_o_bot,bar_x_total,bar_o_total,rx,ro,aset,days,stock_symbol
+
   best_step=max_price=max_total_bar=0
 
-  efile=open(filename)
-  eReader=csv.reader(efile,delimiter=',')
-  if stock_symbol is None:
-	return -1 
-  if step <= 0:
-    block=step=0.05
-    max_total_bar=max_price=0
+  if step == 0:
+    block=0.01
     n=0
     while (step < 10 and max_total_bar<50):
       n=n+1
-      step=step+n*block
+      step=step+block
+      #print n, step,max_total_bar,max_price
       try:
 	r_set=calculate_dataset()
-	r=r_set[0]
-	max_price=r_set[1]
-	if max_price < 10:
-	   block=0.01
-	if r>max_total_bar:
-	   max_total_bar=r
-           best_step=step
+	if max_price < r_set[1]:
+          max_price=r_set[1]
+        if max_total_bar < r_set[0]:
+	  max_total_bar=r_set[0]
+          best_step=step
+      #  print n,best_step,max_total_bar,max_price
       except:
-        print("Error: calculate_dataset:step="+str(step)+":"+str(best_step)+",max_total_bar="+str(max_total_bar))
-    print(best_step)
+        #print("Error: calculate_dataset:step="+str(step)+":"+str(best_step)+",max_total_bar="+str(max_total_bar))
+        pass
+    #print(best_step)
     if best_step>0:
       step=best_step
-      max_total_bar=max_price=0
       r_set=calculate_dataset()
       max_total_bar=r_set[0]
       max_price=r_set[1]
-      efile.close()
       return step,max_total_bar,max_price
     else:
-      print("Manually Check")
-      efile.close()
+      print("Manually Check /var/tmp/history/"+stock_symbol)
+      return step,0,0
   else:
     r_set=calculate_dataset()
     max_total_bar=r_set[0]
     max_price=r_set[1]
-    efile.close()
     return step,max_total_bar,max_price
 
 def calculate_dataset():
-  global trend,trend_status,pH,pL,totalV,l,h,c,tpH,tpL,v,step,bar_x_high,bar_o_high,bar_x_bot,bar_o_bot,bar_x_total,bar_o_total,rx,ro,eReader,days
+  global trend,trend_status,pH,pL,totalV,l,h,c,tpH,tpL,v,step,bar_x_high,bar_o_high,bar_x_bot,bar_o_bot,bar_x_total,bar_o_total,rx,ro,aset,days
 
   trend=0
-  v=h=l=o=c=totalV=pH=pL=tpL=tpH=maxy=y=0
+  v=h=l=o=c=totalV=pH=pL=tpL=tpH=y=0
+  maxy=0
   bar_x_high=[]
   bar_x_bot=[]
   bar_o_high=[]
@@ -287,22 +281,16 @@ def calculate_dataset():
   ro=[]
   days=[]
 
-#  efile=open(filename)
-#  eReader=csv.reader(efile,delimiter=',')
-  for row in eReader:
-#  print('eReader:'+str(eReader.line_num))
-    if len(bar_x_high)>0:
-      y=bar_x_high[0]+bar_x_bot[0]
-      if maxy < y:
-         maxy=y
-#     print('x0:'+str(bar_x_high[0]+bar_x_bot[0])+','+str(bar_x_bot[0]))
-    if (row[1] != 'date'):
+  trend_status='k'
+
+  for counter,row in enumerate(aset):
+    if (counter>1):
       days.append(row[1])
       h=float(row[4])
       c=float(row[3])
       l=float(row[5])
       v=float(row[6])
-#    print('eReader:'+str(eReader.line_num)+'|'+str(h)+'|'+str(l)+'|'+str(c)+'|'+str(v))
+      #print('eReader:'+str(eReader.line_num)+'|'+str(h)+'|'+str(l)+'|'+str(c)+'|'+str(v))
       if (trend == 0 or pH-pL<4*step ):
         trend_unknown()
         trend_status='u'
@@ -316,12 +304,20 @@ def calculate_dataset():
         elif trend_status =='t' and len(rx) > 3 and len(ro) > 3:
 	  trend_rollback()
 	  trend_status='k'
-#  efile.close()
   final_bar()
   total_bars=len(ro)+len(rx)
+  if total_bars>1:
+    yxl=[]
+    ybl=[]
+    for xb,xh in zip(bar_x_bot,bar_x_high):
+      yxl.append(xb+xh)
+    for ob,oh in zip(bar_o_bot,bar_o_high):
+      ybl.append(ob+oh)
+    maxy=max(max(yxl),max(ybl))
+  #print total_bars,maxy
   return total_bars,maxy
 
-def draw_pf():
+def draw_pf(topy):
   global trend,trend_status,pH,pL,totalV,l,h,c,tpH,tpL,v,step,bar_x_high,bar_o_high,bar_x_bot,bar_o_bot,bar_x_total,bar_o_total,rx,ro,days
   barWidth=1
 
@@ -333,7 +329,8 @@ def draw_pf():
   dfx = pd.DataFrame({'x':rx,'x_bot':bar_x_bot,'x_high':bar_x_high,'x_v':bar_x_total})
   dfo = pd.DataFrame({'o':ro,'o_bot':bar_o_bot,'o_high':bar_o_high,'o_v':bar_o_total})
 
-  plt.figure(figsize=(12,8))
+  totalx=len(rx)+len(ro)
+  plt.figure(figsize=(12,6.75))
   gs=gridspec.GridSpec(2,1,height_ratios=[5,1])
   fig,axes = plt.subplots(nrows=2,ncols=1,sharex=True,sharey=False)
 
@@ -358,22 +355,30 @@ def draw_pf():
   xline=0.5
   ylines=[0]
   xlines=[0]
+  totalx=len(rx)+len(ro)
+  county=6.75*totalx/12
+  g=math.modf(round((ymax-ymin)/county,2)/step)
+  gy=g[1]*step
   while (yline < ymax):
-    yline=yline+step*4
+    yline=yline+gy
     if yline > ymin:
       ylines.append(yline)
-  while (xline < len(rx)+len(ro)):
+  while (xline < totalx):
     xline=xline+1
     xlines.append(xline)
 
   axes[0].set_yticks(ylines,minor=True)
+  axes[0].yaxis.set_label_position("right")
   axes[0].set_xticks(xlines,minor=True)
   axes[1].set_xticks(xlines,minor=True)
   axes[0].yaxis.grid(True, which='minor')
+  #axes[0].yaxis.ticker_right()
   axes[0].xaxis.grid(True, which='minor')
   axes[1].xaxis.grid(True, which='minor')
 
-  axes[0].set_ybound(ymin-step,ymax)
+  space=(ymax-ymin)*0.1
+  axes[0].set_ybound(ymin-space,ymax)
+
 #https://jdhao.github.io/2017/05/13/guide-on-how-to-use-chinese-with-matplotlib/
 
   mpl.rcParams['font.sans-serif'] = ['Heiti SC']
@@ -382,22 +387,35 @@ def draw_pf():
   s_name=subprocess.check_output('python get_s_name.py '+stock_symbol,shell=True)
   print s_name
 
-  axes[0].title.set_text('Point & Figure Chart '+ stock_symbol+'  ('+days[0]+'~'+days[-1]+') step='+str(step))
+  axes[0].title.set_text('Point & Figure Chart '+ stock_symbol+'  ('+days[0]+'~'+days[-1]+') step='+str(step)+' grid='+str(gy))
   axes[1].title.set_text('Volume')
 
   axes[0].annotate('c:'+str(c), (len(ro)+len(rx), c),
-            xytext=(0.97, (c-ymin)/(ymax-ymin)), textcoords='axes fraction',
+            xytext=(0.97, (c-ymin+space)/(ymax-ymin+space)), textcoords='axes fraction',
 	    arrowprops=dict(arrowstyle="->"))
-  print c
+  #print c
   #print rx[0],bar_x_bot[0],bar_x_high[0]
   plt.show()
 
+if stock_symbol is None:
+  print("Must input correct stock symbol")
+  exit(100)
+  
+efile=open(filename)
+eReader=csv.reader(efile,delimiter=',')
+for row in eReader:
+  aset.append([row[0],row[1],row[2],row[3],row[4],row[5],row[6],row[7]])
+efile.close()
 
 p_set=prepare_data()
-if p_set[1]==0 and p_set[2]==0 and p_set[0]>0 :
-   step=p_set[0]
-   prepare_data()
 
-draw_pf()
+if p_set[2] >0:
+  draw_pf(p_set[2])
+elif p_set[0]>0.01:
+  step=p_set[0]
+  p_set=prepare_data()
+  if p_set[2]>0:
+    draw_pf(p_set[2])
 
+exit(0)
 

@@ -21,7 +21,7 @@ chartfile=/var/tmp/history/${symbol}_chart.py
 
 if [ $(find /var/tmp/history -mtime -1|grep $symbol|wc -l) -eq 0  ];then
 	python get_s_history.py $symbol 
-	echo Download Data
+	#echo Download Data
 fi
 
 python pf_k_history.py $symbol $step 
