@@ -1,7 +1,7 @@
 #!/Library/Frameworks/Python.framework/Versions/2.7/bin/python
 # -*- coding: utf-8 -*-
 
-import math
+import math,datetime
 import numpy as np
 import numpy,csv,os,sys,subprocess
 import tushare as a
@@ -210,15 +210,23 @@ def check_result():
 
 
 def final_bar():
-  global trend,trend_status,pH,pL,totalV,l,h,tpH,tpL,v,step,bar_x_high,bar_o_high,bar_x_bot,bar_o_bot,bar_x_total,bar_o_total,rx,ro
+  global trend,trend_status,pH,pL,totalV,l,h,tpH,tpL,v,step,bar_x_high,bar_o_high,bar_x_bot,bar_o_bot,bar_x_total,bar_o_total,rx,ro,turnpoint
   if trend_status == 'k':
     if trend == 1:
       bar_append('x')
+      turnpoint=tpH
       #print step, bar_x_bot[-1],bar_x_bot[-1]+bar_x_high[-1]
     elif trend == -1:
       bar_append('o')
+      turnpoint=tpL
       #print step, bar_o_bot[-1],bar_o_bot[-1]+bar_o_high[-1]
-     
+  if trend_status == 't':
+    if trend == 1:
+      bar_append('x')
+      turnpoint=tpH
+    elif trend == -1:
+      bar_append('o') 
+      turnpoint=tpL
   
 #print(stock_symbol)
 filename="/var/tmp/history/" + stock_symbol
@@ -228,34 +236,44 @@ filename="/var/tmp/history/" + stock_symbol
 
 def prepare_data():
   global step,bar_x_high,bar_o_high,bar_x_bot,bar_o_bot,bar_x_total,bar_o_total,rx,ro,aset,days,stock_symbol
-
+  rr=[]
   best_step=max_price=max_total_bar=0
 
   if step == 0:
     block=0.01
     n=0
-    while (step < 10 and max_total_bar<50):
+    while (step < 10):
+#    while (step < 10 and max_total_bar<100):
       n=n+1
       step=step+block
       #print n, step,max_total_bar,max_price
       try:
-	r_set=calculate_dataset()
-	if max_price < r_set[1]:
+          r_set=calculate_dataset()
+#	if max_price < r_set[1]:
           max_price=r_set[1]
-        if max_total_bar < r_set[0]:
-	  max_total_bar=r_set[0]
+#        if max_total_bar < r_set[0]:
+          max_total_bar=r_set[0]
           best_step=step
-      #  print n,best_step,max_total_bar,max_price
+          if max_total_bar>35:
+             rr.append([best_step,max_total_bar])
+        #print n,best_step,max_total_bar,max_price
       except:
         #print("Error: calculate_dataset:step="+str(step)+":"+str(best_step)+",max_total_bar="+str(max_total_bar))
         pass
-    #print(best_step)
-    if best_step>0:
+    if len(rr)>0:
+      max_total_bar=100
+      for countr,v_rr in enumerate(rr):
+         b=v_rr[1]
+     #    print v_rr[0],v_rr[1]
+         if max_total_bar>=v_rr[1]:
+            max_total_bar=v_rr[1]
+            best_step=v_rr[0] 
       step=best_step
+      print step,max_total_bar
       r_set=calculate_dataset()
       max_total_bar=r_set[0]
       max_price=r_set[1]
-      return step,max_total_bar,max_price
+      return best_step,max_total_bar,max_price
     else:
       print("Manually Check /var/tmp/history/"+stock_symbol)
       return step,0,0
@@ -318,13 +336,8 @@ def calculate_dataset():
   return total_bars,maxy
 
 def draw_pf(topy):
-  global trend,trend_status,pH,pL,totalV,l,h,c,tpH,tpL,v,step,bar_x_high,bar_o_high,bar_x_bot,bar_o_bot,bar_x_total,bar_o_total,rx,ro,days
+  global trend,trend_status,pH,pL,totalV,l,h,c,tpH,tpL,v,step,bar_x_high,bar_o_high,bar_x_bot,bar_o_bot,bar_x_total,bar_o_total,rx,ro,days,turnpoint
   barWidth=1
-
-  #check_result()
-  #plt.bar(rx,bar_x_high,bottom=bar_x_bot,color='green',width=barWidth)
-  #plt.bar(ro,bar_o_high,bottom=bar_o_bot,color='blue',width=barWidth)
-  #plt.show()
 
   dfx = pd.DataFrame({'x':rx,'x_bot':bar_x_bot,'x_high':bar_x_high,'x_v':bar_x_total})
   dfo = pd.DataFrame({'o':ro,'o_bot':bar_o_bot,'o_high':bar_o_high,'o_v':bar_o_total})
@@ -390,13 +403,28 @@ def draw_pf(topy):
   axes[0].title.set_text('Point & Figure Chart '+ stock_symbol+'  ('+days[0]+'~'+days[-1]+') step='+str(step)+' grid='+str(gy))
   axes[1].title.set_text('Volume')
 
-  axes[0].annotate('c:'+str(c), (len(ro)+len(rx), c),
-            xytext=(0.97, (c-ymin+space)/(ymax-ymin+space)), textcoords='axes fraction',
-	    arrowprops=dict(arrowstyle="->"))
+  axes[0].annotate('c/t:'+str(c)+'/'+str(turnpoint), (len(ro)+len(rx), c), xytext=(0.97, (c-ymin+space)/(ymax-ymin+space)), textcoords='axes fraction', arrowprops=dict(arrowstyle="->"))
+#  axes[0].annotate('t:'+str(turnpoint), (len(ro)+len(rx), turnpoint), xytext=(0.97, (c-ymin+space)/(ymax-ymin+space)), textcoords='axes fraction', arrowprops=dict(arrowstyle="->"))
+  xsize=axes[0].get_xlim()
+  xmax=xsize[1]
+  axes[0].axhline(y=c,xmin=(totalx-0.25)/xmax,xmax=(totalx+0.5)/xmax,color='black')
+  axes[0].axhline(y=turnpoint,xmin=(totalx-0.25)/xmax,xmax=(totalx+0.5)/xmax,color='blue')
+
+#  axes[0].text(len(ro)+len(rx), turnpoint, turnpoint,va='center', ha="right", bbox=dict(facecolor="yellow",alpha=0.5), transform=axes[0].get_yaxis_transform())
+  #axes[0].text(len(ro)+len(rx), turnpoint, str(turnpoint),fontsize='xx-small', va='center', ha="right", bbox=dict(facecolor="yellow",alpha=0.5), transform=axes[0].get_yaxis_transform())
+  #axes[0].text(len(ro)+len(rx), (turnpoint-ymin+space)/(ymax-ymin+space), str(turnpoint),fontsize='xx-small', va='center', ha="right", bbox=dict(facecolor="yellow",alpha=0.5), transform=axes[0].get_yaxis_transform())
+  #print turnpoint
+  a=datetime.datetime.now()
+  save_file='/var/tmp/history/'+stock_symbol+'_'+str(a.year)+str(a.month) +str(a.day)
+#  print save_file
+#  fig.savefig('/var/tmp/history/'+stock_symbol+str(a.year)+str(a.month) +str(a.day))
+
   #print c
   #print rx[0],bar_x_bot[0],bar_x_high[0]
   plt.show()
 
+
+#==== Main ===========================
 if stock_symbol is None:
   print("Must input correct stock symbol")
   exit(100)
@@ -415,6 +443,7 @@ elif p_set[0]>0.01:
   step=p_set[0]
   p_set=prepare_data()
   if p_set[2]>0:
+    print step
     draw_pf(p_set[2])
 
 exit(0)
