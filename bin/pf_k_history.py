@@ -33,6 +33,11 @@ ro=[]
 days=[]
 aset=[]
 
+def ensure_unicode(v):
+    if isinstance(v, str):
+        v = v.decode('utf8')
+    return unicode(v)  # convert anything not a string to unicode too
+
 def bar_append(bar_type):
    global pH,pL,totalV,rx,ro,bar_x_high,bar_x_bot,bar_o_high,bar_o_bot 
    if bar_type == 'x':
@@ -273,7 +278,7 @@ def prepare_data():
             max_total_bar=v_rr[1]
             best_step=v_rr[0] 
       step=best_step
-      print step,max_total_bar
+      #print step,max_total_bar
       r_set=calculate_dataset()
       max_total_bar=r_set[0]
       max_price=r_set[1]
@@ -368,7 +373,7 @@ def draw_pf(topy):
   ysize=axes[0].get_ylim()
   ymin=ysize[0]
   ymax=ysize[1]
-  print ymin,ymax
+  #print ymin,ymax
   yline=0
   xline=0.5
   ylines=[0]
@@ -407,19 +412,19 @@ def draw_pf(topy):
 #'/usr/lib64/python2.7/site-packages/matplotlib/mpl-data/matplotlibrc'
 #https://www.jianshu.com/p/7b7a3e73ef21
 
-  #mpl.rcParams['font.sans-serif'] = ['FangSong']
-  #myfont = matplotlib.font_manager.FontProperties(fname='/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/matplotlib/mpl-data/fonts/ttf/STHeitiTC-Light-01.ttf') 
-  #mpl.rcParams['font.sans-serif'] = ['Heiti SC']
-  #mpl.rcParams['axes.unicode_minus']=False # in case minus sign is shown as box
+  mpl.rcParams['font.sans-serif'] = ['Heiti SC']
+  mpl.rcParams['axes.unicode_minus']=False # in case minus sign is shown as box
 
+  
   s_name=subprocess.check_output('python get_s_name.py '+stock_symbol,shell=True)
+  s_name=u''.join(ensure_unicode(s_name))
   print s_name
 
   #s=u'中粮生化'
   #axes[0].text(0.1,0.2,s_name.format(s),fontproperties=myfont)
   #axes[0].text(0.1,0.2,s_name.format(s))
 
-  axes[0].title.set_text('Point & Figure Chart '+ stock_symbol+'  ('+days[0]+'~'+days[-1]+') step='+str(step)+' grid='+str(gy))
+  axes[0].title.set_text('PF Chart '+ stock_symbol+'|'+s_name+'  ('+days[0]+'~'+days[-1]+') step='+str(step)+' grid='+str(gy))
   axes[1].title.set_text('Volume')
 
   axes[0].annotate('c/t:'+str(c)+'/'+str(turnpoint), (len(ro)+len(rx), c), xytext=(0.97, (c-ymin+space)/(ymax-ymin+space)), textcoords='axes fraction', arrowprops=dict(arrowstyle="->"))
@@ -455,7 +460,7 @@ for row in eReader:
 efile.close()
 
 p_set=prepare_data()
-print p_set[0],step
+#print p_set[0],step
 if p_set[2] >0:
   draw_pf(p_set[2])
 else:
