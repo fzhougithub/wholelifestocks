@@ -6,11 +6,15 @@ import numpy as np
 import numpy,csv,os,sys,subprocess
 import tushare as a
 import pandas as pd
+import matplotlib;
+#matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import matplotlib as mpl
 import matplotlib.gridspec as gridspec
 from matplotlib import rc
 from pathlib import Path
+#reload(sys)
+#sys.setdefaultencoding('utf-8')
 
 #https://stackoverflow.com/questions/5423381/checking-if-sys-argvx-is-defined
 stock_symbol=sys.argv[1]
@@ -364,6 +368,7 @@ def draw_pf(topy):
   ysize=axes[0].get_ylim()
   ymin=ysize[0]
   ymax=ysize[1]
+  print ymin,ymax
   yline=0
   xline=0.5
   ylines=[0]
@@ -371,9 +376,13 @@ def draw_pf(topy):
   totalx=len(rx)+len(ro)
   county=totalx
   g=math.modf(round((ymax-ymin)/county,2)/step)
-  gy=g[1]*step
+  if g[1]>0:
+    gy=g[1]*step
+  else:
+    gy=step
   while (yline < ymax):
     yline=yline+gy
+    #print yline
     if yline > ymin:
       ylines.append(yline)
   while (xline < totalx):
@@ -393,18 +402,28 @@ def draw_pf(topy):
   axes[0].set_ybound(ymin-space,ymax)
 
 #https://jdhao.github.io/2017/05/13/guide-on-how-to-use-chinese-with-matplotlib/
+#>>> import matplotlib
+#>>> matplotlib.matplotlib_fname()
+#'/usr/lib64/python2.7/site-packages/matplotlib/mpl-data/matplotlibrc'
+#https://www.jianshu.com/p/7b7a3e73ef21
 
-  mpl.rcParams['font.sans-serif'] = ['Heiti SC']
-  mpl.rcParams['axes.unicode_minus']=False # in case minus sign is shown as box
+  #mpl.rcParams['font.sans-serif'] = ['FangSong']
+  #myfont = matplotlib.font_manager.FontProperties(fname='/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/matplotlib/mpl-data/fonts/ttf/STHeitiTC-Light-01.ttf') 
+  #mpl.rcParams['font.sans-serif'] = ['Heiti SC']
+  #mpl.rcParams['axes.unicode_minus']=False # in case minus sign is shown as box
 
-#  s_name=subprocess.check_output('python get_s_name.py '+stock_symbol,shell=True)
-#  print s_name
+  s_name=subprocess.check_output('python get_s_name.py '+stock_symbol,shell=True)
+  print s_name
+
+  #s=u'中粮生化'
+  #axes[0].text(0.1,0.2,s_name.format(s),fontproperties=myfont)
+  #axes[0].text(0.1,0.2,s_name.format(s))
 
   axes[0].title.set_text('Point & Figure Chart '+ stock_symbol+'  ('+days[0]+'~'+days[-1]+') step='+str(step)+' grid='+str(gy))
   axes[1].title.set_text('Volume')
 
   axes[0].annotate('c/t:'+str(c)+'/'+str(turnpoint), (len(ro)+len(rx), c), xytext=(0.97, (c-ymin+space)/(ymax-ymin+space)), textcoords='axes fraction', arrowprops=dict(arrowstyle="->"))
-#  axes[0].annotate('t:'+str(turnpoint), (len(ro)+len(rx), turnpoint), xytext=(0.97, (c-ymin+space)/(ymax-ymin+space)), textcoords='axes fraction', arrowprops=dict(arrowstyle="->"))
+#  axes[0].annotate('t:'+str(turnpoint), (len(ro)+len(rx), turnpoint), xytext=(0.97, (turnpoint-ymin+space)/(ymax-ymin+space)), textcoords='axes fraction', arrowprops=dict(arrowstyle="->"))
   xsize=axes[0].get_xlim()
   xmax=xsize[1]
   axes[0].axhline(y=c,xmin=(totalx-0.25)/xmax,xmax=(totalx+0.5)/xmax,color='black')
@@ -417,11 +436,11 @@ def draw_pf(topy):
   a=datetime.datetime.now()
   save_file='/var/tmp/history/'+stock_symbol+'_'+str(a.year)+str(a.month) +str(a.day)
 #  print save_file
-  fig.savefig('/var/tmp/history/'+stock_symbol+str(a.year)+str(a.month) +str(a.day)+'.png')
+#  fig.savefig(save_file)
 
   #print c
   #print rx[0],bar_x_bot[0],bar_x_high[0]
-#  plt.show()
+  plt.show()
 
 
 #==== Main ===========================
@@ -436,15 +455,11 @@ for row in eReader:
 efile.close()
 
 p_set=prepare_data()
-
+print p_set[0],step
 if p_set[2] >0:
   draw_pf(p_set[2])
-elif p_set[0]>0.01:
-  step=p_set[0]
-  p_set=prepare_data()
-  if p_set[2]>0:
-    print step
-    draw_pf(p_set[2])
+else:
+  print("No Result")
 
 exit(0)
 
