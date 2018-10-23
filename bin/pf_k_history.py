@@ -412,7 +412,8 @@ def draw_pf(topy):
 #'/usr/lib64/python2.7/site-packages/matplotlib/mpl-data/matplotlibrc'
 #https://www.jianshu.com/p/7b7a3e73ef21
 
-  mpl.rcParams['font.sans-serif'] = ['Heiti SC']
+  #mpl.rcParams['font.sans-serif'] = ['Heiti SC']
+  mpl.rcParams['font.sans-serif'] = ['Noto Sans SC']
   mpl.rcParams['axes.unicode_minus']=False # in case minus sign is shown as box
 
   
