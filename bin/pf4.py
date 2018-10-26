@@ -341,8 +341,9 @@ def calculate_dataset():
     for ob,oh in zip(bar_o_bot,bar_o_high):
       ybl.append(ob+oh)
     maxy=max(max(yxl),max(ybl))
+    miny=min(min(bar_x_bot),min(bar_o_bot))
   #print total_bars,maxy
-  return total_bars,maxy
+  return total_bars,maxy,miny
 
 def draw_pf(topy):
   global trend,trend_status,pH,pL,totalV,l,h,c,tpH,tpL,v,step,bar_x_high,bar_o_high,bar_x_bot,bar_o_bot,bar_x_total,bar_o_total,rx,ro,days,turnpoint
@@ -448,6 +449,7 @@ def draw_pf(topy):
   #print rx[0],bar_x_bot[0],bar_x_high[0]
   plt.show()
 
+  
 
 #==== Main ===========================
 if stock_symbol is None:
@@ -468,4 +470,8 @@ else:
   print("No Result")
 
 exit(0)
+
+#https://stockcharts.com/school/doku.php?id=chart_school:chart_analysis:pnf_charts:pnf_scale_time
+# need to reconstruct the calculation with 4 strategies. 
+
 
