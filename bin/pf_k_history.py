@@ -6,6 +6,7 @@ import numpy as np
 import numpy,csv,os,sys,subprocess
 import tushare as a
 import pandas as pd
+import pandas as pd1
 import matplotlib;
 #matplotlib.use('Agg')
 import matplotlib.pyplot as plt
@@ -341,8 +342,59 @@ def calculate_dataset():
     for ob,oh in zip(bar_o_bot,bar_o_high):
       ybl.append(ob+oh)
     maxy=max(max(yxl),max(ybl))
+    miny=min(min(bar_x_bot),min(bar_o_bot))
   #print total_bars,maxy
-  return total_bars,maxy
+  return total_bars,maxy,miny
+
+def normalize_pf():
+  global trend,trend_status,pH,pL,totalV,l,h,c,tpH,tpL,v,step,bar_x_high,bar_o_high,bar_x_bot,bar_o_bot,bar_x_total,bar_o_total,rx,ro,days,turnpoint,pd1
+  rs=[]
+  bars_o=[]
+  bars_h=[]
+  vs=[]
+  flags=[]
+  if len(rx)>0 and len(ro)>0:
+    if rx[0]==1:
+      rs=rx
+      bars_o=bar_x_bot
+      bars_h=bar_x_high
+      vs=bar_x_total
+      for c,v in enumerate(ro):
+        rs.insert(c*2+1,v)
+      for c,v in enumerate(bar_o_bot):
+        bars_o.insert(c*2+1,v)
+      for c,v in enumerate(bar_o_high):
+        bars_h.insert(c*2+1,v)
+      for c,v in enumerate(bar_o_total):
+        vs.insert(c*2+1,v)
+      for c,v in enumerate(rs):
+        if c%2==0:
+          flags.insert(c,'x')
+        else:
+          flags.insert(c,'o')
+    else:
+      rs=ro
+      bars_o=bar_o_bot
+      bars_h=bar_o_high
+      vs=bar_o_total
+      for c,v in enumerate(rx):
+        rs.insert(c*2+1,v)
+      for c,v in enumerate(bar_x_bot):
+        bars_o.insert(c*2+1,v)
+      for c,v in enumerate(bar_x_high):
+        bars_h.insert(c*2+1,v)
+      for c,v in enumerate(bar_x_total):
+        vs.insert(c*2+1,v)
+      for c,v in enumerate(rs):
+        if c%2==0:
+          flags.insert(c,'o')
+        else:
+          flags.insert(c,'x')
+    #print(len(bars_o),len(bars_h),len(vs),len(flags))
+    #print(rx[0],ro[0])
+    df1=pd1.DataFrame({'bars_o':bars_o,'bars_h':bars_h,'bars_v':vs,'bars_flag':flags})
+    #print(df1)
+    df1.to_csv('/var/tmp/history/'+str(stock_symbol)+'_t1.csv',sep=',')
 
 def draw_pf(topy):
   global trend,trend_status,pH,pL,totalV,l,h,c,tpH,tpL,v,step,bar_x_high,bar_o_high,bar_x_bot,bar_o_bot,bar_x_total,bar_o_total,rx,ro,days,turnpoint
@@ -464,6 +516,7 @@ p_set=prepare_data()
 #print p_set[0],step
 if p_set[2] >0:
   draw_pf(p_set[2])
+  normalize_pf()
 else:
   print("No Result")
 

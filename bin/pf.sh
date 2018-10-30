@@ -24,8 +24,8 @@ if [ $(find /var/tmp/history -mtime -1|grep $symbol|wc -l) -eq 0  ];then
 	#echo Download Data
 fi
 
-python pf4.py $symbol $step 
-#python pf_k_history.py $symbol $step 
+#python pf4.py $symbol $step 
+python pf_k_history.py $symbol $step 
 #python pf_k_history.py $symbol $step > $xofile
 #python pf_s_history.py $symbol $step > $xofile
 
