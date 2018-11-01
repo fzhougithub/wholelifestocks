@@ -469,7 +469,7 @@ def draw_pf(topy):
   mpl.rcParams['axes.unicode_minus']=False # in case minus sign is shown as box
 
   
-  s_name=subprocess.check_output("python get_s_name.py "+stock_symbol+"|cut -d' ' -f2",shell=True)
+  s_name=subprocess.check_output('python get_s_name.py '+stock_symbol,shell=True)
   s_name=u''.join(ensure_unicode(s_name))
   print(s_name)
 
@@ -516,7 +516,7 @@ efile.close()
 p_set=prepare_data()
 #print p_set[0],p_set[1],p_set[2],step
 if p_set[2] >0:
-  draw_pf(p_set[2])
+#  draw_pf(p_set[2])
   normalize_pf()
 else:
   print("No Result")
