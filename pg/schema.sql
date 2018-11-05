@@ -1,3 +1,10 @@
+create schema pf;
+
+-- mkdir /Users/frank.zhou/postgres/data/test
+create tablespace test owner "wls" location '/Users/frank.zhou/postgres/data/test';
+
+create database test with owner='wls' encoding = 'utf8' tablespace = test ;
+
 -- Tablespace: fz
 
 -- DROP TABLESPACE fz;
@@ -126,3 +133,43 @@ $BODY$;
 ALTER FUNCTION public.show_up_candidates()
     OWNER TO wls;
 
+create table pf_bars_t1_set ( stime date,etime date,step numeric) inherits(pf_bars_t1);
+
+-- The table is according to tushare.get_hist_data(symbol) function, pandas dataframe
+create table s_history(
+symbol char(6),
+tdate date,
+o numeric,
+c numeric,
+h numeric,
+l numeric,
+v numeric,
+primary key (symbol,tdate)
+);
+
+create table s_basic(
+symbol char(6),
+name char(10),
+industry varchar(20),
+area varchar(20),
+pe numeric,
+outstanding numeric,
+totals numeric,
+totalAssets numeric,
+liquidAssets numeric,
+fixedAssets numeric,
+reserved numeric,
+reservedPerShare numeric,
+esp numeric,
+bvps numeric,
+pb numeric,
+timeToMarket  date,
+undp  numeric,
+perundp numeric,
+rev  numeric,
+profit numeric,
+gpr numeric,
+npr numeric,
+holders integer,
+primary key(symbol)
+);

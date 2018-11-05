@@ -19,4 +19,21 @@ grant all privileges on database postgres to wls;
 \list
 \dt
 
+GRANT ALL ON TABLE public.pf_bars_t1 TO wls WITH GRANT OPTION;
+
+GRANT ALL ON TABLE public.symbol_list TO wls WITH GRANT OPTION;
+
+GRANT ALL ON TABLE public.tmp_bar_t1 TO wls WITH GRANT OPTION;
+
+grant usage on schema pf to wls;
+
+grant select on all tables in schema public to wls;
+
+SHOW search_path;
+
+set search_path to "$user",pf,public;
+
+alter role wls set search_path to "$user",pf,public;
+
+
 

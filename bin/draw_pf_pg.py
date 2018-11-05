@@ -1,6 +1,8 @@
 #!/Library/Frameworks/Python.framework/Versions/2.7/bin/python
 # -*- coding: utf-8 -*-
 
+import datetime
+import psycopg2
 import math,datetime
 import numpy as np
 import numpy,csv,os,sys,subprocess
@@ -118,107 +120,6 @@ def trend_keep():
 #  print("trend_keep:"+str(trend)+"|"+str(totalV)+"|"+str(pH)+'|'+str(pL)+'|'+str(pH)+'|'+str(pL))
 #  print('trend_keep:h('+str(h)+')l('+str(l)+')pH('+str(pH)+')tpH('+str(tpH)+')tpL('+str(tpL)+')pL('+str(pL)+')totalV('+str(totalV)+')trend('+str(trend)+')')
 
-
-def trend_turn():
-  global trend,pH,pL,totalV,l,h,tpH,tpL,v,step,bar_x_high,bar_o_high,bar_x_bot,bar_o_bot,bar_x_total,bar_o_total,rx,ro
-  #print('trent:'+str(trend))
-  if (trend == 1):
-    trend=-1
-    if mod_up(h,step)>pH:
-       pH=mod_up(h,step)
-    bar_append('x')
-#    print("UpStop:bar_x_added:pL="+str(bar_x_bot[-1])+",pH="+str(bar_x_bot[-1]+bar_x_high[-1])+",rx="+str(rx[-1]))
-#    bar_error_check()
-#    print("X: pH="+str(pH)+",pL="+str(pL)+",v="+str(totalV)) 
-    pH=pH-step
-    tpH=pH-step*4
-    if tpH-step > mod_down(l,step):
-      pL=mod_down(l,step)
-    else:
-        pL=tpH-step
-    tpL=pL+step*4
-    totalV=v
-  elif (trend == -1):
-    trend=1
-    #print('changed from -1 to 1:'+str(trend))
-     #print("O,"+str(pH-pL)+","+str(pL)+","+str(totalV))
-    bar_append('o')
-#    print("DownStop:bar_o_added:pH="+str(bar_o_bot[-1]+bar_o_high[-1])+",pL="+str(bar_o_bot[-1])+",ro="+str(ro[-1]))
-#    bar_error_check()
-    pL=pL+step
-    tpL=pL+step*4
-    if tpL+step < mod_up(h,step):
-      pH=mod_up(h,step)
-    else:
-      pH=tpL+step
-    tpH=pH-step*4
-    totalV=v
-#  print('NewTrend('+str(trend)+') after set rx='+str(rx[-1])+'|ro='+str(ro[-1])+':h('+str(h)+')l('+str(l)+')pH('+str(pH)+')tpH('+str(tpH)+')tpL('+str(tpL)+')pL('+str(pL)+')totalV('+str(totalV))
-
-def trend_unknown():
-  global trend,pH,pL,totalV,c,l,h,tpH,tpL,v,step,bar_x_high,bar_o_high,bar_x_bot,bar_o_bot,bar_x_total,bar_o_total,rx,ro
-  if pH == pL and pH == 0:
-    pH=mod_up(h,step)
-    tpH=pH-4*step
-    pL=mod_down(l,step)
-    tpL=pL+4*step
-  elif mod_down(l,step)<pL:
-    pL=mod_down(l,step)
-    tpL=pL+4*step
-  elif mod_up(h,step)>pH:
-    pH=mod_up(h,step)
-    tpH=pH-4*step
-    totalV=totalV+v
-  if pH-pL > 5*step:
-    if l>tpH and c > tpH:
-      trend=1
-      rx.append(1)
-      ro.append(2)
-      trend_status='k'
-    elif h<tpL and c < tpL:
-      trend=-1
-      rx.append(2)
-      ro.append(1)
-      trend_status='k'
-  totalV=totalV+v
-#  print('trend_unknown:h('+str(h)+')l('+str(l)+')pH('+str(pH)+')pL('+str(pL)+')totalV('+str(totalV)+')trend('+str(trend)+')')
-
-def trend_rollback():
-  global trend,trend_status,pH,pL,totalV,l,h,tpH,tpL,v,step,bar_x_high,bar_o_high,bar_x_bot,bar_o_bot,bar_x_total,bar_o_total,rx,ro
-  if trend == 1:
-    trend = -1
-    trend_status='k'
-    pH=bar_o_bot[-1]+bar_o_high[-1]
-    tpH=pH-4*step
-    pL=bar_o_bot[-1]
-    tpL=pL+4*step
-    totalV=totalV+bar_o_total[-1]
-    bar_remove('o')
-#    print("bar_o_removed trend -1 pH="+str(pH)+",pL="+str(pL)+",rx"+str(rx[-1])+"|ro="+str(ro[-1])+'x_bot='+str(bar_x_bot[-1])+'x_high='+str(bar_x_high[-1]))
-#    bar_error_check()
-    trend_keep()
-  elif trend == -1:
-    trend = 1
-    trend_status='k'
-    pH=bar_x_bot[-1]+bar_x_high[-1]
-    tpH=pH-4*step
-    pL=bar_x_bot[-1]
-    tpL=pL+4*step
-    totalV=totalV+bar_x_total[-1]
-    bar_remove('x')
-#    print("bar_x_removed trend 1 pL="+str(pL)+",pH="+str(pH)+",rx="+str(rx[-1])+'|ro='+str(ro[-1])+',o_bot'+str(bar_o_bot[-1])+',o_high='+str(bar_o_high[-1]))
-#    bar_error_check()
-    trend_keep()
-#  print('trend_rollback:h('+str(h)+')l('+str(l)+')pH('+str(pH)+')tpH('+str(tpH)+')tpL('+str(tpL)+')pL('+str(pL)+')totalV('+str(totalV)+')trend('+str(trend)+')rx='+str(rx[-1])+'|ro='+str(ro[-1]))
-
-
-def check_result():
-  global trend,trend_status,pH,pL,totalV,l,h,tpH,tpL,v,step,bar_x_high,bar_o_high,bar_x_bot,bar_o_bot,bar_x_total,bar_o_total,rx,ro
-#  for i in range(len(rx)):
-     #print('rx='+str(rx[i])+',pL='+str(bar_x_bot[i])+',pH='+str(bar_x_bot[i]+bar_x_high[i]))
-#  print len(rx),len(bar_x_bot),len(bar_x_total),len(ro),len(bar_o_bot),len(bar_o_total)
-
-
 def final_bar():
   global trend,trend_status,pH,pL,totalV,l,h,tpH,tpL,v,step,bar_x_high,bar_o_high,bar_x_bot,bar_o_bot,bar_x_total,bar_o_total,rx,ro,turnpoint
   if trend_status == 'k':
@@ -242,159 +143,6 @@ def final_bar():
 filename="/var/tmp/history/" + stock_symbol
 #myfile=Path(filename)
 #histbars=numpy.loadtxt(open(filename,"rb"),delimiter=",",skiprows=0)
-
-
-def prepare_data():
-  global step,bar_x_high,bar_o_high,bar_x_bot,bar_o_bot,bar_x_total,bar_o_total,rx,ro,aset,days,stock_symbol
-  rr=[]
-  best_step=max_price=max_total_bar=0
-
-  if step == 0:
-    block=0.01
-    n=0
-    while (step < 10):
-#    while (step < 10 and max_total_bar<100):
-      n=n+1
-      step=step+block
-      #print(n, step,max_total_bar,max_price)
-      try:
-          r_set=calculate_dataset()
-#	if max_price < r_set[1]:
-          max_price=r_set[1]
-#        if max_total_bar < r_set[0]:
-          max_total_bar=r_set[0]
-          best_step=step
-          if max_total_bar>50:
-             rr.append([best_step,max_total_bar])
-        #print n,best_step,max_total_bar,max_price
-      except:
-        #print("Error: calculate_dataset:step="+str(step)+":"+str(best_step)+",max_total_bar="+str(max_total_bar))
-        pass
-    if len(rr)>0:
-      max_total_bar=100
-      for countr,v_rr in enumerate(rr):
-         b=v_rr[1]
-     #    print v_rr[0],v_rr[1]
-         if max_total_bar>=v_rr[1]:
-            max_total_bar=v_rr[1]
-            best_step=v_rr[0] 
-      step=best_step
-      #print step,max_total_bar
-      r_set=calculate_dataset()
-      max_total_bar=r_set[0]
-      max_price=r_set[1]
-      return best_step,max_total_bar,max_price
-    else:
-      print("Manually Check /var/tmp/history/"+stock_symbol)
-      return step,0,0
-  else:
-    r_set=calculate_dataset()
-    max_total_bar=r_set[0]
-    max_price=r_set[1]
-    return step,max_total_bar,max_price
-
-def calculate_dataset():
-  global trend,trend_status,pH,pL,totalV,l,h,c,tpH,tpL,v,step,bar_x_high,bar_o_high,bar_x_bot,bar_o_bot,bar_x_total,bar_o_total,rx,ro,aset,days
-
-  trend=0
-  v=h=l=o=c=totalV=pH=pL=tpL=tpH=y=0
-  maxy=0
-  bar_x_high=[]
-  bar_x_bot=[]
-  bar_o_high=[]
-  bar_o_bot=[]
-  bar_x_total=[]
-  bar_o_total=[]
-  rx=[]
-  ro=[]
-  days=[]
-
-  trend_status='k'
-
-  for counter,row in enumerate(aset):
-    if (counter>1):
-      days.append(row[1])
-      h=float(row[4])
-      c=float(row[3])
-      l=float(row[5])
-      v=float(row[6])
-      #print('eReader:'+str(eReader.line_num)+'|'+str(h)+'|'+str(l)+'|'+str(c)+'|'+str(v))
-      if (trend == 0 or pH-pL<4*step ):
-        trend_unknown()
-        trend_status='u'
-      if ((c >= tpH and trend == 1) or ( c <= tpL and trend == -1)):
-        trend_keep()
-        trend_status='k'
-      elif ((c <tpH and trend == 1) or ( c > tpL and trend == -1)):
-        if trend_status =='k':
-          trend_turn()
-          trend_status='t' 
-        elif trend_status =='t' and len(rx) > 3 and len(ro) > 3:
-          trend_rollback()
-          trend_status='k'
-  final_bar()
-  total_bars=len(ro)+len(rx)
-  if total_bars>1:
-    yxl=[]
-    ybl=[]
-    for xb,xh in zip(bar_x_bot,bar_x_high):
-      yxl.append(xb+xh)
-    for ob,oh in zip(bar_o_bot,bar_o_high):
-      ybl.append(ob+oh)
-    maxy=max(max(yxl),max(ybl))
-    miny=min(min(bar_x_bot),min(bar_o_bot))
-  #print total_bars,maxy
-  return total_bars,maxy,miny
-
-def normalize_pf():
-  global trend,trend_status,pH,pL,totalV,l,h,c,tpH,tpL,v,step,bar_x_high,bar_o_high,bar_x_bot,bar_o_bot,bar_x_total,bar_o_total,rx,ro,days,turnpoint,pd1
-  rs=[]
-  bars_o=[]
-  bars_h=[]
-  vs=[]
-  flags=[]
-  if len(rx)>0 and len(ro)>0:
-    if rx[0]==1:
-      rs=rx
-      bars_o=bar_x_bot
-      bars_h=bar_x_high
-      vs=bar_x_total
-      for c,v in enumerate(ro):
-        rs.insert(c*2+1,v)
-      for c,v in enumerate(bar_o_bot):
-        bars_o.insert(c*2+1,v)
-      for c,v in enumerate(bar_o_high):
-        bars_h.insert(c*2+1,v)
-      for c,v in enumerate(bar_o_total):
-        vs.insert(c*2+1,v)
-      for c,v in enumerate(rs):
-        if c%2==0:
-          flags.insert(c,'x')
-        else:
-          flags.insert(c,'o')
-    else:
-      rs=ro
-      bars_o=bar_o_bot
-      bars_h=bar_o_high
-      vs=bar_o_total
-      for c,v in enumerate(rx):
-        rs.insert(c*2+1,v)
-      for c,v in enumerate(bar_x_bot):
-        bars_o.insert(c*2+1,v)
-      for c,v in enumerate(bar_x_high):
-        bars_h.insert(c*2+1,v)
-      for c,v in enumerate(bar_x_total):
-        vs.insert(c*2+1,v)
-      for c,v in enumerate(rs):
-        if c%2==0:
-          flags.insert(c,'o')
-        else:
-          flags.insert(c,'x')
-    #print(len(bars_o),len(bars_h),len(vs),len(flags))
-    #print(rx[0],ro[0])
-    df1=pd1.DataFrame({'bars_o':bars_o,'bars_h':bars_h,'bars_v':vs,'bars_flag':flags})
-    #print(df1)
-    df1.to_csv('/var/tmp/history/'+str(stock_symbol)+'_t1.csv',sep=',')
 
 def draw_pf(topy):
   global trend,trend_status,pH,pL,totalV,l,h,c,tpH,tpL,v,step,bar_x_high,bar_o_high,bar_x_bot,bar_o_bot,bar_x_total,bar_o_total,rx,ro,days,turnpoint
@@ -489,6 +237,7 @@ def draw_pf(topy):
 
 #  axes[0].text(len(ro)+len(rx), turnpoint, turnpoint,va='center', ha="right", bbox=dict(facecolor="yellow",alpha=0.5), transform=axes[0].get_yaxis_transform())
   #axes[0].text(len(ro)+len(rx), turnpoint, str(turnpoint),fontsize='xx-small', va='center', ha="right", bbox=dict(facecolor="yellow",alpha=0.5), transform=axes[0].get_yaxis_transform())
+
   #axes[0].text(len(ro)+len(rx), (turnpoint-ymin+space)/(ymax-ymin+space), str(turnpoint),fontsize='xx-small', va='center', ha="right", bbox=dict(facecolor="yellow",alpha=0.5), transform=axes[0].get_yaxis_transform())
   #print turnpoint
   a=datetime.datetime.now()
@@ -500,27 +249,71 @@ def draw_pf(topy):
   #print rx[0],bar_x_bot[0],bar_x_high[0]
   plt.show()
 
+def load_bars_t1(source_type):
+  global trend,trend_status,pH,pL,totalV,l,h,c,tpH,tpL,v,step,bar_x_high,bar_o_high,bar_x_bot,bar_o_bot,bar_x_total,bar_o_total,rx,ro,days,turnpoint
+
+  vflag=''
+  vseq=vbase=vadd=vvolume=min_price=max_price=max_total_bar=0
+  if source_type=='postgresql':
+      hostname='localhost'; username='wls'; password='wholelifestocks'; database='fzdb'
+
+      conn=psycopg2.connect(host=hostname,user=username,password=password,dbname=database)
+      cur = conn.cursor()
+      sql="select seq,flag,cast(low as float),cast(high as float),cast(volume as float) from pf_bars_t1 where symbol='"+stock_symbol+"' order by seq"
+      cur.execute (sql)
+      #for record in cur:
+      for vseq,vflag,vbase,vadd,vvolume in cur:
+        #print record 
+        print vseq,vflag,vbase,vadd,vvolume
+        if vflag == 'x':
+	  rx.append(vseq+1)
+          bar_x_bot.append(vbase)
+          bar_x_high.append(vadd)
+          bar_x_total.append(vvolume)
+          trend=1    
+        elif vflag == 'o':
+          ro.append(vseq+1)
+          bar_o_bot.append(vbase)
+          bar_o_high.append(vadd)
+          bar_o_total.append(vvolume)
+          trend=-1
+      max_total_bar=cur.rowcount
+      cur.close()
+      sql="select cast(min(low) as float),cast(max(low+high) as float) from pf_bars_t1 where symbol='"+stock_symbol+"'"  
+      cur=conn.cursor()
+      cur.execute(sql)
+      for min_price,max_price in cur.fetchall():
+        continue
+  trend_status='k'      
+  return step, max_total_bar,max_price 
 
 #==== Main ===========================
 if stock_symbol is None:
   print("Must input correct stock symbol")
   exit(100)
   
-efile=open(filename)
-eReader=csv.reader(efile,delimiter=',')
-for row in eReader:
-  aset.append([row[0],row[1],row[2],row[3],row[4],row[5],row[6],row[7]])
-efile.close()
-#print(aset)
 
-p_set=prepare_data()
+p_set=load_bars_t1("postgresql")
+#TODO: 1. Date need to be added into the bar, but, how to organize the original calculation fomular is headache
+#TODO: 2. Turnpoint, phL and plH how to keep track? or just based on the following data?  
+#=====================
+days.append('2016-01-01')
+now = datetime.datetime.now()
+days.append(now.strftime("%Y-%m-%d"))
+turnpoint=(p_set[1]+p_set[2])/2
+#=====================
+
+
 #print p_set[0],p_set[1],p_set[2],step
+#print len(rx),len(bar_x_bot),len(bar_x_high),len(bar_x_total) 
+#print len(ro),len(bar_o_bot),len(bar_o_high),len(bar_o_total)
+#print rx,bar_x_bot,bar_x_high,bar_x_total
+#print ro,bar_o_bot,bar_o_high,bar_o_total
+print p_set
 if p_set[2] >0:
-  print p_set[1],p_set[2]
   draw_pf(p_set[2])
-  normalize_pf()
 else:
   print("No Result")
-
+  
 exit(0)
 
