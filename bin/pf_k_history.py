@@ -393,7 +393,9 @@ def normalize_pf():
     #print(len(bars_o),len(bars_h),len(vs),len(flags))
     #print(rx[0],ro[0])
     df1=pd1.DataFrame({'bars_o':bars_o,'bars_h':bars_h,'bars_v':vs,'bars_flag':flags})
-    #print(df1)
+    print bars_o[0]
+    print bars_h[0]
+    print df1.iloc[0]
     df1.to_csv('/var/tmp/history/'+str(stock_symbol)+'_t1.csv',sep=',')
 
 def draw_pf(topy):
@@ -516,7 +518,9 @@ efile.close()
 p_set=prepare_data()
 #print p_set[0],p_set[1],p_set[2],step
 if p_set[2] >0:
-  print p_set[1],p_set[2]
+#  print p_set[1],p_set[2]
+#  print rx[0],bar_x_bot[0],bar_x_high[0]
+#  print ro[0],bar_o_bot[0],bar_o_high[0]
   draw_pf(p_set[2])
   normalize_pf()
 else:

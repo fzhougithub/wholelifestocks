@@ -35,114 +35,12 @@ rx=[]
 ro=[]
 days=[]
 aset=[]
+filename="/var/tmp/history/" + stock_symbol
 
 def ensure_unicode(v):
     if isinstance(v, str):
         v = v.decode('utf8')
     return unicode(v)  # convert anything not a string to unicode too
-
-def bar_append(bar_type):
-   global pH,pL,totalV,rx,ro,bar_x_high,bar_x_bot,bar_o_high,bar_o_bot 
-   if bar_type == 'x':
-     if len(rx) == len(bar_x_high):
-       rx.append(rx[-1]+2)
-     bar_x_high.append(pH-pL)
-     bar_x_bot.append(pL)
-     bar_x_total.append(totalV)
-   elif bar_type == 'o':
-     if len(ro) == len(bar_o_high):
-       ro.append(ro[-1]+2)
-     bar_o_high.append(pH-pL)
-     bar_o_bot.append(pL)
-     bar_o_total.append(totalV)
-
-def bar_remove(bar_type):
-   global pH,pL,totalV,rx,ro,bar_x_high,bar_x_bot,bar_o_high,bar_o_bot
-   if bar_type == 'x':
-     p=len(bar_x_bot)-1
-     del bar_x_bot[p]
-     del bar_x_high[p]
-     del bar_x_total[p]
-     del rx[p]
-   elif bar_type == 'o':
-     p=len(bar_o_bot)-1
-     del bar_o_bot[p]
-     del bar_o_high[p]
-     del bar_o_total[p]
-     del ro[p]
-
-def mod_up(x,unit):
-  n=0
-  if x>unit:
-    rmod=math.modf(x/unit)
-    if rmod[0]>unit/2:
-      n=rmod[1]+1
-    else:
-      n=rmod[1]
-    return n*unit
-
-def mod_down(x,unit):
-  n=0
-  if x>unit:
-    rmod=math.modf(x/unit)
-    if rmod[0]>unit/2:
-      n=rmod[1]+1
-    else:
-      n=rmod[1]
-    return n*unit
-  else:
-    return x
-	
-#def bar_error_check():
-#  global trend,pH,pL,totalV,l,h,tpH,tpL,v,step,bar_x_high,bar_o_high,bar_x_bot,bar_o_bot,bar_x_total,bar_o_total,rx,ro
-#  if rx[-1]>ro[-1] and len(bar_x_bot)>0 and len(bar_o_bot)>0:
-#     if bar_x_bot[-1]-bar_o_bot[-1]-step <>0:
-#       print('Error1: rx='+str(rx[-1])+' ro='+str(ro[-1]))
-#  elif rx[-1]<ro[-1] and len(bar_x_bot)>0 and len(bar_o_bot)>0:
-#     if bar_x_bot[-1]+bar_x_high[-1]-step <> bar_o_bot[-1]+bar_o_high[-1]:
-#       print('Error2: rx='+str(rx[-1])+' ro='+str(ro[-1])+' rx_high='+str(bar_x_bot[-1]+bar_x_high[-1])+' ro_high='+str(bar_o_bot[-1]+bar_o_high[-1]))
-
-def trend_keep():
-  global trend,pH,h,pL,l,totalV,tpH,tpL,step,v
-  if trend == 1: 
-    if pH < mod_up(h,step):
-       pH=mod_up(h,step)
-    tpH=pH-step*4
-    if pL == 0:
-      pL = mod_down(l,step)
-  elif trend == -1:
-    if pL>mod_down(l,step):
-       pL=mod_down(l,step)
-    tpL=pL+step*4
-    if pH == 0:
-      pH = mod_up(h,step)
-  totalV=totalV+v
-#  print("trend_keep:"+str(trend)+"|"+str(totalV)+"|"+str(pH)+'|'+str(pL)+'|'+str(pH)+'|'+str(pL))
-#  print('trend_keep:h('+str(h)+')l('+str(l)+')pH('+str(pH)+')tpH('+str(tpH)+')tpL('+str(tpL)+')pL('+str(pL)+')totalV('+str(totalV)+')trend('+str(trend)+')')
-
-def final_bar():
-  global trend,trend_status,pH,pL,totalV,l,h,tpH,tpL,v,step,bar_x_high,bar_o_high,bar_x_bot,bar_o_bot,bar_x_total,bar_o_total,rx,ro,turnpoint
-  if trend_status == 'k':
-    if trend == 1:
-      bar_append('x')
-      turnpoint=tpH
-      #print step, bar_x_bot[-1],bar_x_bot[-1]+bar_x_high[-1]
-    elif trend == -1:
-      bar_append('o')
-      turnpoint=tpL
-      #print step, bar_o_bot[-1],bar_o_bot[-1]+bar_o_high[-1]
-  if trend_status == 't':
-    if trend == 1:
-      bar_append('x')
-      turnpoint=tpH
-    elif trend == -1:
-      bar_append('o') 
-      turnpoint=tpL
-  
-#print(stock_symbol)
-filename="/var/tmp/history/" + stock_symbol
-#myfile=Path(filename)
-#histbars=numpy.loadtxt(open(filename,"rb"),delimiter=",",skiprows=0)
 
 def draw_pf(topy):
   global trend,trend_status,pH,pL,totalV,l,h,c,tpH,tpL,v,step,bar_x_high,bar_o_high,bar_x_bot,bar_o_bot,bar_x_total,bar_o_total,rx,ro,days,turnpoint
@@ -256,14 +154,11 @@ def load_bars_t1(source_type):
   vseq=vbase=vadd=vvolume=min_price=max_price=max_total_bar=0
   if source_type=='postgresql':
       hostname='localhost'; username='wls'; password='wholelifestocks'; database='fzdb'
-
       conn=psycopg2.connect(host=hostname,user=username,password=password,dbname=database)
       cur = conn.cursor()
       sql="select seq,flag,cast(low as float),cast(high as float),cast(volume as float) from pf_bars_t1 where symbol='"+stock_symbol+"' order by seq"
       cur.execute (sql)
-      #for record in cur:
       for vseq,vflag,vbase,vadd,vvolume in cur:
-        #print record 
         print vseq,vflag,vbase,vadd,vvolume
         if vflag == 'x':
 	  rx.append(vseq+1)
@@ -271,12 +166,14 @@ def load_bars_t1(source_type):
           bar_x_high.append(vadd)
           bar_x_total.append(vvolume)
           trend=1    
+          turnpoint=vbase+vadd-4*step
         elif vflag == 'o':
           ro.append(vseq+1)
           bar_o_bot.append(vbase)
           bar_o_high.append(vadd)
           bar_o_total.append(vvolume)
           trend=-1
+          turnpoint=vbase+4*step
       max_total_bar=cur.rowcount
       cur.close()
       sql="select cast(min(low) as float),cast(max(low+high) as float) from pf_bars_t1 where symbol='"+stock_symbol+"'"  
@@ -285,6 +182,12 @@ def load_bars_t1(source_type):
       for min_price,max_price in cur.fetchall():
         continue
   trend_status='k'      
+  c=turnpoint
+  tpH=(vbase+vadd)-4*step
+  tpL=vbase+4*step
+  #print rx[0],ro[0]
+  #print rx[0],bar_x_bot[0],bar_x_high[0]
+  #print ro[0],bar_o_bot[0],bar_o_high[0]
   return step, max_total_bar,max_price 
 
 #==== Main ===========================
@@ -300,7 +203,6 @@ p_set=load_bars_t1("postgresql")
 days.append('2016-01-01')
 now = datetime.datetime.now()
 days.append(now.strftime("%Y-%m-%d"))
-turnpoint=(p_set[1]+p_set[2])/2
 #=====================
 
 
