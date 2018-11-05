@@ -78,8 +78,8 @@ CREATE TABLE public.pf_bars_t1
     symbol character(6) COLLATE pg_catalog."default" NOT NULL,
     seq integer NOT NULL,
     flag character(1) COLLATE pg_catalog."default",
-    low numeric,
     high numeric,
+    low numeric,
     volume numeric,
     CONSTRAINT pf_bars_t1_pk PRIMARY KEY (symbol, seq)
         USING INDEX TABLESPACE fz
@@ -88,6 +88,28 @@ WITH (
     OIDS = FALSE
 )
 TABLESPACE fz;
+
+-- Table: public.pf_bars_t1_info
+
+-- DROP TABLE public.pf_bars_t1_info;
+
+CREATE TABLE public.pf_bars_t1_info
+(
+    symbol character(6) COLLATE pg_catalog."default" NOT NULL,
+    seq integer NOT NULL,
+    step numeric,
+    s_date date,
+    e_date date,
+    CONSTRAINT pf_bars_t1_info_pkey PRIMARY KEY (symbol, seq)
+        USING INDEX TABLESPACE fz
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE fz;
+
+ALTER TABLE public.pf_bars_t1_info
+    OWNER to wls;
 
 ALTER TABLE public.pf_bars_t1
     OWNER to wls;
@@ -173,3 +195,33 @@ npr numeric,
 holders integer,
 primary key(symbol)
 );
+
+-- FUNCTION: public.s_history_finalday(character)
+
+-- DROP FUNCTION public.s_history_finalday(character);
+-- FUNCTION: public.s_history_finalday(character)
+
+-- DROP FUNCTION public.s_history_finalday(character);
+
+CREATE OR REPLACE FUNCTION public.s_history_finalday(
+	v_symbol character)
+    RETURNS text
+    LANGUAGE 'plpgsql'
+
+    COST 100
+    VOLATILE 
+AS $BODY$
+
+declare
+r text;
+
+begin
+  select case when max(tdate) is null then '1990-01-01' else max(tdate) end into r from s_history where symbol=v_symbol;
+  return r;
+end;
+
+$BODY$;
+
+ALTER FUNCTION public.s_history_finalday(character)
+    OWNER TO "frank.zhou";
+
