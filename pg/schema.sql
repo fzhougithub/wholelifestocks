@@ -253,4 +253,6 @@ ALTER FUNCTION public.s_history_finalday(character)
 
 create unique index u1_pf_bars_t1 on pf_bars_t1(symbol,flag,bar_s,bar_e);
 
+create type s_history_type as (tdate text,open text,close text,high text,low text,volumn text);
+
 

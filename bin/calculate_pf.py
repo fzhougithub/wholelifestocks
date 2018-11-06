@@ -19,6 +19,7 @@ import matplotlib.gridspec as gridspec
 from matplotlib import rc
 from pathlib import Path
 from sqlalchemy import create_engine
+from shlex import split
 import psycopg2
 import collections
 
@@ -571,10 +572,27 @@ def get_history_file():
   for row in eReader:
     aset.append([row[0],row[1],row[2],row[3],row[4],row[5],row[6],row[7]])
   efile.close()
-  #print(aset)
+  print(aset)
 
+def get_history_db():
+  global trend,trend_status,pH,pL,totalV,l,h,c,tpH,tpL,v,step,bar_x_high,bar_o_high,bar_x_bot,bar_o_bot,bar_x_total,bar_o_total,rx,ro,days,turnpoint,pd1,bar_x_start,bar_o_start,bar_x_end,bar_o_end,hostname,username,password,dbname,stock_symbol,step_type
+  conn=psycopg2.connect(host=hostname,user=username,password=password,dbname=database)
+  cur=conn.cursor()
+  if step == 0:
+    sql="select get_pf_step('"+stock_symbol+"','t1')"
+    cur.execute(sql)
+    conn.commit()
+    for p in cur.fetchone():
+      step=float(p)
+  sql="select get_s_history_t1('"+stock_symbol+"')"
+  cur.execute(sql)
+  for s in cur.fetchall():
+    row=str(s).translate(None,'()\'').split(',')
+    aset.append([0,row[0],row[1],row[2],row[3],row[4],row[5],stock_symbol])
+  #print aset[-1]  
+ 
 def calculate_t1():
-  global trend,pH,pL,totalV,l,h,tpH,tpL,v,step,bar_x_high,bar_o_high,bar_x_bot,bar_o_bot,bar_x_total,bar_o_total,rx,ro,bar_x_start,bar_o_start,bar_x_end,bar_o_end,start,end,days
+  global trend,pH,pL,totalV,l,h,tpH,tpL,v,step,bar_x_high,bar_o_high,bar_x_bot,bar_o_bot,bar_x_total,bar_o_total,rx,ro,bar_x_start,bar_o_start,bar_x_end,bar_o_end,start,end,days,stock_symbol
   p_set=prepare_data()
   #print p_set[0],p_set[1],p_set[2],step
   if p_set[2] >0:
@@ -584,7 +602,9 @@ def calculate_t1():
     print("No Result")
 
 #==========Main Code===============
-get_history_file()
+#get_history_file()
+get_history_db()
+
 if step_type == 't1':
   calculate_t1()
 else:
