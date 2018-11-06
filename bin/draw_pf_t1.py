@@ -21,8 +21,9 @@ from pathlib import Path
 
 #https://stackoverflow.com/questions/5423381/checking-if-sys-argvx-is-defined
 stock_symbol=sys.argv[1]
-step=float(sys.argv[2])
+#step=float(sys.argv[2])
 
+step=0
 trend=0
 v=h=l=o=c=totalV=pH=pL=tpL=tpH=0
 bar_x_high=[]
@@ -148,7 +149,7 @@ def draw_pf(topy):
   plt.show()
 
 def load_bars_t1(source_type):
-  global trend,trend_status,pH,pL,totalV,l,h,c,tpH,tpL,v,step,bar_x_high,bar_o_high,bar_x_bot,bar_o_bot,bar_x_total,bar_o_total,rx,ro,days,turnpoint
+  global trend,trend_status,pH,pL,totalV,l,h,c,tpH,tpL,v,step,bar_x_high,bar_o_high,bar_x_bot,bar_o_bot,bar_x_total,bar_o_total,rx,ro,days,turnpoint,stock_symbol
 
   vflag=''
   vseq=vbase=vadd=vvolume=min_price=max_price=max_total_bar=0
@@ -156,6 +157,14 @@ def load_bars_t1(source_type):
       hostname='localhost'; username='wls'; password='wholelifestocks'; database='fzdb'
       conn=psycopg2.connect(host=hostname,user=username,password=password,dbname=database)
       cur = conn.cursor()
+      sql="select step from pf_bars_info where symbol='"+stock_symbol+"'"
+      cur.execute(sql)
+      conn.commit()
+      if cur.rowcount == 0:
+        print("There is no pf bars calculated")
+        exit(200)
+      for p in cur.fetchone():
+        step=float(p)
       sql="select seq,flag,cast(low as float),cast(high as float),cast(volume as float) from pf_bars_t1 where symbol='"+stock_symbol+"' order by seq"
       cur.execute (sql)
       for vseq,vflag,vbase,vadd,vvolume in cur:

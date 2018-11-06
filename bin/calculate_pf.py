@@ -457,6 +457,9 @@ def normalize_pf():
       #print sql
       cur.execute(sql%float(step))
       conn.commit()
+      sql="select update_pf_bars_t1('"+stock_symbol+"')"
+      cur.execute(sql)
+      conn.commit()
       cur.close()
       #print(df1)
       #df1.to_csv('/var/tmp/history/'+str(stock_symbol)+'_t1.csv',sep=',')

@@ -255,4 +255,68 @@ create unique index u1_pf_bars_t1 on pf_bars_t1(symbol,flag,bar_s,bar_e);
 
 create type s_history_type as (tdate text,open text,close text,high text,low text,volumn text);
 
+-- Below function took long time, lots of tricky, better keep it before recall all of the logic
+-- FUNCTION: public.update_pf_bars_t1(character)
+
+-- DROP FUNCTION public.update_pf_bars_t1(character);
+
+CREATE OR REPLACE FUNCTION public.update_pf_bars_t1(
+	v_symbol character)
+    RETURNS integer
+    LANGUAGE 'plpgsql'
+
+    COST 100
+    VOLATILE 
+AS $BODY$
+
+declare
+  r integer;
+  n integer;
+  l_symbol text;
+  l_seq integer;
+  n_seq integer;
+  l_flag character;
+  l_high numeric;
+  l_low numeric;
+  l_volume numeric;
+  l_bar_s date;
+  l_bar_e date;
+  n_cnt integer;
+  i integer;
+  query text;
+  ref refcursor;
+begin
+  execute 'select count(1) from pf_bars_t1 where symbol=$1' into n using v_symbol;
+  if n=0 then
+    execute 'insert into pf_bars_t1 select $1,index,bars_flag,bars_h,bars_o,bars_v,to_date(bars_s,''yyyy-mm-dd''),to_date(bars_e,''yyyy-mm-dd'') from tmp_pf_bars_t1 on conflict (symbol,flag,bar_s,bar_e) DO NOTHING' using v_symbol;			 
+  else
+    execute 'select symbol,seq,flag,bar_s,bar_e from pf_bars_t1 where symbol=$1 and bar_s=(select max(bar_s) from pf_bars_t1 where symbol=$1)' into l_symbol,l_seq,l_flag,l_bar_s,l_bar_e using v_symbol;
+	execute 'select count(1) from tmp_pf_bars_t1 where to_date(bars_s,''yyyy-mm-dd'') >= (select max(bar_s) from pf_bars_t1 where symbol=$1)' into r using v_symbol;
+	if r>=1 then
+--	  execute 'delete from pf_bars_t1 where symbol=$1 and seq=$2' using l_symbol,l_seq;
+--	  execute 'insert into pf_bars_t1 select $1,$2,bars_flag,bars_h,bars_o,bars_v,to_date(bars_s,''yyyy-mm-dd''),to_date(bars_e,''yyyy-mm-dd'') from tmp_pf_bars_t1 where bars_s=(select max(bars_s) from tmp_pf_bars_t1)' using l_symbol,l_seq;
+--    else if r>1 then
+--	  query:='select tdate,o,c,h,l,v from s_history where symbol=$1 order by tdate';
+--	  open ref for execute query using v_symbol;
+--	end if;
+      query:='select bars_flag,bars_h,bars_o,bars_v,to_date(bars_s,''yyyy-mm-dd''),to_date(bars_e,''yyyy-mm-dd'') from tmp_pf_bars_t1 where to_date(bars_s,''yyyy-mm-dd'')>=(select max(bar_s) from pf_bars_t1 where symbol=$1) order by to_date(bars_s,''yyyy-mm-dd'')';
+      open ref for execute query using v_symbol;
+      execute 'delete from pf_bars_t1 where symbol=$1 and seq=$2' using l_symbol,l_seq;
+	  i:=0;
+      loop
+	    fetch ref into l_flag,l_high,l_low,l_volume,l_bar_s,l_bar_e;
+	      EXIT WHEN NOT FOUND;
+		  n_seq:=l_seq+i;
+		  execute 'insert into pf_bars_t1 values($1,$2,$3,$4,$5,$6,$7,$8)' using l_symbol,n_seq,l_flag,l_high,l_low,l_volume,l_bar_s,l_bar_e;
+          i:=i+1;
+	  end loop;
+	end if;
+  end if;
+  return i;	
+end;
+
+$BODY$;
+
+ALTER FUNCTION public.update_pf_bars_t1(character)
+    OWNER TO "frank.zhou";
 

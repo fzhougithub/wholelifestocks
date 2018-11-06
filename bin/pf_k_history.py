@@ -298,7 +298,7 @@ def calculate_dataset():
 
   trend=0
   v=h=l=o=c=totalV=pH=pL=tpL=tpH=y=0
-  maxy=0
+  maxy=miny=0
   bar_x_high=[]
   bar_x_bot=[]
   bar_o_high=[]
