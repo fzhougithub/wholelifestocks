@@ -225,3 +225,32 @@ $BODY$;
 ALTER FUNCTION public.s_history_finalday(character)
     OWNER TO "frank.zhou";
 
+-- FUNCTION: public.s_history_finalday(character)
+
+-- DROP FUNCTION public.s_history_finalday(character);
+
+CREATE OR REPLACE FUNCTION public.s_history_finalday(
+	v_symbol character)
+    RETURNS text
+    LANGUAGE 'plpgsql'
+
+    COST 100
+    VOLATILE 
+AS $BODY$
+
+declare
+r text;
+
+begin
+  select case when max(tdate) is null then '1990-01-01' else max(tdate) end into r from s_history where symbol=v_symbol;
+  return r;
+end;
+
+$BODY$;
+
+ALTER FUNCTION public.s_history_finalday(character)
+    OWNER TO "frank.zhou";
+
+create unique index u1_pf_bars_t1 on pf_bars_t1(symbol,flag,bar_s,bar_e);
+
+

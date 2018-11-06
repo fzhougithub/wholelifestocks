@@ -1,6 +1,10 @@
 #!/Library/Frameworks/Python.framework/Versions/2.7/bin/python
 # -*- coding: utf-8 -*-
 
+# The default calculation is t1, pickup step for min(bars)>50. 
+# If the step is given, means fix step calculation. 
+# The step calculation better be organized outside, 4 types of steps can be implemented. 
+
 import math,datetime
 import numpy as np
 import numpy,csv,os,sys,subprocess
@@ -14,21 +18,46 @@ import matplotlib as mpl
 import matplotlib.gridspec as gridspec
 from matplotlib import rc
 from pathlib import Path
+from sqlalchemy import create_engine
+import psycopg2
+import collections
+
 #reload(sys)
 #sys.setdefaultencoding('utf-8')
 
 #https://stackoverflow.com/questions/5423381/checking-if-sys-argvx-is-defined
-stock_symbol=sys.argv[1]
-step=float(sys.argv[2])
+
+arg_names = ['command', 'symbol_name', 'step']
+args = dict(zip(arg_names, sys.argv))
+Arg_list = collections.namedtuple('Arg_list', arg_names)
+args = Arg_list(*(args.get(arg, None) for arg in arg_names))
+if args[1] is None:
+  print("Need to passin symbol")
+  exit(100)
+else:
+  stock_symbol=args[1]
+#stock_symbol=sys.argv[1]
+
+if args[2] is None:
+  step=0
+  step_type='t1'
+else:
+  step=args[2]
+  step_type='other'
 
 trend=0
 v=h=l=o=c=totalV=pH=pL=tpL=tpH=0
+hostname='localhost'; username='wls'; password='wholelifestocks'; database='fzdb'
 bar_x_high=[]
 bar_x_bot=[]
 bar_o_high=[]
 bar_o_bot=[]
 bar_x_total=[]
 bar_o_total=[]
+bar_x_start=[]
+bar_o_start=[]
+bar_x_end=[]
+bar_o_end=[]
 rx=[]
 ro=[]
 days=[]
@@ -40,34 +69,45 @@ def ensure_unicode(v):
     return unicode(v)  # convert anything not a string to unicode too
 
 def bar_append(bar_type):
-   global pH,pL,totalV,rx,ro,bar_x_high,bar_x_bot,bar_o_high,bar_o_bot 
+   global pH,pL,totalV,rx,ro,bar_x_high,bar_x_bot,bar_o_high,bar_o_bot,bar_x_start,bar_o_start,bar_x_end,bar_o_end,start,end,days 
    if bar_type == 'x':
      if len(rx) == len(bar_x_high):
        rx.append(rx[-1]+2)
      bar_x_high.append(pH-pL)
      bar_x_bot.append(pL)
      bar_x_total.append(totalV)
+     bar_x_start.append(start)
+     bar_x_end.append(days[-1])
    elif bar_type == 'o':
      if len(ro) == len(bar_o_high):
        ro.append(ro[-1]+2)
      bar_o_high.append(pH-pL)
      bar_o_bot.append(pL)
      bar_o_total.append(totalV)
+     bar_o_start.append(start)
+     bar_o_end.append(days[-1])
+   start=days[-1]
 
 def bar_remove(bar_type):
-   global pH,pL,totalV,rx,ro,bar_x_high,bar_x_bot,bar_o_high,bar_o_bot
+   global pH,pL,totalV,rx,ro,bar_x_high,bar_x_bot,bar_o_high,bar_o_bot,bar_x_start,bar_o_start,bar_x_end,bar_o_end,days,start,end
    if bar_type == 'x':
      p=len(bar_x_bot)-1
      del bar_x_bot[p]
      del bar_x_high[p]
      del bar_x_total[p]
      del rx[p]
+     start=bar_x_start[p]
+     del bar_x_start[p]
+     del bar_x_end[p]
    elif bar_type == 'o':
      p=len(bar_o_bot)-1
      del bar_o_bot[p]
      del bar_o_high[p]
      del bar_o_total[p]
      del ro[p]
+     start=bar_o_start[p]
+     del bar_o_start[p]
+     del bar_o_end[p]
 
 def mod_up(x,unit):
   n=0
@@ -91,15 +131,6 @@ def mod_down(x,unit):
   else:
     return x
 	
-#def bar_error_check():
-#  global trend,pH,pL,totalV,l,h,tpH,tpL,v,step,bar_x_high,bar_o_high,bar_x_bot,bar_o_bot,bar_x_total,bar_o_total,rx,ro
-#  if rx[-1]>ro[-1] and len(bar_x_bot)>0 and len(bar_o_bot)>0:
-#     if bar_x_bot[-1]-bar_o_bot[-1]-step <>0:
-#       print('Error1: rx='+str(rx[-1])+' ro='+str(ro[-1]))
-#  elif rx[-1]<ro[-1] and len(bar_x_bot)>0 and len(bar_o_bot)>0:
-#     if bar_x_bot[-1]+bar_x_high[-1]-step <> bar_o_bot[-1]+bar_o_high[-1]:
-#       print('Error2: rx='+str(rx[-1])+' ro='+str(ro[-1])+' rx_high='+str(bar_x_bot[-1]+bar_x_high[-1])+' ro_high='+str(bar_o_bot[-1]+bar_o_high[-1]))
-
 def trend_keep():
   global trend,pH,h,pL,l,totalV,tpH,tpL,step,v
   if trend == 1: 
@@ -120,7 +151,7 @@ def trend_keep():
 
 
 def trend_turn():
-  global trend,pH,pL,totalV,l,h,tpH,tpL,v,step,bar_x_high,bar_o_high,bar_x_bot,bar_o_bot,bar_x_total,bar_o_total,rx,ro
+  global trend,pH,pL,totalV,l,h,tpH,tpL,v,step,bar_x_high,bar_o_high,bar_x_bot,bar_o_bot,bar_x_total,bar_o_total,rx,ro,bar_x_start,bar_o_start,bar_x_end,bar_o_end,start,end,days
   #print('trent:'+str(trend))
   if (trend == 1):
     trend=-1
@@ -156,7 +187,9 @@ def trend_turn():
 #  print('NewTrend('+str(trend)+') after set rx='+str(rx[-1])+'|ro='+str(ro[-1])+':h('+str(h)+')l('+str(l)+')pH('+str(pH)+')tpH('+str(tpH)+')tpL('+str(tpL)+')pL('+str(pL)+')totalV('+str(totalV))
 
 def trend_unknown():
-  global trend,pH,pL,totalV,c,l,h,tpH,tpL,v,step,bar_x_high,bar_o_high,bar_x_bot,bar_o_bot,bar_x_total,bar_o_total,rx,ro
+  global trend,pH,pL,totalV,c,l,h,tpH,tpL,v,step,bar_x_high,bar_o_high,bar_x_bot,bar_o_bot,bar_x_total,bar_o_total,rx,ro,bar_x_start,bar_o_start,bar_x_end,bar_o_end,start,end,days
+  if start == '':
+    start=days[0]
   if pH == pL and pH == 0:
     pH=mod_up(h,step)
     tpH=pH-4*step
@@ -184,7 +217,7 @@ def trend_unknown():
 #  print('trend_unknown:h('+str(h)+')l('+str(l)+')pH('+str(pH)+')pL('+str(pL)+')totalV('+str(totalV)+')trend('+str(trend)+')')
 
 def trend_rollback():
-  global trend,trend_status,pH,pL,totalV,l,h,tpH,tpL,v,step,bar_x_high,bar_o_high,bar_x_bot,bar_o_bot,bar_x_total,bar_o_total,rx,ro
+  global trend,trend_status,pH,pL,totalV,l,h,tpH,tpL,v,step,bar_x_high,bar_o_high,bar_x_bot,bar_o_bot,bar_x_total,bar_o_total,rx,ro,bar_x_start,bar_o_start,bar_x_end,bar_o_end
   if trend == 1:
     trend = -1
     trend_status='k'
@@ -213,14 +246,14 @@ def trend_rollback():
 
 
 def check_result():
-  global trend,trend_status,pH,pL,totalV,l,h,tpH,tpL,v,step,bar_x_high,bar_o_high,bar_x_bot,bar_o_bot,bar_x_total,bar_o_total,rx,ro
+  global trend,trend_status,pH,pL,totalV,l,h,tpH,tpL,v,step,bar_x_high,bar_o_high,bar_x_bot,bar_o_bot,bar_x_total,bar_o_total,rx,ro,bar_x_start,bar_o_start,bar_x_end,bar_o_end
 #  for i in range(len(rx)):
      #print('rx='+str(rx[i])+',pL='+str(bar_x_bot[i])+',pH='+str(bar_x_bot[i]+bar_x_high[i]))
 #  print len(rx),len(bar_x_bot),len(bar_x_total),len(ro),len(bar_o_bot),len(bar_o_total)
 
 
 def final_bar():
-  global trend,trend_status,pH,pL,totalV,l,h,tpH,tpL,v,step,bar_x_high,bar_o_high,bar_x_bot,bar_o_bot,bar_x_total,bar_o_total,rx,ro,turnpoint
+  global trend,trend_status,pH,pL,totalV,l,h,tpH,tpL,v,step,bar_x_high,bar_o_high,bar_x_bot,bar_o_bot,bar_x_total,bar_o_total,rx,ro,turnpoint,bar_x_start,bar_o_start,bar_x_end,bar_o_end
   if trend_status == 'k':
     if trend == 1:
       bar_append('x')
@@ -245,7 +278,7 @@ filename="/var/tmp/history/" + stock_symbol
 
 
 def prepare_data():
-  global step,bar_x_high,bar_o_high,bar_x_bot,bar_o_bot,bar_x_total,bar_o_total,rx,ro,aset,days,stock_symbol
+  global step,bar_x_high,bar_o_high,bar_x_bot,bar_o_bot,bar_x_total,bar_o_total,rx,ro,aset,days,stock_symbol,bar_x_start,bar_o_start,bar_x_end,bar_o_end
   rr=[]
   best_step=max_price=max_total_bar=0
 
@@ -294,11 +327,12 @@ def prepare_data():
     return step,max_total_bar,max_price
 
 def calculate_dataset():
-  global trend,trend_status,pH,pL,totalV,l,h,c,tpH,tpL,v,step,bar_x_high,bar_o_high,bar_x_bot,bar_o_bot,bar_x_total,bar_o_total,rx,ro,aset,days
+  global trend,trend_status,pH,pL,totalV,l,h,c,tpH,tpL,v,step,bar_x_high,bar_o_high,bar_x_bot,bar_o_bot,bar_x_total,bar_o_total,rx,ro,aset,days,bar_x_start,bar_o_start,bar_x_end,bar_o_end,start,end
 
   trend=0
   v=h=l=o=c=totalV=pH=pL=tpL=tpH=y=0
-  maxy=0
+  start=end=''
+  maxy=miny=0
   bar_x_high=[]
   bar_x_bot=[]
   bar_o_high=[]
@@ -308,6 +342,10 @@ def calculate_dataset():
   rx=[]
   ro=[]
   days=[]
+  bar_x_start=[]
+  bar_x_end=[]
+  bar_o_start=[]
+  bar_o_end=[]
 
   trend_status='k'
 
@@ -347,10 +385,12 @@ def calculate_dataset():
   return total_bars,maxy,miny
 
 def normalize_pf():
-  global trend,trend_status,pH,pL,totalV,l,h,c,tpH,tpL,v,step,bar_x_high,bar_o_high,bar_x_bot,bar_o_bot,bar_x_total,bar_o_total,rx,ro,days,turnpoint,pd1
+  global trend,trend_status,pH,pL,totalV,l,h,c,tpH,tpL,v,step,bar_x_high,bar_o_high,bar_x_bot,bar_o_bot,bar_x_total,bar_o_total,rx,ro,days,turnpoint,pd1,bar_x_start,bar_o_start,bar_x_end,bar_o_end,hostname,username,password,dbname,stock_symbol,step_type
   rs=[]
   bars_o=[]
   bars_h=[]
+  bars_s=[]
+  bars_e=[]
   vs=[]
   flags=[]
   if len(rx)>0 and len(ro)>0:
@@ -358,6 +398,8 @@ def normalize_pf():
       rs=rx
       bars_o=bar_x_bot
       bars_h=bar_x_high
+      bars_s=bar_x_start
+      bars_e=bar_x_end
       vs=bar_x_total
       for c,v in enumerate(ro):
         rs.insert(c*2+1,v)
@@ -367,6 +409,10 @@ def normalize_pf():
         bars_h.insert(c*2+1,v)
       for c,v in enumerate(bar_o_total):
         vs.insert(c*2+1,v)
+      for c,v in enumerate(bar_o_start):
+        bars_s.insert(c*2+1,v)
+      for c,v in enumerate(bar_o_end):
+        bars_e.insert(c*2+1,v)
       for c,v in enumerate(rs):
         if c%2==0:
           flags.insert(c,'x')
@@ -376,6 +422,8 @@ def normalize_pf():
       rs=ro
       bars_o=bar_o_bot
       bars_h=bar_o_high
+      bars_s=bar_o_start
+      bars_e=bar_o_end
       vs=bar_o_total
       for c,v in enumerate(rx):
         rs.insert(c*2+1,v)
@@ -385,19 +433,35 @@ def normalize_pf():
         bars_h.insert(c*2+1,v)
       for c,v in enumerate(bar_x_total):
         vs.insert(c*2+1,v)
+      for c,v in enumerate(bar_x_start):
+        bars_s.insert(c*2+1,v)
+      for c,v in enumerate(bar_x_end):
+        bars_e.insert(c*2+1,v)
       for c,v in enumerate(rs):
         if c%2==0:
           flags.insert(c,'o')
         else:
           flags.insert(c,'x')
-    #print(len(bars_o),len(bars_h),len(vs),len(flags))
+    #print(len(bars_o),len(bars_h),len(vs),len(flags),len(bars_s),len(bars_e))
     #print(rx[0],ro[0])
-    df1=pd1.DataFrame({'bars_o':bars_o,'bars_h':bars_h,'bars_v':vs,'bars_flag':flags})
-    #print(df1)
-    df1.to_csv('/var/tmp/history/'+str(stock_symbol)+'_t1.csv',sep=',')
+    df1=pd1.DataFrame({'bars_s':bars_s,'bars_e':bars_e,'bars_o':bars_o,'bars_h':bars_h,'bars_v':vs,'bars_flag':flags})
+    engine = create_engine('postgresql://wls:wholelifestocks@localhost:5432/fzdb')
+    if df1 is None:
+      print("No calculation result for stock:"+stock_symbol)
+    elif step_type == 't1':
+      df1.to_sql('tmp_pf_bars_t1',engine,if_exists='replace')
+      conn=psycopg2.connect(host=hostname,user=username,password=password,dbname=database)
+      cur=conn.cursor()
+      sql="INSERT INTO pf_bars_info values('"+stock_symbol+"','t1',%s) ON CONFLICT (symbol,pftype) DO NOTHING"
+      #print sql
+      cur.execute(sql%float(step))
+      conn.commit()
+      cur.close()
+      #print(df1)
+      #df1.to_csv('/var/tmp/history/'+str(stock_symbol)+'_t1.csv',sep=',')
 
 def draw_pf(topy):
-  global trend,trend_status,pH,pL,totalV,l,h,c,tpH,tpL,v,step,bar_x_high,bar_o_high,bar_x_bot,bar_o_bot,bar_x_total,bar_o_total,rx,ro,days,turnpoint
+  global trend,trend_status,pH,pL,totalV,l,h,c,tpH,tpL,v,step,bar_x_high,bar_o_high,bar_x_bot,bar_o_bot,bar_x_total,bar_o_total,rx,ro,days,turnpoint,bar_x_start,bar_o_start,bar_x_end,bar_o_end
   barWidth=1
 
   dfx = pd.DataFrame({'x':rx,'x_bot':bar_x_bot,'x_high':bar_x_high,'x_v':bar_x_total})
@@ -500,26 +564,31 @@ def draw_pf(topy):
   #print rx[0],bar_x_bot[0],bar_x_high[0]
   plt.show()
 
+def get_history_file():
+  global filename,aset
+  efile=open(filename)
+  eReader=csv.reader(efile,delimiter=',')
+  for row in eReader:
+    aset.append([row[0],row[1],row[2],row[3],row[4],row[5],row[6],row[7]])
+  efile.close()
+  #print(aset)
 
-#==== Main ===========================
-if stock_symbol is None:
-  print("Must input correct stock symbol")
-  exit(100)
-  
-efile=open(filename)
-eReader=csv.reader(efile,delimiter=',')
-for row in eReader:
-  aset.append([row[0],row[1],row[2],row[3],row[4],row[5],row[6],row[7]])
-efile.close()
-#print(aset)
+def calculate_t1():
+  global trend,pH,pL,totalV,l,h,tpH,tpL,v,step,bar_x_high,bar_o_high,bar_x_bot,bar_o_bot,bar_x_total,bar_o_total,rx,ro,bar_x_start,bar_o_start,bar_x_end,bar_o_end,start,end,days
+  p_set=prepare_data()
+  #print p_set[0],p_set[1],p_set[2],step
+  if p_set[2] >0:
+  #  draw_pf(p_set[2])
+    normalize_pf()
+  else:
+    print("No Result")
 
-p_set=prepare_data()
-#print p_set[0],p_set[1],p_set[2],step
-if p_set[2] >0:
-#  draw_pf(p_set[2])
-  normalize_pf()
+#==========Main Code===============
+get_history_file()
+if step_type == 't1':
+  calculate_t1()
 else:
-  print("No Result")
+  calculate_t1()
 
 exit(0)
 

@@ -159,7 +159,7 @@ def load_bars_t1(source_type):
       sql="select seq,flag,cast(low as float),cast(high as float),cast(volume as float) from pf_bars_t1 where symbol='"+stock_symbol+"' order by seq"
       cur.execute (sql)
       for vseq,vflag,vbase,vadd,vvolume in cur:
-        print vseq,vflag,vbase,vadd,vvolume
+        #print vseq,vflag,vbase,vadd,vvolume
         if vflag == 'x':
 	  rx.append(vseq+1)
           bar_x_bot.append(vbase)
@@ -176,6 +176,10 @@ def load_bars_t1(source_type):
           turnpoint=vbase+4*step
       max_total_bar=cur.rowcount
       cur.close()
+      if max_total_bar == 0:
+        print("There is no pre-calculated data in database")
+        # fz: Here, the logic should be provided, can recalculate and draw picture, should not be simple just exit
+        exit(200)
       sql="select cast(min(low) as float),cast(max(low+high) as float) from pf_bars_t1 where symbol='"+stock_symbol+"'"  
       cur=conn.cursor()
       cur.execute(sql)
@@ -211,7 +215,7 @@ days.append(now.strftime("%Y-%m-%d"))
 #print len(ro),len(bar_o_bot),len(bar_o_high),len(bar_o_total)
 #print rx,bar_x_bot,bar_x_high,bar_x_total
 #print ro,bar_o_bot,bar_o_high,bar_o_total
-print p_set
+#print p_set
 if p_set[2] >0:
   draw_pf(p_set[2])
 else:
