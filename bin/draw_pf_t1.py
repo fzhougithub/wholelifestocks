@@ -184,6 +184,11 @@ def load_bars_t1(source_type):
           trend=-1
           turnpoint=vbase+4*step
       max_total_bar=cur.rowcount
+      sql="select c from s_history_finalday where symbol='"+stock_symbol+"'"
+      cur.execute(sql)
+      conn.commit()
+      for p in cur.fetchone():
+        c=float(p)
       cur.close()
       if max_total_bar == 0:
         print("There is no pre-calculated data in database")
@@ -195,7 +200,7 @@ def load_bars_t1(source_type):
       for min_price,max_price in cur.fetchall():
         continue
   trend_status='k'      
-  c=turnpoint
+  #c=turnpoint
   tpH=(vbase+vadd)-4*step
   tpL=vbase+4*step
   #print rx[0],ro[0]

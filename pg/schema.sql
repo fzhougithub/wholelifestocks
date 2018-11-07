@@ -320,3 +320,137 @@ $BODY$;
 ALTER FUNCTION public.update_pf_bars_t1(character)
     OWNER TO "frank.zhou";
 
+create view pf_bars_t1_now as select * from pf_bars_t1 where (symbol,seq) in (select symbol,max(seq) from pf_bars_t1 group by symbol);
+
+create view pf_bars_t1_desc as select * from pf_bars_t1 order by symbol,seq desc;
+
+create view s_history_finalday as select * from (select *,row_number() over (partition by symbol) as rown from s_history_desc) t where rown<2
+
+create view s_history_desc as select * from s_history order by symbol,tdate desc;
+
+create table candidate(symbol char(10),cdate date,type char(10),comments text,primary key(symbol,cdate,type));
+
+CREATE OR REPLACE FUNCTION public.show_bar_big(direction character
+	)
+    RETURNS SETOF character 
+    LANGUAGE 'plpgsql'
+
+    COST 100
+    VOLATILE 
+    ROWS 1000
+AS $BODY$
+
+declare
+  ref refcursor; 
+  r char(6);
+  v_symbol char(6);
+  v_seq integer;
+  v_h_final numeric;
+  v_h_before_final numeric;
+  v_v_final numeric;
+  v_v_before_final numeric;
+begin
+  if lower(direction)='up' then
+    open ref for select symbol,seq,volume from pf_bars_t1 where (symbol,seq) in (select symbol,max(seq) from pf_bars_t1 group by symbol) and flag='x';
+  elsif lower(direction)='down' then
+    open ref for select symbol,seq,volume from pf_bars_t1 where (symbol,seq) in (select symbol,max(seq) from pf_bars_t1 group by symbol) and flag='o';
+  end if;
+  loop
+    fetch ref into v_symbol,v_seq,v_v_final;
+	  EXIT WHEN NOT FOUND;
+      EXECUTE 'SELECT volume FROM pf_bars_t1 WHERE symbol = $1 AND seq = $2' into v_v_before_final using v_symbol,v_seq-1;
+      if v_v_before_final < v_v_final then
+        r:=v_symbol;
+        return next r;
+      end if;
+  end loop;
+  return;
+end;
+
+$BODY$;
+
+ALTER FUNCTION public.show_up_candidates()
+    OWNER TO wls;
+
+CREATE OR REPLACE FUNCTION public.show_tripple_break(direction character
+	)
+    RETURNS SETOF character 
+    LANGUAGE 'plpgsql'
+
+    COST 100
+    VOLATILE 
+    ROWS 1000
+AS $BODY$
+
+declare
+  ref refcursor;
+  r char(6);
+  v_higha numeric[] := array[1,2,3];
+  v_high numeric;
+  v_high3 numeric;
+  v_high2 numeric;
+  v_high1 numeric;
+  v_low numeric;
+  v_low3 numeric;
+  v_low2 numeric;
+  v_low1 numeric;
+  v_v3 numeric;
+  v_v2 numeric;
+  v_v1 numeric;
+  v_volume numeric;
+  i integer;
+  v_symbol char(6);
+  v_seq integer;
+  v_row integer;
+  p numeric;
+begin
+  if lower(direction)='up' then
+    open ref for select symbol,high+low,volume,rown from (select *,row_number() over (partition by symbol) as rown from pf_bars_t1_desc where flag='x') t where rown<4;
+    loop
+      fetch ref into v_symbol,v_high,v_volume,v_row;
+	    EXIT WHEN NOT FOUND;
+		case v_row 
+		  when 1 then 
+		    v_high1=v_high;
+			v_v1=v_volume;
+			v_high2=0;
+			v_high3=0;
+		  when 2 then v_high2=v_high;v_v2:=v_volume;
+		  when 3 then 
+		    v_high3=v_high;v_v3:=v_volume;
+			
+		    if v_high3>0 and abs((v_high2 - v_high3)/v_high3)<0.02 and v_high1 >= v_high2 and v_high1>=v_high3 then
+		      return next v_symbol;
+		    end if;
+		end case;
+	end loop;
+  elsif lower(direction)='down' then
+    open ref for select symbol,low,volume,rown from (select *,row_number() over (partition by symbol) as rown from pf_bars_t1_desc where flag='o') t where rown<4;
+    loop
+      fetch ref into v_symbol,v_low,v_volume,v_row;
+	    EXIT WHEN NOT FOUND;
+		case v_row 
+		  when 1 then 
+		    v_low1=v_low;
+			v_v1=v_volume;
+			v_low2=0;
+			v_low3=0;
+		  when 2 then v_low2=v_low;v_v2:=v_volume;
+		  when 3 then 
+		    v_low3=v_low;v_v3:=v_volume;
+		    if v_low3>0 and abs((v_low2 - v_low3)/v_low3)<0.02 and v_low1 <= v_low2 and v_low1<=v_low3 then
+		      return next v_symbol;
+		    end if;
+		end case;
+	end loop;
+  end if;
+ return;
+end;
+
+$BODY$;
+
+ALTER FUNCTION public.show_up_candidates()
+    OWNER TO wls;
+
+
+
