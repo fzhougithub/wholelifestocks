@@ -20,7 +20,7 @@ from pathlib import Path
 #sys.setdefaultencoding('utf-8')
 
 #https://stackoverflow.com/questions/5423381/checking-if-sys-argvx-is-defined
-stock_symbol=sys.argv[1]
+symbol=sys.argv[1]
 #step=float(sys.argv[2])
 
 step=0
@@ -36,7 +36,8 @@ rx=[]
 ro=[]
 days=[]
 aset=[]
-filename="/var/tmp/history/" + stock_symbol
+filename="/var/tmp/history/" + symbol
+stock_symbol=s_name=''
 
 def ensure_unicode(v):
     if isinstance(v, str):
@@ -44,7 +45,7 @@ def ensure_unicode(v):
     return unicode(v)  # convert anything not a string to unicode too
 
 def draw_pf(topy):
-  global trend,trend_status,pH,pL,totalV,l,h,c,tpH,tpL,v,step,bar_x_high,bar_o_high,bar_x_bot,bar_o_bot,bar_x_total,bar_o_total,rx,ro,days,turnpoint
+  global trend,trend_status,pH,pL,totalV,l,h,c,tpH,tpL,v,step,bar_x_high,bar_o_high,bar_x_bot,bar_o_bot,bar_x_total,bar_o_total,rx,ro,days,turnpoint,s_name
   barWidth=1
 
   dfx = pd.DataFrame({'x':rx,'x_bot':bar_x_bot,'x_high':bar_x_high,'x_v':bar_x_total})
@@ -116,9 +117,10 @@ def draw_pf(topy):
   mpl.rcParams['axes.unicode_minus']=False # in case minus sign is shown as box
 
   
-  s_name=subprocess.check_output("python get_s_name.py "+stock_symbol+"|cut -d' ' -f2",shell=True)
+  #s_name=subprocess.check_output("python get_s_name.py "+stock_symbol+"|cut -d' ' -f2",shell=True)
   s_name=u''.join(ensure_unicode(s_name))
   print(s_name)
+  print(stock_symbol)
 
   #s=u'中粮生化'
   #axes[0].text(0.1,0.2,s_name.format(s),fontproperties=myfont)
@@ -149,7 +151,7 @@ def draw_pf(topy):
   plt.show()
 
 def load_bars_t1(source_type):
-  global trend,trend_status,pH,pL,totalV,l,h,c,tpH,tpL,v,step,bar_x_high,bar_o_high,bar_x_bot,bar_o_bot,bar_x_total,bar_o_total,rx,ro,days,turnpoint,stock_symbol
+  global trend,trend_status,pH,pL,totalV,l,h,c,tpH,tpL,v,step,bar_x_high,bar_o_high,bar_x_bot,bar_o_bot,bar_x_total,bar_o_total,rx,ro,days,turnpoint,stock_symbol,s_name
 
   vflag=''
   vseq=vbase=vadd=vvolume=min_price=max_price=max_total_bar=0
@@ -157,6 +159,12 @@ def load_bars_t1(source_type):
       hostname='localhost'; username='wls'; password='wholelifestocks'; database='fzdb'
       conn=psycopg2.connect(host=hostname,user=username,password=password,dbname=database)
       cur = conn.cursor()
+      cur = conn.cursor()
+      sql = "SELECT symbol, name FROM symbol_list where symbol like '"+symbol+"' or name like '"+symbol+"'"
+      cur.execute( sql )
+      for firstname, lastname in cur.fetchall() :
+         stock_symbol=firstname
+         s_name=lastname
       sql="select step from pf_bars_info where symbol='"+stock_symbol+"'"
       cur.execute(sql)
       conn.commit()

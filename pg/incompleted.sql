@@ -1,5 +1,5 @@
-CREATE OR REPLACE FUNCTION public.show_tripple_break(direction character
-	)
+CREATE OR REPLACE FUNCTION public.show_suprt_v(
+	direction character)
     RETURNS SETOF character 
     LANGUAGE 'plpgsql'
 
@@ -9,45 +9,39 @@ CREATE OR REPLACE FUNCTION public.show_tripple_break(direction character
 AS $BODY$
 
 declare
-  ref refcursor;
+  ref refcursor; 
   r char(6);
-  v_higha numeric[] := array[1,2,3];
-  v_high numeric;
-  v_high3 numeric;
-  v_high2 numeric;
-  v_high1 numeric;
-  v_low3 numberic;
-  v_low2 numeric;
-  v_low1 numeric;
-  i integer;
+  v_flag char(1);
   v_symbol char(6);
-  v_seq integer;
-  v_h_final numeric;
-  v_h_before_final numeric;
-  v_v_final numeric;
-  v_v_before_final numeric;
+  v_rown integer;
+  v_high numeric;
+  v_volume numeric;
 begin
-  if lower(direction)='up' then
-  open ref for select symbol,high,volume from (select *,row_number() over (partition by symbol) as row from pf_bars_t1_desc where flag='x') t where row<4;
+  open ref for select symbol,flag,(high+low),volume,rown from (select *, row_number() over (partition by symbol) as rown from pf_bars_t1_desc limit 10) t where rown<6;
+ 
+ ----- need to be think about and implement below. 
   loop
-      fetch ref into v_symbol,v_high;
-	    EXIT WHEN NOT FOUND;
-		if t_symbol <> v_symbol then
-		  i=0;
-		  v_higha
-		  t_symbol=v_symbol;
-		  
-        EXECUTE 'SELECT volume FROM pf_bars_t1 WHERE symbol = $1 AND seq = $2' into v_v_before_final using v_symbol,v_seq-1;
-        if v_v_before_final < v_v_final then
-          r:=v_symbol;
-          return next r;
-        end if;
-        EXIT WHEN NOT FOUND;
-  end loop;
- return;
+    fetch ref into v_symbol,v_flag,v_high,v_volume,v_rown;
+	  EXIT WHEN NOT FOUND;
+	  if lower(direction)='up' then
+    	  case v_rown
+	        when 1 then
+		    when 2 then
+		    when 3 then
+		    when 4 then
+		    when 5 then
+	      end case;
+	  end if;
+	  if lower(direction)='down' then
+    	  case v_rown
+	        when 1 then
+		    when 2 then
+		    when 3 then
+		    when 4 then
+		    when 5 then	  
+	  end if;
+  end loop;  
+  return;
 end;
 
 $BODY$;
-
-ALTER FUNCTION public.show_up_candidates()
-    OWNER TO wls;

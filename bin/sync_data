@@ -1,13 +1,6 @@
 #!/bin/bash
 
-if [ $(find /var/tmp/history/ -mtime -1|grep s_list|wc -l) -eq 0 ];then
-   python get_s_list.py
-fi
+python sync_s_basic.py
 
-# need to also check the names from s_names
-
-for i in $(cat /var/tmp/history/s_list|cut -d, -f1);
-do
-   python get_s_history.py $i
-done
+python sync_data.py
 
