@@ -453,4 +453,5 @@ ALTER FUNCTION public.show_up_candidates()
     OWNER TO wls;
 
 
+create type r_min_max as (v1 double precision,v2 double precision);
 
