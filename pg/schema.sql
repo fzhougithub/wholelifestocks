@@ -455,3 +455,8 @@ ALTER FUNCTION public.show_up_candidates()
 
 create type r_min_max as (v1 double precision,v2 double precision);
 
+create table pf_bars_pr as select * from pf_bars_t1 limit 0;
+create table tmp_pf_bars_pr as select * from tmp_pf_bars_t1 limit 0;
+
+alter table pf_bars_pr add constraint pk_pf_bars_pr primary key(symbol,seq);
+create unique index u1_pf_bars_pr on pf_bars_pr(symbol, flag, bar_s, bar_e);

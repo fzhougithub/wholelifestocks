@@ -21,42 +21,6 @@ from shlex import split
 import psycopg2
 import collections
 
-arg_names = ['command', 'symbol_name', 'step']
-args = dict(zip(arg_names, sys.argv))
-Arg_list = collections.namedtuple('Arg_list', arg_names)
-args = Arg_list(*(args.get(arg, None) for arg in arg_names))
-if args[1] is None:
-  print("Need to passin symbol")
-  exit(100)
-else:
-  stock_symbol=args[1]
-#stock_symbol=sys.argv[1]
-
-if args[2] is None:
-  date_range='current_date,500'
-else:
-  date_range=args[2]
-step_type='pr'
-
-trend=0
-v=h=l=o=c=totalV=pH=pL=tpL=tpH=0
-hostname='localhost'; username='wls'; password='wholelifestocks'; database='fzdb'
-bar_x_high=[]
-bar_x_bot=[]
-bar_o_high=[]
-bar_o_bot=[]
-bar_x_total=[]
-bar_o_total=[]
-bar_x_start=[]
-bar_o_start=[]
-bar_x_end=[]
-bar_o_end=[]
-rx=[]
-ro=[]
-days=[]
-aset=[]
-s_name=''
-
 def ensure_unicode(v):
     if isinstance(v, str):
         v = v.decode('utf8')
@@ -266,13 +230,13 @@ def final_bar():
       turnpoint=tpL
   
 #print(stock_symbol)
-filename="/var/tmp/history/" + stock_symbol
+#filename="/var/tmp/history/" + stock_symbol
 #myfile=Path(filename)
 #histbars=numpy.loadtxt(open(filename,"rb"),delimiter=",",skiprows=0)
 
 
 def prepare_data():
-  global step,bar_x_high,bar_o_high,bar_x_bot,bar_o_bot,bar_x_total,bar_o_total,rx,ro,aset,days,stock_symbol,bar_x_start,bar_o_start,bar_x_end,bar_o_end
+  global step,bar_x_high,bar_o_high,bar_x_bot,bar_o_bot,bar_x_total,bar_o_total,rx,ro,aset,days,stock_symbol,bar_x_start,bar_o_start,bar_x_end,bar_o_end,maxy,miny
   rr=[]
   best_step=max_price=max_total_bar=0
 
@@ -317,8 +281,9 @@ def prepare_data():
   else:
     r_set=calculate_dataset()
     max_total_bar=r_set[0]
-    max_price=r_set[1]
-    return step,max_total_bar,max_price
+    #max_price=r_set[1]
+    #return step,max_total_bar,max_price
+    return step,max_total_bar,maxy
 
 def calculate_dataset():
   global trend,trend_status,pH,pL,totalV,l,h,c,tpH,tpL,v,step,bar_x_high,bar_o_high,bar_x_bot,bar_o_bot,bar_x_total,bar_o_total,rx,ro,aset,days,bar_x_start,bar_o_start,bar_x_end,bar_o_end,start,end,maxy,miny
@@ -367,7 +332,7 @@ def calculate_dataset():
   total_bars=len(ro)+len(rx)
   return total_bars,maxy,miny
 
-def normalize_pr():
+def normalize_pc():
   global trend,trend_status,pH,pL,totalV,l,h,c,tpH,tpL,v,step,bar_x_high,bar_o_high,bar_x_bot,bar_o_bot,bar_x_total,bar_o_total,rx,ro,days,turnpoint,pd1,bar_x_start,bar_o_start,bar_x_end,bar_o_end,hostname,username,password,dbname,stock_symbol,step_type
   rs=[]
   bars_o=[]
@@ -431,15 +396,15 @@ def normalize_pr():
     engine = create_engine('postgresql://wls:wholelifestocks@localhost:5432/fzdb')
     if df1 is None:
       print("No calculation result for stock:"+stock_symbol)
-    elif step_type == 'pr':
-      df1.to_sql('tmp_pf_bars_pr',engine,if_exists='replace')
+    elif step_type == 'pc':
+      df1.to_sql('tmp_pf_bars_pc',engine,if_exists='replace')
       conn=psycopg2.connect(host=hostname,user=username,password=password,dbname=database)
       cur=conn.cursor()
-      sql="INSERT INTO pf_bars_info values('"+stock_symbol+"','pr',%s) ON CONFLICT (symbol,pftype) DO NOTHING"
+      sql="INSERT INTO pf_bars_info values('"+stock_symbol+"','pc',%s) ON CONFLICT (symbol,pftype) DO NOTHING"
       #print sql
       cur.execute(sql%float(step))
       conn.commit()
-      sqlu="select update_pf_bars('"+stock_symbol+"','pr')"
+      sqlu="select update_pf_bars('"+stock_symbol+"','pc')"
       cur.execute(sqlu)
       conn.commit()
       cur.close()
@@ -586,7 +551,7 @@ def get_range_based_step(p):
     s=500
   return s 
 
-def get_history_db():
+def get_history_db(pftype):
   global trend,trend_status,pH,pL,totalV,l,h,c,tpH,tpL,v,step,bar_x_high,bar_o_high,bar_x_bot,bar_o_bot,bar_x_total,bar_o_total,rx,ro,days,turnpoint,pd1,bar_x_start,bar_o_start,bar_x_end,bar_o_end,hostname,username,password,dbname,stock_symbol,step_type,miny,maxy,s_name
   conn=psycopg2.connect(host=hostname,user=username,password=password,dbname=database)
   cur=conn.cursor()
@@ -598,8 +563,9 @@ def get_history_db():
     miny=float(r[0])
     maxy=float(r[1])
     price_range=float(r[2])
+    step=maxy/100
     #print price_range
-    step=get_range_based_step(price_range)
+    #step=get_range_based_step(price_range)
   sql="select get_s_history_by_days('"+stock_symbol+"',"+date_range+")"
   print sql
   cur.execute(sql)
@@ -627,9 +593,46 @@ def calculate_t1():
 #==========Main Code===============
 #get_history_file()
 
-get_history_db()
+arg_names = ['command', 'symbol_name', 'step']
+args = dict(zip(arg_names, sys.argv))
+Arg_list = collections.namedtuple('Arg_list', arg_names)
+args = Arg_list(*(args.get(arg, None) for arg in arg_names))
+if args[1] is None:
+  print("Need to passin symbol")
+  exit(100)
+else:
+  stock_symbol=args[1]
+#stock_symbol=sys.argv[1]
+
+if args[2] is None:
+  date_range='current_date,500'
+else:
+  date_range=args[2]
+step_type='pc'
+filename="/var/tmp/history/" + stock_symbol
+
+trend=0
+v=h=l=o=c=totalV=pH=pL=tpL=tpH=0
+hostname='localhost'; username='wls'; password='wholelifestocks'; database='fzdb'
+bar_x_high=[]
+bar_x_bot=[]
+bar_o_high=[]
+bar_o_bot=[]
+bar_x_total=[]
+bar_o_total=[]
+bar_x_start=[]
+bar_o_start=[]
+bar_x_end=[]
+bar_o_end=[]
+rx=[]
+ro=[]
+days=[]
+aset=[]
+s_name=''
+
+get_history_db('pc')
 prepare_data()
 #draw_pf(miny)
-normalize_pr()
+normalize_pc()
 
 exit(0)

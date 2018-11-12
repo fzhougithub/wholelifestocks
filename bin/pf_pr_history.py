@@ -439,8 +439,8 @@ def normalize_pr():
       #print sql
       cur.execute(sql%float(step))
       conn.commit()
-      sqlu="select update_pf_bars('"+stock_symbol+"','pr')"
-      cur.execute(sqlu)
+      sql="select update_pf_bars('"+stock_symbol+"','pr')"
+      cur.execute(sql)
       conn.commit()
       cur.close()
       #print(df1)
@@ -594,11 +594,11 @@ def get_history_db():
   cur.execute(sql)
   for r in cur.fetchone():
     r=r.split(',')
-    #print r,r[0],r[1],r[2]
+    print r,r[0],r[1],r[2]
     miny=float(r[0])
     maxy=float(r[1])
     price_range=float(r[2])
-    #print price_range
+    print price_range
     step=get_range_based_step(price_range)
   sql="select get_s_history_by_days('"+stock_symbol+"',"+date_range+")"
   print sql
@@ -629,7 +629,9 @@ def calculate_t1():
 
 get_history_db()
 prepare_data()
-#draw_pf(miny)
+draw_pf(miny)
 normalize_pr()
 
 exit(0)
+
+
