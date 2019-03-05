@@ -159,7 +159,6 @@ def load_bars_pc(source_type):
       hostname='localhost'; username='wls'; password='wholelifestocks'; database='fzdb'
       conn=psycopg2.connect(host=hostname,user=username,password=password,dbname=database)
       cur = conn.cursor()
-      cur = conn.cursor()
       sql = "SELECT symbol, name FROM symbol_list where symbol like '"+symbol+"' or name like '"+symbol+"'"
       cur.execute( sql )
       for firstname, lastname in cur.fetchall() :
@@ -239,6 +238,7 @@ days.append(now.strftime("%Y-%m-%d"))
 #print rx,bar_x_bot,bar_x_high,bar_x_total
 #print ro,bar_o_bot,bar_o_high,bar_o_total
 #print p_set
+
 if p_set[2] >0:
   draw_pf(p_set[2])
 else:
