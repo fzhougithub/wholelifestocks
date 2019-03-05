@@ -1,0 +1,12 @@
+#!/usr/bin/bash
+
+if [ $# -eq 0 ];then
+        echo :Usage $0 start/stop
+        exit 1
+fi
+
+case $1 in
+        'start') FLASK_APP=run.py flask run --host=0.0.0.0 & ;;
+        'stop') ps -ef|grep flask |grep -v grep|awk '{print $2}' | xargs kill ;;
+        '*');;
+esac
