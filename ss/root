@@ -1,0 +1,5 @@
+30 13 * * 1-5 /var/www/scripts/download.sh
+20 13 * * 1-5 /var/www/scripts/download_overview.sh
+*/20 6-13 * * 1-5 /var/www/scripts/alertcheck.sh
+10 14 * * 1-5 /var/www/scripts/daily_charts.sh
+10 16 * * 1-5 /var/www/scripts/refresh_alerts_range.sh
